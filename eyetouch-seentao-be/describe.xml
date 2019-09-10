@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <name>iuap-pap-demo-be</name>
+    <code>iuap-pap-demo-be</code>
+	<dbScripts>
+		<dbScript>
+            <name>mysql</name>
+            <code>mysql</code>
+            <type>init</type>
+            <dbType>mysql</dbType>
+            <defaultScript>true</defaultScript>
+            <ddl>mysql/init/ddl.sql</ddl>
+            <dml>mysql/init/dml.sql</dml>
+        </dbScript>
+        <dbScript>
+            <name>oracle</name>
+            <code>oracle</code>
+            <type>init</type>
+            <dbType>oracle</dbType>
+            <defaultScript>true</defaultScript>
+            <ddl>oracle/init/ddl.sql</ddl>
+            <dml>oracle/init/dml.sql</dml>
+         </dbScript>
+        <dbScript>
+            <name>sqlserver</name>
+            <code>sqlserver</code>
+            <type>init</type>
+            <dbType>sqlserver</dbType>
+            <defaultScript>true</defaultScript>
+            <ddl>sqlserver/init/ddl.sql</ddl>
+            <dml>sqlserver/init/dml.sql</dml>
+         </dbScript>
+         <!-- 升级脚本 -->
+        <dbScript>
+            <name>mysql</name>
+            <code>mysql</code>
+            <dbType>mysql</dbType>
+            <type>upgrade</type>
+            <fromVersion>3.5.5</fromVersion>
+            <toVersion>3.5.6</toVersion>
+            <dml>mysql/upgrade/3.5.5_to_3.5.6/dml.sql</dml>
+            </dbScript>
+        <dbScript>
+            <name>oracle</name>
+            <code>oracle</code>
+            <dbType>oracle</dbType>
+            <type>upgrade</type>
+            <fromVersion>3.5.5</fromVersion>
+            <toVersion>3.5.6</toVersion>
+            <dml>oracle/upgrade/3.5.5_to_3.5.6/dml.sql</dml>
+        </dbScript>
+        <dbScript>
+            <name>sqlserver</name>
+            <code>sqlserver</code>
+            <dbType>sqlserver</dbType>
+            <type>upgrade</type>
+            <fromVersion>3.5.5</fromVersion>
+            <toVersion>3.5.6</toVersion>
+            <dml>sqlserver/upgrade/3.5.5_to_3.5.6/dml.sql</dml>
+        </dbScript>
+         <!-- 友户通 -->
+        <dbScript>
+            <name>mysql-yht</name>
+            <code>mysql-yht</code>
+            <type>init</type>
+            <dbType>mysql</dbType>
+            <property>dep.yht.enable</property>
+            <ddl>mysql/init/ddl.sql</ddl>
+        </dbScript>
+        <dbScript>
+            <name>oracle-yht</name>
+            <code>oracle-yht</code>
+            <type>init</type>
+            <dbType>oracle</dbType>
+            <property>dep.yht.enable</property>
+            <ddl>oracle/init/ddl.sql</ddl>
+        </dbScript>
+     </dbScripts>
+	
+	<!-- 如果没有configUrls，默认将源码下的src/main/resources中的*.properties复制到产品盘的config/WEB-INF/classes下 -->
+	<configUrls>
+		<configUrl>
+			<!-- 配置文件在源码中的路径，从当前子项目的根路径开始，必填，最前面不加"/" -->
+			<!-- 如果为文件则复制文件，如果为文件夹则复制文件夹下的所有文件 -->
+			<source>src/main/resources/application.properties</source>
+			<!-- 配置文件在打包后的产品盘中的存储路径，从config往后，空串为直接存储在config下 -->
+			<!-- 非必填，默认WEB-INF/classes，即存储在config/WEB-INF/classes下 -->
+		</configUrl>
+		<configUrl>
+			<source>src/main/resources/authrbac-sdk.properties</source>
+			<!--从config往后， 默认WEB-INF/classes-->
+		</configUrl>
+        <configUrl>
+			<source>src/main/resources/msg-sdk.properties</source>
+			<!--从config往后， 默认WEB-INF/classes-->
+		</configUrl>
+        <configUrl>
+			<source>src/main/resources/workbench-sdk.properties</source>
+			<!--从config往后， 默认WEB-INF/classes-->
+		</configUrl>
+	</configUrls>
+</project>
