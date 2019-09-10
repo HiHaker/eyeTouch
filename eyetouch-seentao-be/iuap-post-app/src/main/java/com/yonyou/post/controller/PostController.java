@@ -25,7 +25,7 @@ import java.util.ArrayList;
 /**
 * 说明：帖子基础Controller——提供数据增(CREATE)、删(DELETE、改(UPDATE)、查(READ)等rest接口
 * @author  
-* @date 2019-9-10 19:59:15
+* @date 2019-9-10 20:00:26
 */
 @RestController("com.yonyou.post.controller.PostController")
 @RequestMapping(value = "/post/post")

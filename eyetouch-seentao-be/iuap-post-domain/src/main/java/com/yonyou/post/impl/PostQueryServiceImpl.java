@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * RPC provider端
  * @author  
- * @date 2019-9-10 19:59:15
+ * @date 2019-9-10 20:00:26
  */
 @Service("com.yonyou.post.impl.PostQueryServiceImpl")
 public class PostQueryServiceImpl implements PostQueryService {

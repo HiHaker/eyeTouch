@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * RPC 调用接口声明
  * @author  
- * @date 2019-9-10 19:59:15
+ * @date 2019-9-10 20:00:26
  */
 @RemoteCall("iuap-eyetouch-seentao-server")
 public interface PostQueryService {
