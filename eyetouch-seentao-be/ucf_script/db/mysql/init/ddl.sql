@@ -1,15 +1,9 @@
 
--- drop table if EXISTS post;
-CREATE TABLE `post` (
+-- drop table if EXISTS pimage;
+CREATE TABLE `pimage` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
-    `time` VARCHAR(64) DEFAULT NULL COMMENT '发表时间',
-    `content` VARCHAR(64) DEFAULT NULL COMMENT '帖子内容',
-    `title` VARCHAR(64) DEFAULT NULL COMMENT '帖子标题',
-    `type` VARCHAR(64) DEFAULT NULL COMMENT '帖子类型',
-    `style` VARCHAR(64) DEFAULT NULL COMMENT '帖子风格',
-    `uid` VARCHAR(64) DEFAULT NULL COMMENT '用户id',
-    `fpid` VARCHAR(64) DEFAULT NULL COMMENT '转发的原帖id',
+    `pid` VARCHAR(64) DEFAULT NULL COMMENT '帖子的id',
         `TENANT_ID` varchar(64) DEFAULT NULL,
         `DR` int(11) DEFAULT NULL COMMENT '是否删除',
         `TS` varchar(64) DEFAULT NULL COMMENT '时间戳',
