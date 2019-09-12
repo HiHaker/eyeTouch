@@ -4,7 +4,7 @@
     <!--可通过环境变量设置领域名、应用名-->
     <property name="spring.domain.name" value="iuap"/>
     <property name="spring.application.name" value="iuap-eyetouch-seentao-server"/>
-    <property name="logging.path" value="/data/logs/app"/>
+    <property name="logging.path" value="data/logs/app"/>
 
     <property name="COMMON_LOG_PATTERN"
             value="%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] [%logger{36}] [%X{traceId}] [%X{spanId}] [%X{pSpanId}] [%X{rpcOccurrence}] [%X{code}] [%X{req.requestURL}] [%X{req.queryString}] [${spring.domain.name},${spring.application.name},%X{sysId},%X{tenantId},%X{userId},%X{profile},%X{agentId}] - %msg %ex%n" />

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="iuap-bootstrap" />
+        <module name="iuap-post-app" />
+        <module name="iuap-common-app" />
+        <module name="iuap-post-api" />
+        <module name="iuap-post-domain" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="iuap-bootstrap" options="-parameters" />
+      <module name="iuap-common-app" options="-parameters" />
+      <module name="iuap-post-api" options="-parameters" />
+      <module name="iuap-post-app" options="-parameters" />
+      <module name="iuap-post-domain" options="-parameters" />
+    </option>
+  </component>
+</project>
