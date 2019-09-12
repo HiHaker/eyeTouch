@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * RPC 调用接口声明
  * @author  
- * @date 2019-9-12 10:33:41
+ * @date 2019-9-12 10:44:26
  */
 @RemoteCall("iuap-eyetouch-seentao-server")
 public interface PimageQueryService {

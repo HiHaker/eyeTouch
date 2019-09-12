@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * RPC provider端
  * @author  
- * @date 2019-9-12 10:33:40
+ * @date 2019-9-12 10:44:26
  */
 @Service("com.yonyou.pimage.impl.PimageQueryServiceImpl")
 public class PimageQueryServiceImpl implements PimageQueryService {

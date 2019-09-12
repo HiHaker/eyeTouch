@@ -25,7 +25,7 @@ import java.util.ArrayList;
 /**
 * 说明：帖子图片基础Controller——提供数据增(CREATE)、删(DELETE、改(UPDATE)、查(READ)等rest接口
 * @author  
-* @date 2019-9-12 10:33:40
+* @date 2019-9-12 10:44:26
 */
 @RestController("com.yonyou.pimage.controller.PimageController")
 @RequestMapping(value = "/pimage/pimage")
