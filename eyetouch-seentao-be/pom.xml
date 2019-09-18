@@ -14,6 +14,9 @@
         <module>iuap-post-api</module>
         <module>iuap-post-app</module>
         <module>iuap-post-domain</module>
+        <module>iuap-pimage-api</module>
+        <module>iuap-pimage-app</module>
+        <module>iuap-pimage-domain</module>
     </modules>
 
     <packaging>pom</packaging>

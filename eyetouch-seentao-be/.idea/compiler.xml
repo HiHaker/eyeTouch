@@ -6,11 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="iuap-post-api" />
+        <module name="iuap-pimage-app" />
+        <module name="iuap-pimage-domain" />
+        <module name="iuap-post-domain" />
         <module name="iuap-bootstrap" />
+        <module name="iuap-pimage-api" />
         <module name="iuap-post-app" />
         <module name="iuap-common-app" />
-        <module name="iuap-post-api" />
-        <module name="iuap-post-domain" />
       </profile>
     </annotationProcessing>
   </component>
@@ -18,6 +21,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="iuap-bootstrap" options="-parameters" />
       <module name="iuap-common-app" options="-parameters" />
+      <module name="iuap-pimage-api" options="-parameters" />
+      <module name="iuap-pimage-app" options="-parameters" />
+      <module name="iuap-pimage-domain" options="-parameters" />
       <module name="iuap-post-api" options="-parameters" />
       <module name="iuap-post-app" options="-parameters" />
       <module name="iuap-post-domain" options="-parameters" />

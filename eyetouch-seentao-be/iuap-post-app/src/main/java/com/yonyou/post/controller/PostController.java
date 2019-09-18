@@ -144,6 +144,25 @@ public class PostController extends BaseController{
     }
 
     /**
+     * 根据id查询帖子
+     * @param post_ID
+     * @return
+     */
+    @RequestMapping(value = "/getPostById", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getPostById(
+            @RequestParam(required = false) String post_ID
+    ){
+        GenericAssoVo<Post> postVo = service.getAssoVo(post_ID);
+        return postVo.getEntity();
+    }
+
+    /**
+     * 查询集合示例
+     */
+
+
+    /**
     * 单条添加
     * @param entity 业务实体
     * @return 标准JsonResponse结构
@@ -194,4 +213,3 @@ public class PostController extends BaseController{
         return super.buildSuccess();
     }
 }
-

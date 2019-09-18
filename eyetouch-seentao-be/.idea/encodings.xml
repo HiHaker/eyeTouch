@@ -4,6 +4,9 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-bootstrap" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-common-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-pimage-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-pimage-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-pimage-domain" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-post-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-post-app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-post-domain" charset="UTF-8" />

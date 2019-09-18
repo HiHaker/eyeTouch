@@ -117,24 +117,24 @@ public class Post extends BasePO implements AuditTrail{
 
     @Condition(match=Match.EQ)
     @Column(name="type")
-    private String type;        //帖子类型
+    private Integer type;        //帖子类型
 
-    public void setType(String type){
+    public void setType(Integer type){
         this.type = type;
     }
-    public String getType(){
+    public Integer getType(){
         return this.type;
     }
 
 
     @Condition(match=Match.EQ)
     @Column(name="style")
-    private String style;        //帖子风格
+    private Integer style;        //帖子风格
 
-    public void setStyle(String style){
+    public void setStyle(Integer style){
         this.style = style;
     }
-    public String getStyle(){
+    public Integer getStyle(){
         return this.style;
     }
 
