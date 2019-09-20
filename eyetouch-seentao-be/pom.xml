@@ -11,9 +11,9 @@
     <modules>
         <module>iuap-bootstrap</module>
         <module>iuap-common-app</module>
-        <module>iuap-video-api</module>
-        <module>iuap-video-app</module>
-        <module>iuap-video-domain</module>
+        <module>iuap-pvideo-api</module>
+        <module>iuap-pvideo-app</module>
+        <module>iuap-pvideo-domain</module>
     </modules>
 
     <packaging>pom</packaging>

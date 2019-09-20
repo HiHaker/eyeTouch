@@ -1,6 +1,6 @@
 
--- drop table if EXISTS video;
-CREATE TABLE `video` (
+-- drop table if EXISTS pvideo;
+CREATE TABLE `pvideo` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
     `pid` VARCHAR(64) DEFAULT NULL COMMENT '帖子id',
