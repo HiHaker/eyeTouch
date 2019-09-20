@@ -1,14 +1,9 @@
 
--- drop table if EXISTS commodity;
-CREATE TABLE `commodity` (
+-- drop table if EXISTS cimage;
+CREATE TABLE `cimage` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
-    `content` VARCHAR(64) DEFAULT NULL COMMENT '商品内容',
-    `effacicy` VARCHAR(64) DEFAULT NULL COMMENT '商品功效',
-    `name` VARCHAR(64) DEFAULT NULL COMMENT '商品名称',
-    `brand` VARCHAR(64) DEFAULT NULL COMMENT '商品品牌',
-    `type` VARCHAR(64) DEFAULT NULL COMMENT '商品类型',
-    `link` VARCHAR(64) DEFAULT NULL COMMENT '商品链接',
+    `cid` VARCHAR(64) DEFAULT NULL COMMENT '商品id',
         `TENANT_ID` varchar(64) DEFAULT NULL,
         `DR` int(11) DEFAULT NULL COMMENT '是否删除',
         `TS` varchar(64) DEFAULT NULL COMMENT '时间戳',
