@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * RPC provider端
  * @author  
- * @date 2019-9-20 8:26:14
+ * @date 2019-9-20 8:43:35
  */
 @Service("com.yonyou.video.impl.VideoQueryServiceImpl")
 public class VideoQueryServiceImpl implements VideoQueryService {

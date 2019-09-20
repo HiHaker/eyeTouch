@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 视频枚举定义,约定为po的fieldName_key为匹配原则
  * @since v5.0.0
- * @date 2019-9-20 8:26:14
+ * @date 2019-9-20 8:43:35
  */
 public class VideoConstant   {
     ;

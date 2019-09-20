@@ -25,10 +25,10 @@ import java.util.ArrayList;
 /**
 * 说明：视频基础Controller——提供数据增(CREATE)、删(DELETE、改(UPDATE)、查(READ)等rest接口
 * @author  
-* @date 2019-9-20 8:26:15
+* @date 2019-9-20 8:43:36
 */
 @RestController("com.yonyou.video.controller.VideoController")
-@RequestMapping(value = "/video/video")
+@RequestMapping(value = "/pvideo/video")
 public class VideoController extends BaseController{
 
     private Logger logger = LoggerFactory.getLogger(VideoController.class);
