@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * RPC provider端
  * @author  
- * @date 2019-9-20 11:17:57
+ * @date 2019-9-20 11:19:29
  */
 @Service("com.yonyou.cimage.impl.CimageQueryServiceImpl")
 public class CimageQueryServiceImpl implements CimageQueryService {

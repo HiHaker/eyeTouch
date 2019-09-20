@@ -13,7 +13,7 @@ import java.util.Random;
 /**
  * 商品图片
  * @since v5.0.0
- * @date 2019-9-20 11:17:57
+ * @date 2019-9-20 11:19:29
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)

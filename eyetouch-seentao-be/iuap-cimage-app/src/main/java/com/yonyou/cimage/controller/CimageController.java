@@ -25,7 +25,7 @@ import java.util.ArrayList;
 /**
 * 说明：商品图片基础Controller——提供数据增(CREATE)、删(DELETE、改(UPDATE)、查(READ)等rest接口
 * @author  
-* @date 2019-9-20 11:17:57
+* @date 2019-9-20 11:19:29
 */
 @RestController("com.yonyou.cimage.controller.CimageController")
 @RequestMapping(value = "/cimage/cimage")
