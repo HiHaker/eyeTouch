@@ -1,9 +1,9 @@
 
--- drop table if EXISTS pimage;
-CREATE TABLE `pimage` (
+-- drop table if EXISTS video;
+CREATE TABLE `video` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
-    `pid` VARCHAR(64) DEFAULT NULL COMMENT '帖子的id',
+    `pid` VARCHAR(64) DEFAULT NULL COMMENT '帖子id',
         `TENANT_ID` varchar(64) DEFAULT NULL,
         `DR` int(11) DEFAULT NULL COMMENT '是否删除',
         `TS` varchar(64) DEFAULT NULL COMMENT '时间戳',

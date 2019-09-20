@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>com.yonyou.iuap</groupId>
-            <artifactId>iuap-pimage-app</artifactId>
+            <artifactId>iuap-video-app</artifactId>
             <version>${project.version}</version>
         </dependency>
 
