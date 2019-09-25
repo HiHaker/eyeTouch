@@ -1,9 +1,9 @@
 
--- drop table if EXISTS cimage;
-CREATE TABLE `cimage` (
+-- drop table if EXISTS cbrand;
+CREATE TABLE `cbrand` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
-    `cid` VARCHAR(64) DEFAULT NULL COMMENT '商品id',
+    `name` VARCHAR(64) DEFAULT NULL COMMENT '品牌名称',
         `TENANT_ID` varchar(64) DEFAULT NULL,
         `DR` int(11) DEFAULT NULL COMMENT '是否删除',
         `TS` varchar(64) DEFAULT NULL COMMENT '时间戳',

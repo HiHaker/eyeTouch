@@ -11,9 +11,9 @@
     <modules>
         <module>iuap-bootstrap</module>
         <module>iuap-common-app</module>
-        <module>iuap-cimage-api</module>
-        <module>iuap-cimage-app</module>
-        <module>iuap-cimage-domain</module>
+        <module>iuap-cbrand-api</module>
+        <module>iuap-cbrand-app</module>
+        <module>iuap-cbrand-domain</module>
     </modules>
 
     <packaging>pom</packaging>
