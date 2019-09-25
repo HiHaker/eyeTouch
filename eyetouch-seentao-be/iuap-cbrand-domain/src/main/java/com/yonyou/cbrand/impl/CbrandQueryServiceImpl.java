@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * RPC provider端
  * @author  
- * @date 2019-9-25 20:55:32
+ * @date 2019-9-25 21:02:54
  */
 @Service("com.yonyou.cbrand.impl.CbrandQueryServiceImpl")
 public class CbrandQueryServiceImpl implements CbrandQueryService {

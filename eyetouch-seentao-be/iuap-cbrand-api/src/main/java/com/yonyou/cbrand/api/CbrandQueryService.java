@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * RPC 调用接口声明
  * @author  
- * @date 2019-9-25 20:55:32
+ * @date 2019-9-25 21:02:54
  */
 @RemoteCall("iuap-eyetouch-seentao-server")
 public interface CbrandQueryService {

@@ -25,7 +25,7 @@ import java.util.ArrayList;
 /**
 * 说明：商品品牌基础Controller——提供数据增(CREATE)、删(DELETE、改(UPDATE)、查(READ)等rest接口
 * @author  
-* @date 2019-9-25 20:55:32
+* @date 2019-9-25 21:02:54
 */
 @RestController("com.yonyou.cbrand.controller.CbrandController")
 @RequestMapping(value = "/cbrand/cbrand")
