@@ -6,6 +6,7 @@ import com.yonyou.pimage.po.Pimage;
 import com.yonyou.pimage.service.PimageService;
 import com.yonyou.iuap.ucf.common.rest.SearchParams;
 import com.yonyou.iuap.ucf.dao.support.SqlParam;
+import com.yonyou.post.api.PostQueryService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,9 @@ import java.util.Map;
 public class PimageQueryServiceImpl implements PimageQueryService {
 
     private PimageService pimageService;
+
+    @Autowired
+    private PostQueryService postQueryService;
 
     @Autowired
     public void setPimageService(PimageService pimageService) {

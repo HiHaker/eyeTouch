@@ -17,6 +17,18 @@
         <module>iuap-pimage-api</module>
         <module>iuap-pimage-app</module>
         <module>iuap-pimage-domain</module>
+        <module>iuap-pvideo-api</module>
+        <module>iuap-pvideo-app</module>
+        <module>iuap-pvideo-domain</module>
+        <module>iuap-commodity-api</module>
+        <module>iuap-commodity-app</module>
+        <module>iuap-commodity-domain</module>
+        <module>iuap-cimage-api</module>
+        <module>iuap-cimage-app</module>
+        <module>iuap-cimage-domain</module>
+        <module>iuap-cbrand-api</module>
+        <module>iuap-cbrand-app</module>
+        <module>iuap-cbrand-domain</module>
     </modules>
 
     <packaging>pom</packaging>

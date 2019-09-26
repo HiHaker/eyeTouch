@@ -37,7 +37,7 @@ public class PimageController extends BaseController{
     private PimageService service;
 
     @Autowired
-    PimageQueryService pimageQueryService;
+    private PimageQueryService pimageQueryService;
 
     @Autowired
     public void setPimageService(PimageService service) {
