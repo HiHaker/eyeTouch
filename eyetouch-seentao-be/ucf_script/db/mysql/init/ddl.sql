@@ -1,9 +1,9 @@
 
--- drop table if EXISTS cbrand;
-CREATE TABLE `cbrand` (
+-- drop table if EXISTS effacicy;
+CREATE TABLE `effacicy` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
-    `name` VARCHAR(64) DEFAULT NULL COMMENT '品牌名称',
+    `name` VARCHAR(64) DEFAULT NULL COMMENT '商品功效名称',
         `TENANT_ID` varchar(64) DEFAULT NULL,
         `DR` int(11) DEFAULT NULL COMMENT '是否删除',
         `TS` varchar(64) DEFAULT NULL COMMENT '时间戳',
