@@ -1,6 +1,6 @@
 
 
-CREATE TABLE [ctype] (
+CREATE TABLE [effacicy] (
 
 [ID] varchar(64)   NOT NULL ,
 [TS] varchar(64)   NULL ,
@@ -15,25 +15,25 @@ CREATE TABLE [ctype] (
 ON [PRIMARY]
 GO
 
-EXEC sp_addextendedproperty 'MS_Description',N'商品类型名称','user','dbo','TABLE','ctype','COLUMN','name'
+EXEC sp_addextendedproperty 'MS_Description',N'商品功效名称','user','dbo','TABLE','effacicy','COLUMN','name'
 GO
 
 
-EXEC sp_addextendedproperty 'MS_Description',N'主键 ID','user','dbo','TABLE','ctype','COLUMN','ID'
+EXEC sp_addextendedproperty 'MS_Description',N'主键 ID','user','dbo','TABLE','effacicy','COLUMN','ID'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'乐观锁时间戳','user','dbo','TABLE','ctype','COLUMN','TS'
+EXEC sp_addextendedproperty 'MS_Description',N'乐观锁时间戳','user','dbo','TABLE','effacicy','COLUMN','TS'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'修改时间','user','dbo','TABLE','ctype','COLUMN','LAST_MODIFIED'
+EXEC sp_addextendedproperty 'MS_Description',N'修改时间','user','dbo','TABLE','effacicy','COLUMN','LAST_MODIFIED'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'修改人','user','dbo','TABLE','ctype','COLUMN','LAST_MODIFY_USER'
+EXEC sp_addextendedproperty 'MS_Description',N'修改人','user','dbo','TABLE','effacicy','COLUMN','LAST_MODIFY_USER'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'创建时间','user','dbo','TABLE','ctype','COLUMN','CREATE_TIME'
+EXEC sp_addextendedproperty 'MS_Description',N'创建时间','user','dbo','TABLE','effacicy','COLUMN','CREATE_TIME'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'创建人','user','dbo','TABLE','ctype','COLUMN','CREATE_USER'
+EXEC sp_addextendedproperty 'MS_Description',N'创建人','user','dbo','TABLE','effacicy','COLUMN','CREATE_USER'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'租户标识','user','dbo','TABLE','ctype','COLUMN','TENANT_ID'
+EXEC sp_addextendedproperty 'MS_Description',N'租户标识','user','dbo','TABLE','effacicy','COLUMN','TENANT_ID'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'是否删除','user','dbo','TABLE','ctype','COLUMN','DR'
+EXEC sp_addextendedproperty 'MS_Description',N'是否删除','user','dbo','TABLE','effacicy','COLUMN','DR'
 GO
 
 

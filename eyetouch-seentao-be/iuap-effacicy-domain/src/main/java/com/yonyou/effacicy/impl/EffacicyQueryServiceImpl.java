@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * RPC provider端
  * @author  
- * @date 2019-9-26 10:07:37
+ * @date 2019-9-26 10:26:51
  */
 @Service("com.yonyou.effacicy.impl.EffacicyQueryServiceImpl")
 public class EffacicyQueryServiceImpl implements EffacicyQueryService {

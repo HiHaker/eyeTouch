@@ -25,7 +25,7 @@ import java.util.ArrayList;
 /**
 * 说明：商品功效基础Controller——提供数据增(CREATE)、删(DELETE、改(UPDATE)、查(READ)等rest接口
 * @author  
-* @date 2019-9-26 10:07:37
+* @date 2019-9-26 10:26:51
 */
 @RestController("com.yonyou.effacicy.controller.EffacicyController")
 @RequestMapping(value = "/effacicy/effacicy")

@@ -17,7 +17,7 @@ import java.util.Random;
 /**
  * 商品功效
  * @since v5.0.0
- * @date 2019-9-26 10:07:37
+ * @date 2019-9-26 10:26:51
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)

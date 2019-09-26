@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * RPC 调用接口声明
  * @author  
- * @date 2019-9-26 10:07:37
+ * @date 2019-9-26 10:26:51
  */
 @RemoteCall("iuap-eyetouch-seentao-server")
 public interface EffacicyQueryService {

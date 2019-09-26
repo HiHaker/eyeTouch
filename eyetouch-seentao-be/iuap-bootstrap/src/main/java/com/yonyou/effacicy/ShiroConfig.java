@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ImportResource;
 /**
  * Shiro 配置
  * @author  
- * @date 2019-9-26 10:07:37
+ * @date 2019-9-26 10:26:51
  */
 @Configuration
 @ImportResource(locations = { "classpath*:/applicationContext-shiro.xml" })
