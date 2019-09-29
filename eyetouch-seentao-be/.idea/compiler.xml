@@ -11,28 +11,29 @@
         <module name="iuap-pimage-api" />
         <module name="iuap-cimage-api" />
         <module name="iuap-post-domain" />
-        <module name="iuap-cbrand-domain" />
+        <module name="iuap-cimage-app" />
         <module name="iuap-post-app" />
-        <module name="iuap-commodity-domain" />
+        <module name="iuap-ctype-api" />
+        <module name="iuap-pvideo-app" />
         <module name="iuap-pimage-domain" />
         <module name="iuap-commodity-app" />
+        <module name="iuap-effacicy-domain" />
         <module name="iuap-post-api" />
-        <module name="iuap-pvideo-domain" />
+        <module name="iuap-cbrand-domain" />
         <module name="iuap-cbrand-app" />
         <module name="iuap-commodity-api" />
+        <module name="iuap-cimage-domain" />
+        <module name="iuap-pvideo-domain" />
         <module name="iuap-cbrand-api" />
         <module name="iuap-bootstrap" />
-        <module name="iuap-pvideo-app" />
+        <module name="iuap-commodity-domain" />
+        <module name="iuap-effacicy-api" />
         <module name="iuap-pimage-app" />
-        <module name="iuap-cimage-app" />
-        <module name="iuap-cimage-domain" />
+        <module name="iuap-effacicy-app" />
+        <module name="iuap-ctype-app" />
+        <module name="iuap-ctype-domain" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="iuap-video-api" target="1.8" />
-      <module name="iuap-video-app" target="1.8" />
-      <module name="iuap-video-domain" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -47,6 +48,12 @@
       <module name="iuap-commodity-app" options="-parameters" />
       <module name="iuap-commodity-domain" options="-parameters" />
       <module name="iuap-common-app" options="-parameters" />
+      <module name="iuap-ctype-api" options="-parameters" />
+      <module name="iuap-ctype-app" options="-parameters" />
+      <module name="iuap-ctype-domain" options="-parameters" />
+      <module name="iuap-effacicy-api" options="-parameters" />
+      <module name="iuap-effacicy-app" options="-parameters" />
+      <module name="iuap-effacicy-domain" options="-parameters" />
       <module name="iuap-pimage-api" options="-parameters" />
       <module name="iuap-pimage-app" options="-parameters" />
       <module name="iuap-pimage-domain" options="-parameters" />

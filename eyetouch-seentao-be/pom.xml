@@ -29,6 +29,12 @@
         <module>iuap-cbrand-api</module>
         <module>iuap-cbrand-app</module>
         <module>iuap-cbrand-domain</module>
+        <module>iuap-effacicy-api</module>
+        <module>iuap-effacicy-app</module>
+        <module>iuap-effacicy-domain</module>
+        <module>iuap-ctype-api</module>
+        <module>iuap-ctype-app</module>
+        <module>iuap-ctype-domain</module>
     </modules>
 
     <packaging>pom</packaging>

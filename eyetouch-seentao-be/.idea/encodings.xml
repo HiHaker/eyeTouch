@@ -13,6 +13,12 @@
     <file url="file://$PROJECT_DIR$/iuap-commodity-app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-commodity-domain" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-common-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-ctype-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-ctype-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-ctype-domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-effacicy-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-effacicy-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-effacicy-domain" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-pimage-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-pimage-app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-pimage-domain" charset="UTF-8" />
