@@ -9,9 +9,11 @@
         <module name="iuap-pvideo-api" />
         <module name="iuap-common-app" />
         <module name="iuap-pimage-api" />
+        <module name="iuap-myuser-domain" />
         <module name="iuap-cimage-api" />
         <module name="iuap-post-domain" />
         <module name="iuap-cimage-app" />
+        <module name="iuap-myuser-app" />
         <module name="iuap-post-app" />
         <module name="iuap-ctype-api" />
         <module name="iuap-pvideo-app" />
@@ -25,6 +27,7 @@
         <module name="iuap-cimage-domain" />
         <module name="iuap-pvideo-domain" />
         <module name="iuap-cbrand-api" />
+        <module name="iuap-myuser-api" />
         <module name="iuap-bootstrap" />
         <module name="iuap-commodity-domain" />
         <module name="iuap-effacicy-api" />
@@ -54,6 +57,9 @@
       <module name="iuap-effacicy-api" options="-parameters" />
       <module name="iuap-effacicy-app" options="-parameters" />
       <module name="iuap-effacicy-domain" options="-parameters" />
+      <module name="iuap-myuser-api" options="-parameters" />
+      <module name="iuap-myuser-app" options="-parameters" />
+      <module name="iuap-myuser-domain" options="-parameters" />
       <module name="iuap-pimage-api" options="-parameters" />
       <module name="iuap-pimage-app" options="-parameters" />
       <module name="iuap-pimage-domain" options="-parameters" />

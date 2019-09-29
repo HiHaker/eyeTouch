@@ -35,6 +35,9 @@
         <module>iuap-ctype-api</module>
         <module>iuap-ctype-app</module>
         <module>iuap-ctype-domain</module>
+        <module>iuap-myuser-api</module>
+        <module>iuap-myuser-app</module>
+        <module>iuap-myuser-domain</module>
     </modules>
 
     <packaging>pom</packaging>
