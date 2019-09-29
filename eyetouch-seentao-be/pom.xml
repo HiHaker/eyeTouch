@@ -11,9 +11,9 @@
     <modules>
         <module>iuap-bootstrap</module>
         <module>iuap-common-app</module>
-        <module>iuap-user-api</module>
-        <module>iuap-user-app</module>
-        <module>iuap-user-domain</module>
+        <module>iuap-myuser-api</module>
+        <module>iuap-myuser-app</module>
+        <module>iuap-myuser-domain</module>
     </modules>
 
     <packaging>pom</packaging>
