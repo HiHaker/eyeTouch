@@ -38,6 +38,9 @@
         <module>iuap-myuser-api</module>
         <module>iuap-myuser-app</module>
         <module>iuap-myuser-domain</module>
+        <module>iuap-relation-api</module>
+        <module>iuap-relation-app</module>
+        <module>iuap-relation-domain</module>
     </modules>
 
     <packaging>pom</packaging>

@@ -61,6 +61,11 @@
             <artifactId>iuap-myuser-app</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.yonyou.iuap</groupId>
+            <artifactId>iuap-relation-app</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>com.yonyou.iuap</groupId>

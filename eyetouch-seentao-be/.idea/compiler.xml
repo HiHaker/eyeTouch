@@ -6,35 +6,38 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="iuap-pvideo-api" />
-        <module name="iuap-common-app" />
-        <module name="iuap-pimage-api" />
         <module name="iuap-cimage-api" />
-        <module name="iuap-post-domain" />
-        <module name="iuap-cbrand-api" />
-        <module name="iuap-pvideo-domain" />
-        <module name="iuap-post-app" />
-        <module name="iuap-ctype-api" />
         <module name="iuap-pimage-domain" />
-        <module name="iuap-commodity-app" />
-        <module name="iuap-effacicy-domain" />
-        <module name="iuap-post-api" />
-        <module name="iuap-cbrand-domain" />
+        <module name="iuap-pvideo-app" />
+        <module name="iuap-commodity-domain" />
+        <module name="iuap-relation-app" />
+        <module name="iuap-pvideo-api" />
         <module name="iuap-cbrand-app" />
         <module name="iuap-myuser-app" />
+        <module name="iuap-relation-api" />
+        <module name="iuap-post-domain" />
         <module name="iuap-ctype-app" />
-        <module name="iuap-commodity-domain" />
-        <module name="iuap-commodity-api" />
-        <module name="iuap-myuser-domain" />
+        <module name="iuap-pvideo-domain" />
         <module name="iuap-myuser-api" />
-        <module name="iuap-bootstrap" />
-        <module name="iuap-pvideo-app" />
+        <module name="iuap-post-api" />
+        <module name="iuap-ctype-api" />
+        <module name="iuap-commodity-app" />
+        <module name="iuap-cimage-app" />
+        <module name="iuap-commodity-api" />
+        <module name="iuap-post-app" />
+        <module name="iuap-effacicy-app" />
+        <module name="iuap-ctype-domain" />
+        <module name="iuap-cbrand-domain" />
+        <module name="iuap-common-app" />
         <module name="iuap-effacicy-api" />
         <module name="iuap-pimage-app" />
-        <module name="iuap-effacicy-app" />
-        <module name="iuap-cimage-app" />
+        <module name="iuap-myuser-domain" />
+        <module name="iuap-bootstrap" />
+        <module name="iuap-pimage-api" />
+        <module name="iuap-effacicy-domain" />
         <module name="iuap-cimage-domain" />
-        <module name="iuap-ctype-domain" />
+        <module name="iuap-relation-domain" />
+        <module name="iuap-cbrand-api" />
       </profile>
     </annotationProcessing>
   </component>
@@ -69,6 +72,9 @@
       <module name="iuap-pvideo-api" options="-parameters" />
       <module name="iuap-pvideo-app" options="-parameters" />
       <module name="iuap-pvideo-domain" options="-parameters" />
+      <module name="iuap-relation-api" options="-parameters" />
+      <module name="iuap-relation-app" options="-parameters" />
+      <module name="iuap-relation-domain" options="-parameters" />
     </option>
   </component>
 </project>

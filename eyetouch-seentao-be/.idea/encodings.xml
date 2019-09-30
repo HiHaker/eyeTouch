@@ -31,5 +31,8 @@
     <file url="file://$PROJECT_DIR$/iuap-pvideo-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-pvideo-app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-pvideo-domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-relation-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-relation-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-relation-domain" charset="UTF-8" />
   </component>
 </project>
