@@ -163,3 +163,6 @@ alter table commodity add constraint FK_Reference_5 foreign key (effacicy)
 
 alter table commodity add constraint FK_Reference_6 foreign key (type)
       references ctype (ID) on delete restrict on update restrict;
+
+alter table post add constraint FK_Reference_7 foreign key (uid)
+      references myuser (ID) on delete restrict on update restrict;
