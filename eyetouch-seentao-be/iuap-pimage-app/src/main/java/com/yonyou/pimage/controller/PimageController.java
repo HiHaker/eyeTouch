@@ -145,11 +145,8 @@ public class PimageController extends BaseController{
     public Object getPostImg(
             @RequestParam(required = false) String post_ID
     ){
-        com.yonyou.pimage.dto.SimpleSearchDTO pimageSimpleDto = new
-                com.yonyou.pimage.dto.SimpleSearchDTO();
-        pimageSimpleDto.setSearch_pid(post_ID);
-        List pimageList = pimageQueryService.listPimage(pimageSimpleDto.toSearchParams(Pimage.class));
-        return this.buildSuccess(pimageList);
+        List<String> pimageUrls = service.getAllPostImages(post_ID);
+        return this.buildSuccess(pimageUrls);
     }
 
     /**
@@ -158,19 +155,20 @@ public class PimageController extends BaseController{
      */
     @RequestMapping(value = "/deletePostImages", method = RequestMethod.DELETE)
     @ResponseBody
-    public void deleteByPid(@RequestParam(required = false) String post_ID){
-        // 逻辑：先根据帖子的id找到对应的所有的图片的记录，将这些记录的id存到列表里面，再使用deleteByIds删除
-        com.yonyou.pimage.dto.SimpleSearchDTO pimageSimpleDto = new
-                com.yonyou.pimage.dto.SimpleSearchDTO();
-        pimageSimpleDto.setSearch_pid(post_ID);
-        List pimageList = pimageQueryService.listPimage(pimageSimpleDto.toSearchParams(Pimage.class));
-        List<String> pimageIds = new ArrayList<>();
-        for (Object o:pimageList){
-            // 进行强制类型转换
-            PimageDTO record = (PimageDTO)o;
-            pimageIds.add(record.getId());
-        }
-        service.deleteByIds(pimageIds);
+    public void deletePimageByPid(@RequestParam(required = false) String post_ID){
+        service.deleteByIds(post_ID);
+    }
+
+    /**
+     * 给帖子增加一张图片
+     * @param post_ID
+     */
+    @RequestMapping(value = "/insertRecord", method = {RequestMethod.POST,RequestMethod.PATCH})
+    @ResponseBody
+    public void insertRecord(@RequestParam(required = false) String post_ID){
+        Pimage p = new Pimage();
+        p.setPid(post_ID);
+        service.addRecord(p);
     }
 
     /**

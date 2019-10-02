@@ -145,11 +145,30 @@ public class PvideoController extends BaseController{
     public Object getPostImg(
             @RequestParam(required = false) String post_ID
     ){
-        com.yonyou.pvideo.dto.SimpleSearchDTO pvideoSimpleDto = new
-                com.yonyou.pvideo.dto.SimpleSearchDTO();
-        pvideoSimpleDto.setSearch_pid(post_ID);
-        List pimageList = pvideoQueryService.listPvideo(pvideoSimpleDto.toSearchParams(Pvideo.class));
-        return this.buildSuccess(pimageList);
+        List pvideoList = service.getPostVideo(post_ID);
+        return this.buildSuccess(pvideoList);
+    }
+
+    /**
+     * 根据帖子id删除其所有图片
+     * @param post_ID
+     */
+    @RequestMapping(value = "/deletePostVideo", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deletePimageByPid(@RequestParam(required = false) String post_ID){
+        service.deleteByIds(post_ID);
+    }
+
+    /**
+     * 给帖子增加一条视频记录
+     * @param post_ID
+     */
+    @RequestMapping(value = "/insertRecord", method = {RequestMethod.POST,RequestMethod.PATCH})
+    @ResponseBody
+    public void insertRecord(@RequestParam(required = false) String post_ID){
+        Pvideo p = new Pvideo();
+        p.setPid(post_ID);
+        service.addRecord(p);
     }
 
     /**

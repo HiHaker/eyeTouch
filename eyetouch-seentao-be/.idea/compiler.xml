@@ -14,30 +14,30 @@
         <module name="iuap-cbrand-app" />
         <module name="iuap-myuser-app" />
         <module name="iuap-relation-api" />
-        <module name="iuap-post-domain" />
         <module name="iuap-ctype-app" />
         <module name="iuap-pvideo-domain" />
         <module name="iuap-myuser-api" />
         <module name="iuap-post-api" />
+        <module name="iuap-cimage-api" />
         <module name="iuap-ctype-api" />
         <module name="iuap-commodity-app" />
         <module name="iuap-commodity-api" />
         <module name="iuap-post-app" />
-        <module name="iuap-effacicy-app" />
+        <module name="iuap-relation-domain" />
         <module name="iuap-ctype-domain" />
         <module name="iuap-cbrand-domain" />
         <module name="iuap-common-app" />
         <module name="iuap-effacicy-api" />
+        <module name="iuap-effacicy-app" />
         <module name="iuap-myuser-domain" />
         <module name="iuap-pimage-app" />
-        <module name="iuap-cimage-api" />
-        <module name="iuap-cbrand-api" />
+        <module name="iuap-post-domain" />
+        <module name="iuap-bootstrap" />
         <module name="iuap-pimage-api" />
         <module name="iuap-effacicy-domain" />
         <module name="iuap-cimage-domain" />
-        <module name="iuap-relation-domain" />
         <module name="iuap-pimage-domain" />
-        <module name="iuap-bootstrap" />
+        <module name="iuap-cbrand-api" />
       </profile>
     </annotationProcessing>
   </component>
