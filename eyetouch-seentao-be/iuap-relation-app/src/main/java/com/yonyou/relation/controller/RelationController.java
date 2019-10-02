@@ -1,4 +1,5 @@
 package com.yonyou.relation.controller;
+import com.yonyou.relation.api.RelationQueryService;
 import com.yonyou.relation.po.Relation;
 import com.yonyou.relation.dto.RelationDTO;
 import com.yonyou.relation.service.RelationService;
@@ -34,6 +35,9 @@ public class RelationController extends BaseController{
     private Logger logger = LoggerFactory.getLogger(RelationController.class);
     private final static  int PAGE_FLAG_LOAD_ALL = 1;
     private RelationService service;
+
+    @Autowired
+    RelationQueryService relationQueryService;
 
     @Autowired
     public void setRelationService(RelationService service) {
@@ -131,6 +135,40 @@ public class RelationController extends BaseController{
         } else {
             return this.buildError("", "Nothing got @Associative nor fkName", RequestStatusEnum.FAIL_FIELD);
         }
+    }
+
+    /**
+     * 根据被关注人的用户ID，得到所有粉丝的用户ID列表
+     * @param follows_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllFans", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllFans(
+            @RequestParam(required = false) String follows_ID
+    ){
+        com.yonyou.relation.dto.SimpleSearchDTO relationSimpleDto = new
+                com.yonyou.relation.dto.SimpleSearchDTO();
+        relationSimpleDto.setSearch_follows(follows_ID);
+        List fansList = relationQueryService.listRelation(relationSimpleDto.toSearchParams(Relation.class));
+        return this.buildSuccess(fansList);
+    }
+
+    /**
+     * 根据粉丝的用户ID，得到所有关注的用户ID列表
+     * @param fans_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllFollows", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllFollows(
+            @RequestParam(required = false) String fans_ID
+    ){
+        com.yonyou.relation.dto.SimpleSearchDTO relationSimpleDto = new
+                com.yonyou.relation.dto.SimpleSearchDTO();
+        relationSimpleDto.setSearch_fans(fans_ID);
+        List followsList = relationQueryService.listRelation(relationSimpleDto.toSearchParams(Relation.class));
+        return this.buildSuccess(followsList);
     }
 
     /**

@@ -153,6 +153,27 @@ public class PimageController extends BaseController{
     }
 
     /**
+     * 根据帖子id删除其所有图片
+     * @param post_ID
+     */
+    @RequestMapping(value = "/deletePostImages", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByPid(@RequestParam(required = false) String post_ID){
+        // 逻辑：先根据帖子的id找到对应的所有的图片的记录，将这些记录的id存到列表里面，再使用deleteByIds删除
+        com.yonyou.pimage.dto.SimpleSearchDTO pimageSimpleDto = new
+                com.yonyou.pimage.dto.SimpleSearchDTO();
+        pimageSimpleDto.setSearch_pid(post_ID);
+        List pimageList = pimageQueryService.listPimage(pimageSimpleDto.toSearchParams(Pimage.class));
+        List<String> pimageIds = new ArrayList<>();
+        for (Object o:pimageList){
+            // 进行强制类型转换
+            PimageDTO record = (PimageDTO)o;
+            pimageIds.add(record.getId());
+        }
+        service.deleteByIds(pimageIds);
+    }
+
+    /**
     * 单条添加
     * @param entity 业务实体
     * @return 标准JsonResponse结构

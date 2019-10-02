@@ -1,6 +1,9 @@
 package com.yonyou.pimage.service;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import com.yonyou.iuap.ucf.common.rest.SearchParams;
 import com.yonyou.pimage.api.PimageQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +35,13 @@ public class PimageService extends GenericAssoService<Pimage,String>{
     @Override
     protected ServiceFeature[] getFeats() {
         return new ServiceFeature[]{ AUDIT,I18N_ENUM };
+    }
+
+    /**
+     * 根据查询到的id列表进行删除
+     * @param Ids
+     */
+    public void deleteByIds(List<String> Ids){
+        pimageMapper.deleteByIds(Ids);
     }
 }
