@@ -9,6 +9,9 @@
     <file url="file://$PROJECT_DIR$/iuap-cimage-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-cimage-app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-cimage-domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-clikes-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-clikes-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-clikes-domain" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-commodity-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-commodity-app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-commodity-domain" charset="UTF-8" />

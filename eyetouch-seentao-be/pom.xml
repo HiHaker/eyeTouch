@@ -50,6 +50,9 @@
         <module>iuap-pcomments-api</module>
         <module>iuap-pcomments-app</module>
         <module>iuap-pcomments-domain</module>
+        <module>iuap-clikes-api</module>
+        <module>iuap-clikes-app</module>
+        <module>iuap-clikes-domain</module>
     </modules>
 
     <packaging>pom</packaging>
