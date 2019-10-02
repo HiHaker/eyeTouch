@@ -25,7 +25,7 @@ import java.util.List;
  * 模块启动器
  *
  * @author  
- * @date 2019-10-2 20:19:09
+ * @date 2019-10-2 20:20:07
  * @since v5.0.0
  */
 @ComponentScan(basePackages = {"com.yonyou"})

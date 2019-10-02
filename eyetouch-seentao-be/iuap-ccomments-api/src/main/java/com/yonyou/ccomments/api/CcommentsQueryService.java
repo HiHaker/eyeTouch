@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * RPC 调用接口声明
  * @author  
- * @date 2019-10-2 20:19:09
+ * @date 2019-10-2 20:20:07
  */
 @RemoteCall("iuap-eyetouch-seentao-server")
 public interface CcommentsQueryService {
