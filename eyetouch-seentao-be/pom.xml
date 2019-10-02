@@ -11,9 +11,9 @@
     <modules>
         <module>iuap-bootstrap</module>
         <module>iuap-common-app</module>
-        <module>iuap-cfavorites-api</module>
-        <module>iuap-cfavorites-app</module>
-        <module>iuap-cfavorites-domain</module>
+        <module>iuap-ccomments-api</module>
+        <module>iuap-ccomments-app</module>
+        <module>iuap-ccomments-domain</module>
     </modules>
 
     <packaging>pom</packaging>
