@@ -47,6 +47,9 @@
         <module>iuap-pfavorites-api</module>
         <module>iuap-pfavorites-app</module>
         <module>iuap-pfavorites-domain</module>
+        <module>iuap-pcomments-api</module>
+        <module>iuap-pcomments-app</module>
+        <module>iuap-pcomments-domain</module>
     </modules>
 
     <packaging>pom</packaging>
