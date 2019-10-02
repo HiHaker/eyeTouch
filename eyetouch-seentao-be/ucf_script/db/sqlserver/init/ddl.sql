@@ -1,6 +1,6 @@
 
 
-CREATE TABLE [pcomments] (
+CREATE TABLE [clikes] (
 
 [ID] varchar(64)   NOT NULL ,
 [TS] varchar(64)   NULL ,
@@ -10,39 +10,36 @@ CREATE TABLE [pcomments] (
 [LAST_MODIFY_USER] varchar(64)   NULL ,
 
 [time] VARCHAR(64)   NULL ,
-[pid] VARCHAR(64)   NULL ,
+[cid] VARCHAR(64)   NULL ,
 [uid] VARCHAR(64)   NULL ,
-[content] VARCHAR(64)   NULL ,
    PRIMARY KEY ([ID])
 )
 ON [PRIMARY]
 GO
 
-EXEC sp_addextendedproperty 'MS_Description',N'发表时间','user','dbo','TABLE','pcomments','COLUMN','time'
+EXEC sp_addextendedproperty 'MS_Description',N'发表时间','user','dbo','TABLE','clikes','COLUMN','time'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'帖子id','user','dbo','TABLE','pcomments','COLUMN','pid'
+EXEC sp_addextendedproperty 'MS_Description',N'商品id','user','dbo','TABLE','clikes','COLUMN','cid'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'用户id','user','dbo','TABLE','pcomments','COLUMN','uid'
-GO
-EXEC sp_addextendedproperty 'MS_Description',N'评论内容','user','dbo','TABLE','pcomments','COLUMN','content'
+EXEC sp_addextendedproperty 'MS_Description',N'用户id','user','dbo','TABLE','clikes','COLUMN','uid'
 GO
 
 
-EXEC sp_addextendedproperty 'MS_Description',N'主键 ID','user','dbo','TABLE','pcomments','COLUMN','ID'
+EXEC sp_addextendedproperty 'MS_Description',N'主键 ID','user','dbo','TABLE','clikes','COLUMN','ID'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'乐观锁时间戳','user','dbo','TABLE','pcomments','COLUMN','TS'
+EXEC sp_addextendedproperty 'MS_Description',N'乐观锁时间戳','user','dbo','TABLE','clikes','COLUMN','TS'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'修改时间','user','dbo','TABLE','pcomments','COLUMN','LAST_MODIFIED'
+EXEC sp_addextendedproperty 'MS_Description',N'修改时间','user','dbo','TABLE','clikes','COLUMN','LAST_MODIFIED'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'修改人','user','dbo','TABLE','pcomments','COLUMN','LAST_MODIFY_USER'
+EXEC sp_addextendedproperty 'MS_Description',N'修改人','user','dbo','TABLE','clikes','COLUMN','LAST_MODIFY_USER'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'创建时间','user','dbo','TABLE','pcomments','COLUMN','CREATE_TIME'
+EXEC sp_addextendedproperty 'MS_Description',N'创建时间','user','dbo','TABLE','clikes','COLUMN','CREATE_TIME'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'创建人','user','dbo','TABLE','pcomments','COLUMN','CREATE_USER'
+EXEC sp_addextendedproperty 'MS_Description',N'创建人','user','dbo','TABLE','clikes','COLUMN','CREATE_USER'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'租户标识','user','dbo','TABLE','pcomments','COLUMN','TENANT_ID'
+EXEC sp_addextendedproperty 'MS_Description',N'租户标识','user','dbo','TABLE','clikes','COLUMN','TENANT_ID'
 GO
-EXEC sp_addextendedproperty 'MS_Description',N'是否删除','user','dbo','TABLE','pcomments','COLUMN','DR'
+EXEC sp_addextendedproperty 'MS_Description',N'是否删除','user','dbo','TABLE','clikes','COLUMN','DR'
 GO
 
 
