@@ -150,6 +150,19 @@ public class MyuserController extends BaseController{
     }
 
     /**
+     * 根据用户名得到所有的用户
+     * @param login_name
+     * @return
+     */
+    @RequestMapping(value = "/getUserByLoginName", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getUserByLoginName(
+            @RequestParam(required = false) String login_name
+    ){
+        return this.buildSuccess(service.getUserByLoginName(login_name));
+    }
+
+    /**
     * 单条添加
     * @param entity 业务实体
     * @return 标准JsonResponse结构
