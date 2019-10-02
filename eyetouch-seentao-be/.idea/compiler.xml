@@ -10,6 +10,8 @@
         <module name="iuap-commodity-domain" />
         <module name="iuap-pvideo-app" />
         <module name="iuap-clikes-app" />
+        <module name="iuap-cfavorites-domain" />
+        <module name="iuap-cfavorites-api" />
         <module name="iuap-relation-app" />
         <module name="iuap-pvideo-api" />
         <module name="iuap-clikes-api" />
@@ -46,6 +48,7 @@
         <module name="iuap-pimage-api" />
         <module name="iuap-pfavorites-domain" />
         <module name="iuap-effacicy-domain" />
+        <module name="iuap-cfavorites-app" />
         <module name="iuap-cimage-domain" />
         <module name="iuap-pcomments-app" />
         <module name="iuap-pimage-domain" />
@@ -59,6 +62,9 @@
       <module name="iuap-cbrand-api" options="-parameters" />
       <module name="iuap-cbrand-app" options="-parameters" />
       <module name="iuap-cbrand-domain" options="-parameters" />
+      <module name="iuap-cfavorites-api" options="-parameters" />
+      <module name="iuap-cfavorites-app" options="-parameters" />
+      <module name="iuap-cfavorites-domain" options="-parameters" />
       <module name="iuap-cimage-api" options="-parameters" />
       <module name="iuap-cimage-app" options="-parameters" />
       <module name="iuap-cimage-domain" options="-parameters" />

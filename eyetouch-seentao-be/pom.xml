@@ -53,6 +53,9 @@
         <module>iuap-clikes-api</module>
         <module>iuap-clikes-app</module>
         <module>iuap-clikes-domain</module>
+        <module>iuap-cfavorites-api</module>
+        <module>iuap-cfavorites-app</module>
+        <module>iuap-cfavorites-domain</module>
     </modules>
 
     <packaging>pom</packaging>
