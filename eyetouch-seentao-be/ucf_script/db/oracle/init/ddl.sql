@@ -1,8 +1,8 @@
--- drop table plikes cascade constraints;
-create table plikes
+-- drop table pfavorites cascade constraints;
+create table pfavorites
 (
 ID VARCHAR2(64) not null,
-        constraint PK_plikes primary key (ID),
+        constraint PK_pfavorites primary key (ID),
         time VARCHAR2(64) null,
         pid VARCHAR2(64) null,
         uid VARCHAR2(64) null,
@@ -14,15 +14,15 @@ ID VARCHAR2(64) not null,
         CREATE_TIME VARCHAR2(64) NULL,
         CREATE_USER VARCHAR2(64) NULL
 );
-        comment on column plikes.time is '发表时间';
-        comment on column plikes.pid is '帖子id';
-        comment on column plikes.uid is '用户id';
-comment on column plikes.DR is '是否删除';
-comment on column plikes.TS is '时间戳';
-comment on column plikes.LAST_MODIFIED is '修改时间';
-comment on column plikes.LAST_MODIFY_USER is '修改人';
-comment on column plikes.CREATE_TIME is '创建时间';
-comment on column plikes.CREATE_USER is '创建人';
+        comment on column pfavorites.time is '发表时间';
+        comment on column pfavorites.pid is '帖子id';
+        comment on column pfavorites.uid is '用户id';
+comment on column pfavorites.DR is '是否删除';
+comment on column pfavorites.TS is '时间戳';
+comment on column pfavorites.LAST_MODIFIED is '修改时间';
+comment on column pfavorites.LAST_MODIFY_USER is '修改人';
+comment on column pfavorites.CREATE_TIME is '创建时间';
+comment on column pfavorites.CREATE_USER is '创建人';
 
 
 

@@ -1,6 +1,6 @@
 
--- drop table if EXISTS plikes;
-CREATE TABLE `plikes` (
+-- drop table if EXISTS pfavorites;
+CREATE TABLE `pfavorites` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
     `time` VARCHAR(64) DEFAULT NULL COMMENT '发表时间',
