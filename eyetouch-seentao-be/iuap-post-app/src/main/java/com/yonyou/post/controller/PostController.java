@@ -144,6 +144,30 @@ public class PostController extends BaseController{
     }
 
     /**
+     * 根据帖子的Id删除帖子
+     * @param post_ID
+     */
+    @RequestMapping(value = "/deletePostById", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deletePostById(
+            @RequestParam(required = false) String post_ID
+    ){
+        service.deletePostById(post_ID);
+    }
+
+    /**
+     * 根据用户的id删除其全部帖子
+     * @param user_ID
+     */
+    @RequestMapping(value = "/deletePostByUserId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deletePostByUserId(
+            @RequestParam(required = false) String user_ID
+    ){
+        service.deletePostByUserId(user_ID);
+    }
+
+    /**
      * 根据id查询帖子
      * @param post_ID
      * @return
@@ -158,9 +182,40 @@ public class PostController extends BaseController{
     }
 
     /**
-     * 查询集合示例
+     * 根据用户id查询帖子
+     * @param user_ID
+     * @return
      */
+    public Object getPostByUserId(
+            @RequestParam(required = false) String user_ID
+    ){
+        List postList = service.getPostByUserId(user_ID);
+        return this.buildSuccess(postList);
+    }
 
+    /**
+     * 根据type值查询帖子（1：图文，2：视频）
+     * @param type
+     * @return
+     */
+    public Object getPostByType(
+            @RequestParam(required = false) String type
+    ){
+        List postList = service.getPostByType(type);
+        return this.buildSuccess(postList);
+    }
+
+    /**
+     * 根据style值查询帖子（0：心情随笔，1：妆容分享，2：眼妆教程，3：妆品推荐）
+     * @param style
+     * @return
+     */
+    public Object getPostByStyle(
+            @RequestParam(required = false) String style
+    ){
+        List postList = service.getPostByStyle(style);
+        return this.buildSuccess(postList);
+    }
 
     /**
     * 单条添加

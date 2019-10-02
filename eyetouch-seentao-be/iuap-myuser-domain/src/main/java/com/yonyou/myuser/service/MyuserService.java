@@ -1,4 +1,5 @@
 package com.yonyou.myuser.service;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.yonyou.myuser.api.MyuserQueryService;
@@ -46,6 +47,16 @@ public class MyuserService extends GenericAssoService<Myuser,String>{
      */
     public void addRecord(Myuser user){
         this.save(user,true,true);
+    }
+
+    /**
+     * 根据用户的id删除用户
+     * @param user_ID
+     */
+    public void deleteUserById(String user_ID){
+        List<String> userIds = new ArrayList<>();
+        userIds.add(user_ID);
+        myuserMapper.deleteByIds(userIds);
     }
 
     /**

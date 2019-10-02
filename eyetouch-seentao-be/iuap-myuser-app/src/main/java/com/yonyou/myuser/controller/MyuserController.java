@@ -150,6 +150,18 @@ public class MyuserController extends BaseController{
     }
 
     /**
+     * 根据用户的Id删除用户
+     * @param user_ID
+     */
+    @RequestMapping(value = "/deleteUserById", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteUserById(
+            @RequestParam(required = false) String user_ID
+    ){
+        service.deleteUserById(user_ID);
+    }
+
+    /**
      * 根据用户名得到所有的用户
      * @param login_name
      * @return
