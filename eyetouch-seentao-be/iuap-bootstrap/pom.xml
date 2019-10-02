@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>com.yonyou.iuap</groupId>
-            <artifactId>iuap-pcomments-app</artifactId>
+            <artifactId>iuap-ccomments-app</artifactId>
             <version>${project.version}</version>
         </dependency>
 

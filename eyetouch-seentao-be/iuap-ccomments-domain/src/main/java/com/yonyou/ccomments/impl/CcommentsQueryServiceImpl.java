@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * RPC provider端
  * @author  
- * @date 2019-10-2 19:53:40
+ * @date 2019-10-2 20:19:09
  */
 @Service("com.yonyou.ccomments.impl.CcommentsQueryServiceImpl")
 public class CcommentsQueryServiceImpl implements CcommentsQueryService {
