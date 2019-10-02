@@ -138,6 +138,19 @@ public class RelationController extends BaseController{
     }
 
     /**
+     * 根据关注人和被关注人的id删除记录
+     * @param fans_ID
+     * @param follows_ID
+     */
+    @RequestMapping(value = "/deleteByFansAndFollows", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByFansAndFollows(
+            @RequestParam(required = false) String fans_ID, String follows_ID
+    ){
+        service.deleteByFansAndFollows(fans_ID,follows_ID);
+    }
+
+    /**
      * 根据被关注人的用户ID，得到所有粉丝的用户ID列表
      * @param follows_ID
      * @return
@@ -147,11 +160,7 @@ public class RelationController extends BaseController{
     public Object getAllFans(
             @RequestParam(required = false) String follows_ID
     ){
-        com.yonyou.relation.dto.SimpleSearchDTO relationSimpleDto = new
-                com.yonyou.relation.dto.SimpleSearchDTO();
-        relationSimpleDto.setSearch_follows(follows_ID);
-        List fansList = relationQueryService.listRelation(relationSimpleDto.toSearchParams(Relation.class));
-        return this.buildSuccess(fansList);
+        return this.buildSuccess(service.getAllFans(follows_ID));
     }
 
     /**
@@ -164,11 +173,7 @@ public class RelationController extends BaseController{
     public Object getAllFollows(
             @RequestParam(required = false) String fans_ID
     ){
-        com.yonyou.relation.dto.SimpleSearchDTO relationSimpleDto = new
-                com.yonyou.relation.dto.SimpleSearchDTO();
-        relationSimpleDto.setSearch_fans(fans_ID);
-        List followsList = relationQueryService.listRelation(relationSimpleDto.toSearchParams(Relation.class));
-        return this.buildSuccess(followsList);
+        return this.buildSuccess(service.getAllFollows(fans_ID));
     }
 
     /**
