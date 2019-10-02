@@ -25,7 +25,7 @@ import java.util.ArrayList;
 /**
 * 说明：帖子评论基础Controller——提供数据增(CREATE)、删(DELETE、改(UPDATE)、查(READ)等rest接口
 * @author  
-* @date 2019-10-2 17:37:32
+* @date 2019-10-2 20:05:58
 */
 @RestController("com.yonyou.pcomments.controller.PcommentsController")
 @RequestMapping(value = "/pcomments/pcomments")
@@ -46,15 +46,17 @@ public class PcommentsController extends BaseController{
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public Object list(@RequestParam( defaultValue = "0")Integer pageIndex,@RequestParam( defaultValue = "10")Integer pageSize
+            ,@RequestParam(required = false) String search_auid
+            ,@RequestParam(required = false) String search_buid
             ,@RequestParam(required = false) String search_time
             ,@RequestParam(required = false) String search_pid
-            ,@RequestParam(required = false) String search_uid
             ,@RequestParam(required = false) String search_content
     ) {
         SimpleSearchDTO searchDTO = new SimpleSearchDTO();
+            searchDTO.setSearch_auid(search_auid);
+            searchDTO.setSearch_buid(search_buid);
             searchDTO.setSearch_time(search_time);
             searchDTO.setSearch_pid(search_pid);
-            searchDTO.setSearch_uid(search_uid);
             searchDTO.setSearch_content(search_content);
         PageRequest pageRequest;
         Sort sort= SearchUtil.getSortFromSortMap(searchDTO.getSorts(),Pcomments.class);

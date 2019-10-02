@@ -213,6 +213,18 @@ export default class IndexView extends Component {
 
     pcommentsColumn = [
         {
+            title: "a用户id",
+            dataIndex: "auid",
+            key: "auid",
+            width: 150,
+        },
+        {
+            title: "b用户id",
+            dataIndex: "buid",
+            key: "buid",
+            width: 150,
+        },
+        {
             title: "发表时间",
             dataIndex: "time",
             key: "time",
@@ -222,12 +234,6 @@ export default class IndexView extends Component {
             title: "帖子id",
             dataIndex: "pid",
             key: "pid",
-            width: 150,
-        },
-        {
-            title: "用户id",
-            dataIndex: "uid",
-            key: "uid",
             width: 150,
         },
         {

@@ -66,6 +66,58 @@ class SearchArea extends Component {
                 <FormList>
                               <FormItem>
         <Label >
+            a用户id
+        </Label>
+        <FormControl disabled={typeof btnFlag != 'undefined' && btnFlag == 2
+}
+            {
+            ...getFieldProps('auid', {
+                validateTrigger: 'onBlur',
+                initialValue: (typeof rowData === 'undefined' || typeof rowData.auid === 'undefined') ? "" : rowData.auid
+,
+                rules: [{
+                    type:'string',required: false,pattern:/\S+/ig, message: '请输入a用户id',
+                }],
+                onChange(value) {
+if(typeof rowData !== 'undefined'){
+    let tempRow = Object.assign({},rowData,{ auid: value });
+    _this.setState({
+        rowData:tempRow
+    })
+}
+                }
+            }
+            )}
+        />
+                              </FormItem>
+                              <FormItem>
+        <Label >
+            b用户id
+        </Label>
+        <FormControl disabled={typeof btnFlag != 'undefined' && btnFlag == 2
+}
+            {
+            ...getFieldProps('buid', {
+                validateTrigger: 'onBlur',
+                initialValue: (typeof rowData === 'undefined' || typeof rowData.buid === 'undefined') ? "" : rowData.buid
+,
+                rules: [{
+                    type:'string',required: false,pattern:/\S+/ig, message: '请输入b用户id',
+                }],
+                onChange(value) {
+if(typeof rowData !== 'undefined'){
+    let tempRow = Object.assign({},rowData,{ buid: value });
+    _this.setState({
+        rowData:tempRow
+    })
+}
+                }
+            }
+            )}
+        />
+                              </FormItem>
+                              <FormItem>
+        <Label >
             发表时间
         </Label>
         <FormControl disabled={typeof btnFlag != 'undefined' && btnFlag == 2
@@ -107,32 +159,6 @@ if(typeof rowData !== 'undefined'){
                 onChange(value) {
 if(typeof rowData !== 'undefined'){
     let tempRow = Object.assign({},rowData,{ pid: value });
-    _this.setState({
-        rowData:tempRow
-    })
-}
-                }
-            }
-            )}
-        />
-                              </FormItem>
-                              <FormItem>
-        <Label >
-            用户id
-        </Label>
-        <FormControl disabled={typeof btnFlag != 'undefined' && btnFlag == 2
-}
-            {
-            ...getFieldProps('uid', {
-                validateTrigger: 'onBlur',
-                initialValue: (typeof rowData === 'undefined' || typeof rowData.uid === 'undefined') ? "" : rowData.uid
-,
-                rules: [{
-                    type:'string',required: false,pattern:/\S+/ig, message: '请输入用户id',
-                }],
-                onChange(value) {
-if(typeof rowData !== 'undefined'){
-    let tempRow = Object.assign({},rowData,{ uid: value });
     _this.setState({
         rowData:tempRow
     })

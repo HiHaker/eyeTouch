@@ -18,11 +18,29 @@ import java.util.*;
  /**
   * 用于构造查询条件
   * @since v5.0.0
-  * @date 2019-10-2 17:37:32
+  * @date 2019-10-2 20:05:58
   */
 public class SimpleSearchDTO {
     private static Logger logger = LoggerFactory.getLogger(SimpleSearchDTO.class);
     private static String PARAM_SEARCH_PREFIX = "search_";
+        private String search_auid;     //a用户id
+
+        public void setSearch_auid(String auid){
+            this.search_auid = auid;
+        }
+        public String getSearch_auid(){
+            return this.search_auid;
+        }
+
+        private String search_buid;     //b用户id
+
+        public void setSearch_buid(String buid){
+            this.search_buid = buid;
+        }
+        public String getSearch_buid(){
+            return this.search_buid;
+        }
+
         private String search_time;     //发表时间
 
         public void setSearch_time(String time){
@@ -39,15 +57,6 @@ public class SimpleSearchDTO {
         }
         public String getSearch_pid(){
             return this.search_pid;
-        }
-
-        private String search_uid;     //用户id
-
-        public void setSearch_uid(String uid){
-            this.search_uid = uid;
-        }
-        public String getSearch_uid(){
-            return this.search_uid;
         }
 
         private String search_content;     //评论内容
