@@ -41,6 +41,9 @@
         <module>iuap-relation-api</module>
         <module>iuap-relation-app</module>
         <module>iuap-relation-domain</module>
+        <module>iuap-plikes-api</module>
+        <module>iuap-plikes-app</module>
+        <module>iuap-plikes-domain</module>
     </modules>
 
     <packaging>pom</packaging>

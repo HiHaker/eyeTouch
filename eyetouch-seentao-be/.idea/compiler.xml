@@ -14,12 +14,15 @@
         <module name="iuap-cbrand-app" />
         <module name="iuap-myuser-app" />
         <module name="iuap-relation-api" />
+        <module name="iuap-plikes-app" />
+        <module name="iuap-plikes-api" />
         <module name="iuap-ctype-app" />
         <module name="iuap-pvideo-domain" />
         <module name="iuap-myuser-api" />
         <module name="iuap-post-api" />
         <module name="iuap-cimage-api" />
         <module name="iuap-ctype-api" />
+        <module name="iuap-plikes-domain" />
         <module name="iuap-commodity-app" />
         <module name="iuap-commodity-api" />
         <module name="iuap-post-app" />
@@ -66,6 +69,9 @@
       <module name="iuap-pimage-api" options="-parameters" />
       <module name="iuap-pimage-app" options="-parameters" />
       <module name="iuap-pimage-domain" options="-parameters" />
+      <module name="iuap-plikes-api" options="-parameters" />
+      <module name="iuap-plikes-app" options="-parameters" />
+      <module name="iuap-plikes-domain" options="-parameters" />
       <module name="iuap-post-api" options="-parameters" />
       <module name="iuap-post-app" options="-parameters" />
       <module name="iuap-post-domain" options="-parameters" />
