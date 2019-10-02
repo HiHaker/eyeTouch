@@ -18,7 +18,7 @@ import java.util.*;
  /**
   * 用于构造查询条件
   * @since v5.0.0
-  * @date 2019-10-2 20:05:58
+  * @date 2019-10-2 20:07:08
   */
 public class SimpleSearchDTO {
     private static Logger logger = LoggerFactory.getLogger(SimpleSearchDTO.class);
