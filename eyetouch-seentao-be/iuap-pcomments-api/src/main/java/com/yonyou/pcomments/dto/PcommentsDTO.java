@@ -13,7 +13,7 @@ import java.util.Random;
 /**
  * 帖子评论
  * @since v5.0.0
- * @date 2019-10-2 17:37:32
+ * @date 2019-10-2 20:07:08
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -100,6 +100,28 @@ public class PcommentsDTO  implements AuditTrail{
     }
 
 
+    private String auid;        //a用户id
+
+    public void setAuid(String auid){
+        this.auid = auid;
+    }
+    public String getAuid(){
+        return this.auid;
+    }
+
+
+
+    private String buid;        //b用户id
+
+    public void setBuid(String buid){
+        this.buid = buid;
+    }
+    public String getBuid(){
+        return this.buid;
+    }
+
+
+
     private String time;        //发表时间
 
     public void setTime(String time){
@@ -118,17 +140,6 @@ public class PcommentsDTO  implements AuditTrail{
     }
     public String getPid(){
         return this.pid;
-    }
-
-
-
-    private String uid;        //用户id
-
-    public void setUid(String uid){
-        this.uid = uid;
-    }
-    public String getUid(){
-        return this.uid;
     }
 
 

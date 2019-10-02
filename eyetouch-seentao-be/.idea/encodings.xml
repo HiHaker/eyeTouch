@@ -6,6 +6,9 @@
     <file url="file://$PROJECT_DIR$/iuap-cbrand-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-cbrand-app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-cbrand-domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-ccomments-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-ccomments-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-ccomments-domain" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-cfavorites-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-cfavorites-app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-cfavorites-domain" charset="UTF-8" />
@@ -29,7 +32,10 @@
     <file url="file://$PROJECT_DIR$/iuap-myuser-app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-myuser-domain" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-pcomments-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-pcomments-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-pcomments-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-pcomments-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iuap-pcomments-domain" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-pcomments-domain" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-pfavorites-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iuap-pfavorites-app" charset="UTF-8" />

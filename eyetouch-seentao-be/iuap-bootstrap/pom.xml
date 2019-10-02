@@ -91,6 +91,11 @@
             <artifactId>iuap-cfavorites-app</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.yonyou.iuap</groupId>
+            <artifactId>iuap-ccomments-app</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>com.yonyou.iuap</groupId>

@@ -17,7 +17,7 @@ import java.util.Random;
 /**
  * 帖子评论
  * @since v5.0.0
- * @date 2019-10-2 17:37:32
+ * @date 2019-10-2 20:07:08
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -80,6 +80,30 @@ public class Pcomments extends BasePO implements AuditTrail{
     }
 
     @Condition(match=Match.EQ)
+    @Column(name="auid")
+    private String auid;        //a用户id
+
+    public void setAuid(String auid){
+        this.auid = auid;
+    }
+    public String getAuid(){
+        return this.auid;
+    }
+
+
+    @Condition(match=Match.EQ)
+    @Column(name="buid")
+    private String buid;        //b用户id
+
+    public void setBuid(String buid){
+        this.buid = buid;
+    }
+    public String getBuid(){
+        return this.buid;
+    }
+
+
+    @Condition(match=Match.EQ)
     @Column(name="time")
     private String time;        //发表时间
 
@@ -100,18 +124,6 @@ public class Pcomments extends BasePO implements AuditTrail{
     }
     public String getPid(){
         return this.pid;
-    }
-
-
-    @Condition(match=Match.EQ)
-    @Column(name="uid")
-    private String uid;        //用户id
-
-    public void setUid(String uid){
-        this.uid = uid;
-    }
-    public String getUid(){
-        return this.uid;
     }
 
 
