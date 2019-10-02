@@ -28,15 +28,18 @@
         <module name="iuap-post-app" />
         <module name="iuap-relation-domain" />
         <module name="iuap-ctype-domain" />
+        <module name="iuap-pfavorites-api" />
         <module name="iuap-cbrand-domain" />
         <module name="iuap-common-app" />
         <module name="iuap-effacicy-api" />
+        <module name="iuap-pfavorites-app" />
         <module name="iuap-effacicy-app" />
         <module name="iuap-myuser-domain" />
         <module name="iuap-pimage-app" />
         <module name="iuap-post-domain" />
         <module name="iuap-bootstrap" />
         <module name="iuap-pimage-api" />
+        <module name="iuap-pfavorites-domain" />
         <module name="iuap-effacicy-domain" />
         <module name="iuap-cimage-domain" />
         <module name="iuap-pimage-domain" />
@@ -66,6 +69,9 @@
       <module name="iuap-myuser-api" options="-parameters" />
       <module name="iuap-myuser-app" options="-parameters" />
       <module name="iuap-myuser-domain" options="-parameters" />
+      <module name="iuap-pfavorites-api" options="-parameters" />
+      <module name="iuap-pfavorites-app" options="-parameters" />
+      <module name="iuap-pfavorites-domain" options="-parameters" />
       <module name="iuap-pimage-api" options="-parameters" />
       <module name="iuap-pimage-app" options="-parameters" />
       <module name="iuap-pimage-domain" options="-parameters" />

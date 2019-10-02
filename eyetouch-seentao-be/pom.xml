@@ -44,6 +44,9 @@
         <module>iuap-plikes-api</module>
         <module>iuap-plikes-app</module>
         <module>iuap-plikes-domain</module>
+        <module>iuap-pfavorites-api</module>
+        <module>iuap-pfavorites-app</module>
+        <module>iuap-pfavorites-domain</module>
     </modules>
 
     <packaging>pom</packaging>
