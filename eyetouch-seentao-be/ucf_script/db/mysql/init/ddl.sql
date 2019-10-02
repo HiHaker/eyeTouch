@@ -1,6 +1,6 @@
 
--- drop table if EXISTS clikes;
-CREATE TABLE `clikes` (
+-- drop table if EXISTS cfavorites;
+CREATE TABLE `cfavorites` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
     `time` VARCHAR(64) DEFAULT NULL COMMENT '发表时间',
