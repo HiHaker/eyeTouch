@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>com.yonyou.iuap</groupId>
-            <artifactId>iuap-relation-app</artifactId>
+            <artifactId>iuap-plikes-app</artifactId>
             <version>${project.version}</version>
         </dependency>
 

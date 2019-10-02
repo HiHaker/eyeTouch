@@ -1,10 +1,11 @@
 
--- drop table if EXISTS relation;
-CREATE TABLE `relation` (
+-- drop table if EXISTS plikes;
+CREATE TABLE `plikes` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
-    `follows` VARCHAR(64) DEFAULT NULL COMMENT '关注人id',
-    `fans` VARCHAR(64) DEFAULT NULL COMMENT '粉丝id',
+    `time` VARCHAR(64) DEFAULT NULL COMMENT '发表时间',
+    `pid` VARCHAR(64) DEFAULT NULL COMMENT '帖子id',
+    `uid` VARCHAR(64) DEFAULT NULL COMMENT '用户id',
         `TENANT_ID` varchar(64) DEFAULT NULL,
         `DR` int(11) DEFAULT NULL COMMENT '是否删除',
         `TS` varchar(64) DEFAULT NULL COMMENT '时间戳',
