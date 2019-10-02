@@ -27,7 +27,7 @@ export default class IndexView extends Component {
             delModalVisible: false,
             modalVisible: false, // 添加、编辑、详情 弹框
             delPicModalVisible: false, // 添加、编辑、详情 弹框
-            checkTable: "pcomments", //选中的表名 用于modal 弹框标记
+            checkTable: "ccomments", //选中的表名 用于modal 弹框标记
             flag: -1, //按钮状态
         }
 
@@ -75,9 +75,9 @@ export default class IndexView extends Component {
      */
     onChangeTab = (tabKey) => {
         if (tabKey !== "uploadFill") { // 判断是否文件上传
-            const {pcommentsObj, pcommentsIndex, searchParam} = this.props;
+            const {ccommentsObj, ccommentsIndex, searchParam} = this.props;
             const {pageSize} = this.props[tabKey + "Obj"];
-            const {id: search_NA} = pcommentsObj.list[pcommentsIndex] || {};
+            const {id: search_NA} = ccommentsObj.list[ccommentsIndex] || {};
             if (search_NA) { //如果主表有数据，子表在获取数据
                 const param = {search_NA, pageIndex: 0, pageSize};
             }
@@ -126,14 +126,14 @@ export default class IndexView extends Component {
 
         let {pageIndex, pageSize} = getPageParam(value, type, modalObj);
 
-        if (tableName === "pcommentsObj") { //主表分页
+        if (tableName === "ccommentsObj") { //主表分页
             searchParam.pageSize = pageSize;
             searchParam.pageIndex = pageIndex;
             actions.masterDetailMany.loadList(searchParam);
         } else {
             //子表分页
-            const {pcommentsIndex, pcommentsObj} = this.props;
-            const {id: search_NA} = pcommentsObj.list[pcommentsIndex];
+            const {ccommentsIndex, ccommentsObj} = this.props;
+            const {id: search_NA} = ccommentsObj.list[ccommentsIndex];
 
         }
         actions.masterDetailMany.updateState({searchParam});
@@ -143,17 +143,17 @@ export default class IndexView extends Component {
      *
      */
     onPrint = () => {
-        const {pcommentsIndex, pcommentsObj} = this.props;
-        const {list} = pcommentsObj;
+        const {ccommentsIndex, ccommentsObj} = this.props;
+        const {list} = ccommentsObj;
         if (list.length === 0) {
             Warning('请选择需打印的数据');
             return;
         }
-        const {id} = list[pcommentsIndex] || {};
+        const {id} = list[ccommentsIndex] || {};
         actions.masterDetailMany.printDocument({
             queryParams: {
-                funccode: 'pcomments',
-                nodekey: 'pcomments'
+                funccode: 'ccomments',
+                nodekey: 'ccomments'
             },
             printParams: {id: id}
         });
@@ -193,10 +193,10 @@ export default class IndexView extends Component {
         const {list} = this.props[checkTable + "Obj"];
         this.setState({delModalVisible: false});
         if (type === 1 && list.length > 0) {
-            if (checkTable === "pcomments") { // 主表
-                const {pcommentsIndex} = this.props;
-                const record = list[pcommentsIndex];
-                await actions.masterDetailMany.delpcomments(record);
+            if (checkTable === "ccomments") { // 主表
+                const {ccommentsIndex} = this.props;
+                const record = list[ccommentsIndex];
+                await actions.masterDetailMany.delccomments(record);
             }
         }
     }
@@ -211,19 +211,7 @@ export default class IndexView extends Component {
         this.setState({delPicModalVisible: false});
     }
 
-    pcommentsColumn = [
-        {
-            title: "a用户id",
-            dataIndex: "auid",
-            key: "auid",
-            width: 150,
-        },
-        {
-            title: "b用户id",
-            dataIndex: "buid",
-            key: "buid",
-            width: 150,
-        },
+    ccommentsColumn = [
         {
             title: "发表时间",
             dataIndex: "time",
@@ -231,9 +219,15 @@ export default class IndexView extends Component {
             width: 150,
         },
         {
-            title: "帖子id",
-            dataIndex: "pid",
-            key: "pid",
+            title: "商品id",
+            dataIndex: "cid",
+            key: "cid",
+            width: 150,
+        },
+        {
+            title: "用户id",
+            dataIndex: "uid",
+            key: "uid",
             width: 150,
         },
         {
@@ -284,8 +278,8 @@ export default class IndexView extends Component {
     render() {
         const _this = this;
         const {
-            pcommentsObj, 
-            pcommentsIndex,
+            ccommentsObj, 
+            ccommentsIndex,
             showLoading,
             tabKey
         } = this.props;
@@ -294,84 +288,84 @@ export default class IndexView extends Component {
             delPicModalVisible
         } = this.state;
 
-        let selectRow = pcommentsObj['list'][pcommentsIndex] || {};
+        let selectRow = ccommentsObj['list'][ccommentsIndex] || {};
         // 主表数据为空
-        const pcommentsForbid = pcommentsObj.list.length > 0 ? false : true;
-        let {list} = pcommentsObj;
-        const {id} = list[pcommentsIndex] || {};
+        const ccommentsForbid = ccommentsObj.list.length > 0 ? false : true;
+        let {list} = ccommentsObj;
+        const {id} = list[ccommentsIndex] || {};
 
         return (
             <div className='master-detail-many'>
-                <Header title='帖子评论'/>
-                <SearchArea pcommentsObj={pcommentsObj} onRef={this.onRef}/>
+                <Header title='商品评论'/>
+                <SearchArea ccommentsObj={ccommentsObj} onRef={this.onRef}/>
                 <div className='table-header'>
-                    <ButtonRoleGroup funcCode="pcomments">
+                    <ButtonRoleGroup funcCode="ccomments">
                         <Button
                             className="ml8"
                             role="add"
                             colors="primary"
-                            onClick={() => this.onShowMainModal('pcomments', 0)}
+                            onClick={() => this.onShowMainModal('ccomments', 0)}
                         >新增</Button>
                         <Button
                             className="ml8"
                             role="update"
                             shape='border'
-                            disabled={pcommentsForbid}
-                            onClick={() => _this.onShowMainModal("pcomments", 1)}
+                            disabled={ccommentsForbid}
+                            onClick={() => _this.onShowMainModal("ccomments", 1)}
                         >修改</Button>
                         <Button
                             className="ml8"
                             shape='border'
-                            disabled={pcommentsForbid}
-                            onClick={() => _this.onShowMainModal("pcomments", 2)}
+                            disabled={ccommentsForbid}
+                            onClick={() => _this.onShowMainModal("ccomments", 2)}
                         >详情</Button>
                         <Button
                             className="ml8"
                             role="delete"
                             shape='border'
-                            disabled={pcommentsForbid}
-                            onClick={() => _this.onClickDel("pcomments")}
+                            disabled={ccommentsForbid}
+                            onClick={() => _this.onClickDel("ccomments")}
                         >删除</Button>
                     </ButtonRoleGroup>
                 </div>
                 <Grid
-                    ref="pcomments"
-                    data={pcommentsObj.list}
+                    ref="ccomments"
+                    data={ccommentsObj.list}
                     rowKey={(r, i) => i}
-                    columns={_this.pcommentsColumn}
+                    columns={_this.ccommentsColumn}
                     getSelectedDataFunc={this.getSelectedDataFunc}
                     showHeaderMenu={true}
                     draggable={true}
                     multiSelect={false}
                     onRowClick={(record, index) => {
-                        actions.masterDetailMany.updateState({pcommentsIndex: index});
+                        actions.masterDetailMany.updateState({ccommentsIndex: index});
                         // 根据tab 页来获取子表数据
                         const {
-                            pcommentsObj, 
+                            ccommentsObj, 
                             tabKey, 
                             searchParam
                         } = this.props;
                         
-                        const {list} = pcommentsObj;
+                        const {list} = ccommentsObj;
                         const {id: search_NA} = list[index];
                         let param = {pageIndex: 0, search_NA};
                     }}
                     rowClassName={(record, index, indent) => { //判断是否选中当前行
-                        return pcommentsIndex === index ? "selected" : "";
+                        return ccommentsIndex === index ? "selected" : "";
                     }}
                     paginationObj={{
-                        ...this.getBasicPage(pcommentsObj),
+                        ...this.getBasicPage(ccommentsObj),
                         freshData: (pageSize) => {
-                            _this.freshData(pageSize, "pcommentsObj");
+                            _this.freshData(pageSize, "ccommentsObj");
                         },
                         onDataNumSelect: (index, value) => {
-                            _this.onDataNumSelect(index, value, "pcommentsObj");
+                            _this.onDataNumSelect(index, value, "ccommentsObj");
                         },
                         dataNum: 0,
                     }}
                 />
                 <div className="table-space"> </div>
-                <div className={pcommentsForbid? "tabel-header-wrap-hide":"tabel-header-wrap"} >
+                <div className={ccommentsForbid? "tabel-header-wrap-hide":"tabel-header-wrap"} >
                     <Tabs
                         defaultActiveKey={tabKey}
                         onChange={this.onChangeTab}

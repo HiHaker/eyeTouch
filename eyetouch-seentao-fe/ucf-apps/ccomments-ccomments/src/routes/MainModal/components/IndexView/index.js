@@ -23,7 +23,7 @@ const {Option} = Select;
 const format = "YYYY-MM-DD";
 let titleArr = ["新增", "修改", "详情"];
 
-class AddEditpcomments extends Component {
+class AddEditccomments extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,15 +37,15 @@ class AddEditpcomments extends Component {
         let { btnFlag: flag, checkTable: checkTable} = searchObj;
         const btnFlag = Number(flag);
 
-        const { pcommentsObj, pcommentsIndex: currentIndex } = this.props;
+        const { ccommentsObj, ccommentsIndex: currentIndex } = this.props;
         // 防止网络阻塞造成btnFlag显示不正常
         this.setState({btnFlag: btnFlag});
         let rowData = {};
         try {
             // 判断是否重后端请求数据
-            if (btnFlag > 0 && checkTable === "pcomments") {
+            if (btnFlag > 0 && checkTable === "ccomments") {
                 this.props.form.resetFields();
-                const {list} =pcommentsObj;
+                const {list} =ccommentsObj;
                 rowData = list[currentIndex] || {};
             }
         } catch (error) {
@@ -98,7 +98,7 @@ class AddEditpcomments extends Component {
                 }
                 values.btnFlag=btnFlag;
                 _this.onCloseEdit(true); // 关闭弹框 无论成功失败
-                actions.masterDetailMany.savepcomments(values); //保存主表数据
+                actions.masterDetailMany.saveccomments(values); //保存主表数据
                 //返回
                 actions.routing.replace({ pathname: '/' });
             }
@@ -177,60 +177,6 @@ class AddEditpcomments extends Component {
                 <FormList className="formlist">
                                 <FormItem>
         <Label >
-            a用户id
-        </Label>
-        <FormControl disabled={typeof btnFlag != 'undefined' && btnFlag == 2
-}
-            {
-            ...getFieldProps('auid', {
-                validateTrigger: 'onBlur',
-                initialValue: (typeof rowData === 'undefined' || typeof rowData.auid === 'undefined') ? "" : rowData.auid
-,
-                rules: [{
-                    type:'string',required: false,pattern:/\S+/ig, message: '请输入a用户id',
-                }],
-                onChange(value) {
-if(typeof rowData !== 'undefined'){
-    let tempRow = Object.assign({},rowData,{ auid: value });
-    _this.setState({
-        rowData:tempRow
-    })
-}
-                }
-            }
-            )}
-        />
-        <FormError errorMsg={getFieldError('auid')}/>
-                                </FormItem>
-                                <FormItem>
-        <Label >
-            b用户id
-        </Label>
-        <FormControl disabled={typeof btnFlag != 'undefined' && btnFlag == 2
-}
-            {
-            ...getFieldProps('buid', {
-                validateTrigger: 'onBlur',
-                initialValue: (typeof rowData === 'undefined' || typeof rowData.buid === 'undefined') ? "" : rowData.buid
-,
-                rules: [{
-                    type:'string',required: false,pattern:/\S+/ig, message: '请输入b用户id',
-                }],
-                onChange(value) {
-if(typeof rowData !== 'undefined'){
-    let tempRow = Object.assign({},rowData,{ buid: value });
-    _this.setState({
-        rowData:tempRow
-    })
-}
-                }
-            }
-            )}
-        />
-        <FormError errorMsg={getFieldError('buid')}/>
-                                </FormItem>
-                                <FormItem>
-        <Label >
             发表时间
         </Label>
         <FormControl disabled={typeof btnFlag != 'undefined' && btnFlag == 2
@@ -258,21 +204,21 @@ if(typeof rowData !== 'undefined'){
                                 </FormItem>
                                 <FormItem>
         <Label >
-            帖子id
+            商品id
         </Label>
         <FormControl disabled={typeof btnFlag != 'undefined' && btnFlag == 2
 }
             {
-            ...getFieldProps('pid', {
+            ...getFieldProps('cid', {
                 validateTrigger: 'onBlur',
-                initialValue: (typeof rowData === 'undefined' || typeof rowData.pid === 'undefined') ? "" : rowData.pid
+                initialValue: (typeof rowData === 'undefined' || typeof rowData.cid === 'undefined') ? "" : rowData.cid
 ,
                 rules: [{
-                    type:'string',required: false,pattern:/\S+/ig, message: '请输入帖子id',
+                    type:'string',required: false,pattern:/\S+/ig, message: '请输入商品id',
                 }],
                 onChange(value) {
 if(typeof rowData !== 'undefined'){
-    let tempRow = Object.assign({},rowData,{ pid: value });
+    let tempRow = Object.assign({},rowData,{ cid: value });
     _this.setState({
         rowData:tempRow
     })
@@ -281,7 +227,34 @@ if(typeof rowData !== 'undefined'){
             }
             )}
         />
-        <FormError errorMsg={getFieldError('pid')}/>
+        <FormError errorMsg={getFieldError('cid')}/>
+                                </FormItem>
+                                <FormItem>
+        <Label >
+            用户id
+        </Label>
+        <FormControl disabled={typeof btnFlag != 'undefined' && btnFlag == 2
+}
+            {
+            ...getFieldProps('uid', {
+                validateTrigger: 'onBlur',
+                initialValue: (typeof rowData === 'undefined' || typeof rowData.uid === 'undefined') ? "" : rowData.uid
+,
+                rules: [{
+                    type:'string',required: false,pattern:/\S+/ig, message: '请输入用户id',
+                }],
+                onChange(value) {
+if(typeof rowData !== 'undefined'){
+    let tempRow = Object.assign({},rowData,{ uid: value });
+    _this.setState({
+        rowData:tempRow
+    })
+}
+                }
+            }
+            )}
+        />
+        <FormError errorMsg={getFieldError('uid')}/>
                                 </FormItem>
                                 <FormItem>
         <Label >
@@ -316,4 +289,4 @@ if(typeof rowData !== 'undefined'){
     }
 }
 
-export default FormList.createForm()(AddEditpcomments);
+export default FormList.createForm()(AddEditccomments);
