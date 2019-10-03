@@ -49,14 +49,7 @@ public class PlikesService extends GenericAssoService<Plikes,String>{
         com.yonyou.plikes.dto.SimpleSearchDTO plikesSimpleDto = new
                 com.yonyou.plikes.dto.SimpleSearchDTO();
         plikesSimpleDto.setSearch_uid(user_ID);
-        List deleteList = plikesQueryService.listPlikes(plikesSimpleDto.toSearchParams(Plikes.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            PlikesDTO record = (PlikesDTO)o;
-            records.add(record.getId());
-        }
-        plikesMapper.deleteByIds(records);
+        plikesMapper.delete(plikesSimpleDto.toSearchParams(Plikes.class));
     }
 
     /**
@@ -67,14 +60,7 @@ public class PlikesService extends GenericAssoService<Plikes,String>{
         com.yonyou.plikes.dto.SimpleSearchDTO plikesSimpleDto = new
                 com.yonyou.plikes.dto.SimpleSearchDTO();
         plikesSimpleDto.setSearch_pid(post_ID);
-        List deleteList = plikesQueryService.listPlikes(plikesSimpleDto.toSearchParams(Plikes.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            PlikesDTO record = (PlikesDTO)o;
-            records.add(record.getId());
-        }
-        plikesMapper.deleteByIds(records);
+        plikesMapper.delete(plikesSimpleDto.toSearchParams(Plikes.class));
     }
 
     /**
@@ -87,14 +73,7 @@ public class PlikesService extends GenericAssoService<Plikes,String>{
                com.yonyou.plikes.dto.SimpleSearchDTO();
        plikesSimpleDto.setSearch_uid(user_ID);
        plikesSimpleDto.setSearch_pid(post_ID);
-       List deleteList = plikesQueryService.listPlikes(plikesSimpleDto.toSearchParams(Plikes.class));
-       List<String> records = new ArrayList<>();
-       for (Object o:deleteList){
-           // 进行强制类型转换
-           PlikesDTO record = (PlikesDTO)o;
-           records.add(record.getId());
-       }
-       plikesMapper.deleteByIds(records);
+       plikesMapper.delete(plikesSimpleDto.toSearchParams(Plikes.class));
    }
 
     /**
@@ -102,7 +81,7 @@ public class PlikesService extends GenericAssoService<Plikes,String>{
      * @param post_ID
      * @return
      */
-    public Object getAllUsers(String post_ID){
+    public List<Object> getAllUsersByPostId(String post_ID){
         com.yonyou.plikes.dto.SimpleSearchDTO plikesSimpleDto = new
                 com.yonyou.plikes.dto.SimpleSearchDTO();
         plikesSimpleDto.setSearch_pid(post_ID);
@@ -115,7 +94,7 @@ public class PlikesService extends GenericAssoService<Plikes,String>{
      * @param user_ID
      * @return
      */
-    public Object getAllPosts(String user_ID){
+    public List<Object> getAllPostsByUserId(String user_ID){
         com.yonyou.plikes.dto.SimpleSearchDTO plikesSimpleDto = new
                 com.yonyou.plikes.dto.SimpleSearchDTO();
         plikesSimpleDto.setSearch_uid(user_ID);

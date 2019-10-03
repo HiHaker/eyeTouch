@@ -219,12 +219,12 @@ public class PcommentsController extends BaseController{
      * @param auser_ID
      * @return
      */
-    @RequestMapping(value = "/getAllAUsers", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllAUsersByAUid", method = RequestMethod.GET)
     @ResponseBody
-    public Object getAllAUsers(
+    public Object getAllAUsersByAUid(
             @RequestParam(required = false) String auser_ID
     ){
-        return this.buildSuccess(service.getAllAUsers(auser_ID));
+        return this.buildSuccess(service.getAllAUsersByAUid(auser_ID));
     }
 
     /**
@@ -232,12 +232,12 @@ public class PcommentsController extends BaseController{
      * @param buser_ID
      * @return
      */
-    @RequestMapping(value = "/getAllBUsers", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllBUsersByBUid", method = RequestMethod.GET)
     @ResponseBody
-    public Object getAllBUsers(
+    public Object getAllBUsersByBUid(
             @RequestParam(required = false) String buser_ID
     ){
-        return this.buildSuccess(service.getAllBUsers(buser_ID));
+        return this.buildSuccess(service.getAllBUsersByBUid(buser_ID));
     }
 
     /**
@@ -246,12 +246,12 @@ public class PcommentsController extends BaseController{
      * @param buser_ID
      * @return
      */
-    @RequestMapping(value = "/getAllABUsers", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllABUsersByAUidAndBUid", method = RequestMethod.GET)
     @ResponseBody
-    public Object getAllABUsers(
+    public Object getAllABUsersByAUidAndBUid(
             @RequestParam(required = false) String auser_ID, String buser_ID
     ){
-        return this.buildSuccess(service.getAllABUsers(auser_ID, buser_ID));
+        return this.buildSuccess(service.getAllABUsersByAUidAndBUid(auser_ID, buser_ID));
     }
 
     /**
@@ -259,12 +259,12 @@ public class PcommentsController extends BaseController{
      * @param post_ID
      * @return
      */
-    @RequestMapping(value = "/getAllPosts", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllByPostId", method = RequestMethod.GET)
     @ResponseBody
-    public Object getAllPosts(
+    public Object getAllByPostId(
             @RequestParam(required = false) String post_ID
     ){
-        return this.buildSuccess(service.getAllPosts(post_ID));
+        return this.buildSuccess(service.getAllByPostId(post_ID));
     }
 
     /**

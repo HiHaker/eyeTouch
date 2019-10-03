@@ -134,41 +134,27 @@ public class PvideoController extends BaseController{
             return this.buildError("", "Nothing got @Associative nor fkName", RequestStatusEnum.FAIL_FIELD);
         }
     }
+    /**
+     * 根据帖子id删除其所有图片
+     * @param post_ID
+     */
+    @RequestMapping(value = "/deleteVideoByPostId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteVideoByPostId(@RequestParam(required = false) String post_ID){
+        service.deleteVideoByPostId(post_ID);
+    }
 
     /**
      * 根据帖子的id得到其视频
      * @param post_ID
      * @return
      */
-    @RequestMapping(value = "/getPostVideo", method = RequestMethod.GET)
+    @RequestMapping(value = "/getVideoByPostId", method = RequestMethod.GET)
     @ResponseBody
-    public Object getPostImg(
+    public Object getVideoByPostId(
             @RequestParam(required = false) String post_ID
     ){
-        List pvideoList = service.getPostVideo(post_ID);
-        return this.buildSuccess(pvideoList);
-    }
-
-    /**
-     * 根据帖子id删除其所有图片
-     * @param post_ID
-     */
-    @RequestMapping(value = "/deletePostVideo", method = RequestMethod.DELETE)
-    @ResponseBody
-    public void deletePimageByPid(@RequestParam(required = false) String post_ID){
-        service.deleteByIds(post_ID);
-    }
-
-    /**
-     * 给帖子增加一条视频记录
-     * @param post_ID
-     */
-    @RequestMapping(value = "/insertRecord", method = {RequestMethod.POST,RequestMethod.PATCH})
-    @ResponseBody
-    public void insertRecord(@RequestParam(required = false) String post_ID){
-        Pvideo p = new Pvideo();
-        p.setPid(post_ID);
-        service.addRecord(p);
+        return this.buildSuccess(service.getVideoByPostId(post_ID));
     }
 
     /**

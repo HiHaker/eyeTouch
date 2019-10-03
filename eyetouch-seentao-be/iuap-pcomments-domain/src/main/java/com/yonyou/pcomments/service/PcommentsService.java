@@ -49,14 +49,7 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
         com.yonyou.pcomments.dto.SimpleSearchDTO pcommentsSimpleDto = new
                 com.yonyou.pcomments.dto.SimpleSearchDTO();
         pcommentsSimpleDto.setSearch_auid(auser_ID);
-        List deleteList = pcommentsQueryService.listPcomments(pcommentsSimpleDto.toSearchParams(Pcomments.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            PcommentsDTO record = (PcommentsDTO)o;
-            records.add(record.getId());
-        }
-        pcommentsMapper.deleteByIds(records);
+        pcommentsMapper.delete(pcommentsSimpleDto.toSearchParams(Pcomments.class));
     }
 
     /**
@@ -67,14 +60,7 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
         com.yonyou.pcomments.dto.SimpleSearchDTO pcommentsSimpleDto = new
                 com.yonyou.pcomments.dto.SimpleSearchDTO();
         pcommentsSimpleDto.setSearch_buid(buser_ID);
-        List deleteList = pcommentsQueryService.listPcomments(pcommentsSimpleDto.toSearchParams(Pcomments.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            PcommentsDTO record = (PcommentsDTO)o;
-            records.add(record.getId());
-        }
-        pcommentsMapper.deleteByIds(records);
+        pcommentsMapper.delete(pcommentsSimpleDto.toSearchParams(Pcomments.class));
     }
 
     /**
@@ -85,14 +71,7 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
         com.yonyou.pcomments.dto.SimpleSearchDTO pcommentsSimpleDto = new
                 com.yonyou.pcomments.dto.SimpleSearchDTO();
         pcommentsSimpleDto.setSearch_pid(post_ID);
-        List deleteList = pcommentsQueryService.listPcomments(pcommentsSimpleDto.toSearchParams(Pcomments.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            PcommentsDTO record = (PcommentsDTO)o;
-            records.add(record.getId());
-        }
-        pcommentsMapper.deleteByIds(records);
+        pcommentsMapper.delete(pcommentsSimpleDto.toSearchParams(Pcomments.class));
     }
 
     /**
@@ -105,14 +84,7 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
                 com.yonyou.pcomments.dto.SimpleSearchDTO();
         pcommentsSimpleDto.setSearch_auid(auser_ID);
         pcommentsSimpleDto.setSearch_buid(buser_ID);
-        List deleteList = pcommentsQueryService.listPcomments(pcommentsSimpleDto.toSearchParams(Pcomments.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            PcommentsDTO record = (PcommentsDTO)o;
-            records.add(record.getId());
-        }
-        pcommentsMapper.deleteByIds(records);
+        pcommentsMapper.delete(pcommentsSimpleDto.toSearchParams(Pcomments.class));
     }
 
     /**
@@ -125,14 +97,7 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
                 com.yonyou.pcomments.dto.SimpleSearchDTO();
         pcommentsSimpleDto.setSearch_auid(auser_ID);
         pcommentsSimpleDto.setSearch_pid(post_ID);
-        List deleteList = pcommentsQueryService.listPcomments(pcommentsSimpleDto.toSearchParams(Pcomments.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            PcommentsDTO record = (PcommentsDTO)o;
-            records.add(record.getId());
-        }
-        pcommentsMapper.deleteByIds(records);
+        pcommentsMapper.delete(pcommentsSimpleDto.toSearchParams(Pcomments.class));
     }
 
     /**
@@ -145,14 +110,7 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
                 com.yonyou.pcomments.dto.SimpleSearchDTO();
         pcommentsSimpleDto.setSearch_buid(buser_ID);
         pcommentsSimpleDto.setSearch_pid(post_ID);
-        List deleteList = pcommentsQueryService.listPcomments(pcommentsSimpleDto.toSearchParams(Pcomments.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            PcommentsDTO record = (PcommentsDTO)o;
-            records.add(record.getId());
-        }
-        pcommentsMapper.deleteByIds(records);
+        pcommentsMapper.delete(pcommentsSimpleDto.toSearchParams(Pcomments.class));
     }
 
     /**
@@ -160,7 +118,7 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
      * @param auser_ID
      * @return
      */
-    public Object getAllAUsers(String auser_ID){
+    public List<Object> getAllAUsersByAUid(String auser_ID){
         com.yonyou.pcomments.dto.SimpleSearchDTO pcommentsSimpleDto = new
                 com.yonyou.pcomments.dto.SimpleSearchDTO();
         pcommentsSimpleDto.setSearch_auid(auser_ID);
@@ -173,7 +131,7 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
      * @param buser_ID
      * @return
      */
-    public Object getAllBUsers(String buser_ID){
+    public List<Object> getAllBUsersByBUid(String buser_ID){
         com.yonyou.pcomments.dto.SimpleSearchDTO pcommentsSimpleDto = new
                 com.yonyou.pcomments.dto.SimpleSearchDTO();
         pcommentsSimpleDto.setSearch_buid(buser_ID);
@@ -187,7 +145,7 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
      * @param buser_ID
      * @return
      */
-    public Object getAllABUsers(String auser_ID, String buser_ID){
+    public List<Object> getAllABUsersByAUidAndBUid(String auser_ID, String buser_ID){
         com.yonyou.pcomments.dto.SimpleSearchDTO pcommentsSimpleDto = new
                 com.yonyou.pcomments.dto.SimpleSearchDTO();
         pcommentsSimpleDto.setSearch_auid(auser_ID);
@@ -201,7 +159,7 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
      * @param post_ID
      * @return
      */
-    public Object getAllPosts(String post_ID){
+    public List<Object> getAllByPostId(String post_ID){
         com.yonyou.pcomments.dto.SimpleSearchDTO pcommentsSimpleDto = new
                 com.yonyou.pcomments.dto.SimpleSearchDTO();
         pcommentsSimpleDto.setSearch_pid(post_ID);

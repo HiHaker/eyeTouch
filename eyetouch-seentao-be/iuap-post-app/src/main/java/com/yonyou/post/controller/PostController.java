@@ -168,6 +168,17 @@ public class PostController extends BaseController{
     }
 
     /**
+     * 获取全部帖子列表
+     * @return
+     */
+    @RequestMapping(value = "/getAllPost", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllPost(){
+        List postList = service.getAllPost();
+        return this.buildSuccess(postList);
+    }
+
+    /**
      * 根据id查询帖子
      * @param post_ID
      * @return

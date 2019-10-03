@@ -59,15 +59,18 @@ public class PostService extends GenericAssoService<Post,String>{
         com.yonyou.post.dto.SimpleSearchDTO postSimpleDto = new
                 com.yonyou.post.dto.SimpleSearchDTO();
         postSimpleDto.setSearch_uid(user_ID);
-        List postList = postQueryService.listPost(postSimpleDto.toSearchParams(Post.class));
+        postMapper.delete(postSimpleDto.toSearchParams(Post.class));
+    }
 
-        List<String> postIds = new ArrayList<>();
-        for (Object o:postList){
-            // 进行强制类型转换
-            PostDTO record = (PostDTO)o;
-            postIds.add(record.getId());
-        }
-        postMapper.deleteByIds(postIds);
+    /**
+     * 得到全部的帖子列表
+     * @return
+     */
+    public List<Object> getAllPost(){
+        com.yonyou.post.dto.SimpleSearchDTO postSimpleDto = new
+                com.yonyou.post.dto.SimpleSearchDTO();
+        List postList = postQueryService.listPost(postSimpleDto.toSearchParams(Post.class));
+        return postList;
     }
 
     /**

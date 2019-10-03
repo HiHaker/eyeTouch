@@ -64,7 +64,7 @@ public class MyuserService extends GenericAssoService<Myuser,String>{
      * @param loginName
      * @return
      */
-    public Object getUserByLoginName(String loginName){
+    public List<Object> getUserByLoginName(String loginName){
         com.yonyou.myuser.dto.SimpleSearchDTO myuserSimpleDto = new
                 com.yonyou.myuser.dto.SimpleSearchDTO();
         myuserSimpleDto.setSearch_login_name(loginName);

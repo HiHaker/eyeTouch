@@ -136,39 +136,26 @@ public class PimageController extends BaseController{
     }
 
     /**
+     * 根据帖子id删除其所有图片
+     * @param post_ID
+     */
+    @RequestMapping(value = "/deleteImagesByPostId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteImagesByPostId(@RequestParam(required = false) String post_ID){
+        service.deleteImagesByPostId(post_ID);
+    }
+
+    /**
      * 根据帖子的id得到其所有的图片
      * @param post_ID
      * @return
      */
-    @RequestMapping(value = "/getPostImages", method = RequestMethod.GET)
+    @RequestMapping(value = "/getImagesByPostId", method = RequestMethod.GET)
     @ResponseBody
-    public Object getPostImg(
+    public Object getImagesByPostId(
             @RequestParam(required = false) String post_ID
     ){
-        List<String> pimageUrls = service.getAllPostImages(post_ID);
-        return this.buildSuccess(pimageUrls);
-    }
-
-    /**
-     * 根据帖子id删除其所有图片
-     * @param post_ID
-     */
-    @RequestMapping(value = "/deletePostImages", method = RequestMethod.DELETE)
-    @ResponseBody
-    public void deletePimageByPid(@RequestParam(required = false) String post_ID){
-        service.deleteByIds(post_ID);
-    }
-
-    /**
-     * 给帖子增加一张图片
-     * @param post_ID
-     */
-    @RequestMapping(value = "/insertRecord", method = {RequestMethod.POST,RequestMethod.PATCH})
-    @ResponseBody
-    public void insertRecord(@RequestParam(required = false) String post_ID){
-        Pimage p = new Pimage();
-        p.setPid(post_ID);
-        service.addRecord(p);
+        return this.buildSuccess(service.getImagesByPostId(post_ID));
     }
 
     /**

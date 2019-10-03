@@ -142,12 +142,12 @@ public class RelationController extends BaseController{
      * @param fans_ID
      * @param follows_ID
      */
-    @RequestMapping(value = "/deleteByFansAndFollows", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deleteByFansIdAndFollowsId", method = RequestMethod.DELETE)
     @ResponseBody
-    public void deleteByFansAndFollows(
+    public void deleteByFansIdAndFollowsId(
             @RequestParam(required = false) String fans_ID, String follows_ID
     ){
-        service.deleteByFansAndFollows(fans_ID,follows_ID);
+        service.deleteByFansIdAndFollowsId(fans_ID,follows_ID);
     }
 
     /**
@@ -155,12 +155,12 @@ public class RelationController extends BaseController{
      * @param follows_ID
      * @return
      */
-    @RequestMapping(value = "/getAllFans", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllFansByFollowsId", method = RequestMethod.GET)
     @ResponseBody
-    public Object getAllFans(
+    public Object getAllFansByFollowsId(
             @RequestParam(required = false) String follows_ID
     ){
-        return this.buildSuccess(service.getAllFans(follows_ID));
+        return this.buildSuccess(service.getAllFansByFollowsId(follows_ID));
     }
 
     /**
@@ -168,12 +168,12 @@ public class RelationController extends BaseController{
      * @param fans_ID
      * @return
      */
-    @RequestMapping(value = "/getAllFollows", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllFollowsByFansId", method = RequestMethod.GET)
     @ResponseBody
-    public Object getAllFollows(
+    public Object getAllFollowsByFansId(
             @RequestParam(required = false) String fans_ID
     ){
-        return this.buildSuccess(service.getAllFollows(fans_ID));
+        return this.buildSuccess(service.getAllFollowsByFansId(fans_ID));
     }
 
     /**

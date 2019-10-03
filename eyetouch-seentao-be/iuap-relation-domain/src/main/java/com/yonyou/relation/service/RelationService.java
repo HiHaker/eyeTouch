@@ -47,19 +47,12 @@ public class RelationService extends GenericAssoService<Relation,String>{
      * @param fans_ID
      * @param follows_ID
      */
-    public void deleteByFansAndFollows(String fans_ID, String follows_ID){
+    public void deleteByFansIdAndFollowsId(String fans_ID, String follows_ID){
         com.yonyou.relation.dto.SimpleSearchDTO relationSimpleDto = new
                 com.yonyou.relation.dto.SimpleSearchDTO();
         relationSimpleDto.setSearch_follows(follows_ID);
         relationSimpleDto.setSearch_fans(fans_ID);
-        List deleteList = relationQueryService.listRelation(relationSimpleDto.toSearchParams(Relation.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            RelationDTO record = (RelationDTO)o;
-            records.add(record.getId());
-        }
-        relationMapper.deleteByIds(records);
+        relationMapper.delete(relationSimpleDto.toSearchParams(Relation.class));
     }
 
     /**
@@ -67,7 +60,7 @@ public class RelationService extends GenericAssoService<Relation,String>{
      * @param follows_ID
      * @return
      */
-    public Object getAllFans(String follows_ID){
+    public List<Object> getAllFansByFollowsId(String follows_ID){
         com.yonyou.relation.dto.SimpleSearchDTO relationSimpleDto = new
                 com.yonyou.relation.dto.SimpleSearchDTO();
         relationSimpleDto.setSearch_follows(follows_ID);
@@ -80,7 +73,7 @@ public class RelationService extends GenericAssoService<Relation,String>{
      * @param fans_ID
      * @return
      */
-    public Object getAllFollows(String fans_ID){
+    public List<Object> getAllFollowsByFansId(String fans_ID){
         com.yonyou.relation.dto.SimpleSearchDTO relationSimpleDto = new
                 com.yonyou.relation.dto.SimpleSearchDTO();
         relationSimpleDto.setSearch_fans(fans_ID);

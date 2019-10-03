@@ -50,39 +50,26 @@ public class PvideoService extends GenericAssoService<Pvideo,String>{
     }
 
     /**
-     * 根据查询到的id列表进行删除
+     * 根据帖子id删除对应的记录
      * @param post_ID
      */
-    public void deleteByIds(String post_ID){
-        // 逻辑：先根据帖子的id找到对应的视频的记录，将这些记录的id存到列表里面，再使用deleteByIds删除
+    public void deleteVideoByPostId(String post_ID){
         com.yonyou.pvideo.dto.SimpleSearchDTO pvideoSimpleDto = new
                 com.yonyou.pvideo.dto.SimpleSearchDTO();
         pvideoSimpleDto.setSearch_pid(post_ID);
-        List pvideoList = pvideoQueryService.listPvideo(pvideoSimpleDto.toSearchParams(Pvideo.class));
-        List<String> pvideoIds = new ArrayList<>();
-        for (Object o:pvideoList){
-            // 进行强制类型转换
-            PvideoDTO record = (PvideoDTO)o;
-            pvideoIds.add(record.getId());
-        }
-        pvideoMapper.deleteByIds(pvideoIds);
+        pvideoMapper.delete(pvideoSimpleDto.toSearchParams(Pvideo.class));
     }
 
     /**
-     * 得到帖子的视频的url列表
+     * 得到帖子的视频的记录
      * @param post_ID
      * @return
      */
-    public List<String> getPostVideo(String post_ID){
+    public List<Object> getVideoByPostId(String post_ID){
         com.yonyou.pvideo.dto.SimpleSearchDTO pvideoSimpleDto = new
                 com.yonyou.pvideo.dto.SimpleSearchDTO();
         pvideoSimpleDto.setSearch_pid(post_ID);
         List pvideoList = pvideoQueryService.listPvideo(pvideoSimpleDto.toSearchParams(Pvideo.class));
-        List<String> videoUrls = new ArrayList<>();
-        for (Object o:pvideoList){
-            PvideoDTO record = (PvideoDTO)o;
-            videoUrls.add(record.getId());
-        }
-        return videoUrls;
+        return pvideoList;
     }
 }

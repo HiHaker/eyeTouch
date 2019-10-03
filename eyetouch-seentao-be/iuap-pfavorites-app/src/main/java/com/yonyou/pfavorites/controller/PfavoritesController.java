@@ -177,12 +177,12 @@ public class PfavoritesController extends BaseController{
      * @param post_ID
      * @return
      */
-    @RequestMapping(value = "/getAllUsers", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllUsersByPostId", method = RequestMethod.GET)
     @ResponseBody
-    public Object getAllUsers(
+    public Object getAllUsersByPostId(
             @RequestParam(required = false) String post_ID
     ){
-        return this.buildSuccess(service.getAllUsers(post_ID));
+        return this.buildSuccess(service.getAllUsersByPostId(post_ID));
     }
 
     /**
@@ -190,12 +190,12 @@ public class PfavoritesController extends BaseController{
      * @param user_ID
      * @return
      */
-    @RequestMapping(value = "/getAllPosts", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllPostsByUserId", method = RequestMethod.GET)
     @ResponseBody
-    public Object getAllPosts(
+    public Object getAllPostsByUserId(
             @RequestParam(required = false) String user_ID
     ){
-        return this.buildSuccess(service.getAllPosts(user_ID));
+        return this.buildSuccess(service.getAllPostsByUserId(user_ID));
     }
 
     /**

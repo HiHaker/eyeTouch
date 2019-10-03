@@ -49,14 +49,7 @@ public class PfavoritesService extends GenericAssoService<Pfavorites,String>{
         com.yonyou.pfavorites.dto.SimpleSearchDTO pfavoritesSimpleDto = new
                 com.yonyou.pfavorites.dto.SimpleSearchDTO();
         pfavoritesSimpleDto.setSearch_uid(user_ID);
-        List deleteList = pfavoritesQueryService.listPfavorites(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            PfavoritesDTO record = (PfavoritesDTO)o;
-            records.add(record.getId());
-        }
-        pfavoritesMapper.deleteByIds(records);
+        pfavoritesMapper.delete(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
     }
 
     /**
@@ -67,14 +60,7 @@ public class PfavoritesService extends GenericAssoService<Pfavorites,String>{
         com.yonyou.pfavorites.dto.SimpleSearchDTO pfavoritesSimpleDto = new
                 com.yonyou.pfavorites.dto.SimpleSearchDTO();
         pfavoritesSimpleDto.setSearch_pid(post_ID);
-        List deleteList = pfavoritesQueryService.listPfavorites(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            PfavoritesDTO record = (PfavoritesDTO)o;
-            records.add(record.getId());
-        }
-        pfavoritesMapper.deleteByIds(records);
+        pfavoritesMapper.delete(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
     }
 
     /**
@@ -87,14 +73,7 @@ public class PfavoritesService extends GenericAssoService<Pfavorites,String>{
                 com.yonyou.pfavorites.dto.SimpleSearchDTO();
         pfavoritesSimpleDto.setSearch_uid(user_ID);
         pfavoritesSimpleDto.setSearch_pid(post_ID);
-        List deleteList = pfavoritesQueryService.listPfavorites(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
-        List<String> records = new ArrayList<>();
-        for (Object o:deleteList){
-            // 进行强制类型转换
-            PfavoritesDTO record = (PfavoritesDTO)o;
-            records.add(record.getId());
-        }
-        pfavoritesMapper.deleteByIds(records);
+        pfavoritesMapper.delete(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
     }
 
     /**
@@ -102,7 +81,7 @@ public class PfavoritesService extends GenericAssoService<Pfavorites,String>{
      * @param post_ID
      * @return
      */
-    public Object getAllUsers(String post_ID){
+    public List<Object> getAllUsersByPostId(String post_ID){
         com.yonyou.pfavorites.dto.SimpleSearchDTO pfavoritesSimpleDto = new
                 com.yonyou.pfavorites.dto.SimpleSearchDTO();
         pfavoritesSimpleDto.setSearch_pid(post_ID);
@@ -115,7 +94,7 @@ public class PfavoritesService extends GenericAssoService<Pfavorites,String>{
      * @param user_ID
      * @return
      */
-    public Object getAllPosts(String user_ID){
+    public List<Object> getAllPostsByUserId(String user_ID){
         com.yonyou.pfavorites.dto.SimpleSearchDTO pfavoritesSimpleDto = new
                 com.yonyou.pfavorites.dto.SimpleSearchDTO();
         pfavoritesSimpleDto.setSearch_uid(user_ID);

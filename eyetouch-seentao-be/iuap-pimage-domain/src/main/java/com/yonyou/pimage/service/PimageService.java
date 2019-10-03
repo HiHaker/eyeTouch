@@ -51,22 +51,14 @@ public class PimageService extends GenericAssoService<Pimage,String>{
     }
 
     /**
-     * 根据查询到的id列表进行删除
+     * 根据帖子的id删除对应的图片
      * @param post_ID
      */
-    public void deleteByIds(String post_ID){
-        // 逻辑：先根据帖子的id找到对应的所有的图片的记录，将这些记录的id存到列表里面，再使用deleteByIds删除
+    public void deleteImagesByPostId(String post_ID){
         com.yonyou.pimage.dto.SimpleSearchDTO pimageSimpleDto = new
                 com.yonyou.pimage.dto.SimpleSearchDTO();
         pimageSimpleDto.setSearch_pid(post_ID);
-        List pimageList = pimageQueryService.listPimage(pimageSimpleDto.toSearchParams(Pimage.class));
-        List<String> pimageIds = new ArrayList<>();
-        for (Object o:pimageList){
-            // 进行强制类型转换
-            PimageDTO record = (PimageDTO)o;
-            pimageIds.add(record.getId());
-        }
-        pimageMapper.deleteByIds(pimageIds);
+        pimageMapper.delete(pimageSimpleDto.toSearchParams(Pimage.class));
     }
 
     /**
@@ -74,16 +66,11 @@ public class PimageService extends GenericAssoService<Pimage,String>{
      * @param post_ID
      * @return
      */
-    public List<String> getAllPostImages(String post_ID){
+    public List<Object> getImagesByPostId(String post_ID){
         com.yonyou.pimage.dto.SimpleSearchDTO pimageSimpleDto = new
                 com.yonyou.pimage.dto.SimpleSearchDTO();
         pimageSimpleDto.setSearch_pid(post_ID);
         List pimageList = pimageQueryService.listPimage(pimageSimpleDto.toSearchParams(Pimage.class));
-        List<String> imgUrls = new ArrayList<>();
-        for (Object o:pimageList){
-            PimageDTO record = (PimageDTO)o;
-            imgUrls.add(record.getId());
-        }
-        return imgUrls;
+        return pimageList;
     }
 }
