@@ -42,6 +42,42 @@ public class PfavoritesService extends GenericAssoService<Pfavorites,String>{
     }
 
     /**
+     * 根据用户id删除其全部收藏记录
+     * @param user_ID
+     */
+    public void deleteByUserId(String user_ID){
+        com.yonyou.pfavorites.dto.SimpleSearchDTO pfavoritesSimpleDto = new
+                com.yonyou.pfavorites.dto.SimpleSearchDTO();
+        pfavoritesSimpleDto.setSearch_uid(user_ID);
+        List deleteList = pfavoritesQueryService.listPfavorites(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
+        List<String> records = new ArrayList<>();
+        for (Object o:deleteList){
+            // 进行强制类型转换
+            PfavoritesDTO record = (PfavoritesDTO)o;
+            records.add(record.getId());
+        }
+        pfavoritesMapper.deleteByIds(records);
+    }
+
+    /**
+     * 根据帖子id删除其全部收藏记录
+     * @param post_ID
+     */
+    public void deleteByPostId(String post_ID){
+        com.yonyou.pfavorites.dto.SimpleSearchDTO pfavoritesSimpleDto = new
+                com.yonyou.pfavorites.dto.SimpleSearchDTO();
+        pfavoritesSimpleDto.setSearch_pid(post_ID);
+        List deleteList = pfavoritesQueryService.listPfavorites(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
+        List<String> records = new ArrayList<>();
+        for (Object o:deleteList){
+            // 进行强制类型转换
+            PfavoritesDTO record = (PfavoritesDTO)o;
+            records.add(record.getId());
+        }
+        pfavoritesMapper.deleteByIds(records);
+    }
+
+    /**
      * 根据用户id和帖子的id删除记录
      * @param user_ID
      * @param post_ID

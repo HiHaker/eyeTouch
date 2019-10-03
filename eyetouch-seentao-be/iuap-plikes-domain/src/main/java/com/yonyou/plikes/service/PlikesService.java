@@ -42,6 +42,42 @@ public class PlikesService extends GenericAssoService<Plikes,String>{
     }
 
     /**
+     * 根据用户的id删除其全部点赞记录
+     * @param user_ID
+     */
+    public void deleteByUserId(String user_ID){
+        com.yonyou.plikes.dto.SimpleSearchDTO plikesSimpleDto = new
+                com.yonyou.plikes.dto.SimpleSearchDTO();
+        plikesSimpleDto.setSearch_uid(user_ID);
+        List deleteList = plikesQueryService.listPlikes(plikesSimpleDto.toSearchParams(Plikes.class));
+        List<String> records = new ArrayList<>();
+        for (Object o:deleteList){
+            // 进行强制类型转换
+            PlikesDTO record = (PlikesDTO)o;
+            records.add(record.getId());
+        }
+        plikesMapper.deleteByIds(records);
+    }
+
+    /**
+     * 根据帖子的id删除其全部点赞记录
+     * @param post_ID
+     */
+    public void deleteByPostId(String post_ID){
+        com.yonyou.plikes.dto.SimpleSearchDTO plikesSimpleDto = new
+                com.yonyou.plikes.dto.SimpleSearchDTO();
+        plikesSimpleDto.setSearch_pid(post_ID);
+        List deleteList = plikesQueryService.listPlikes(plikesSimpleDto.toSearchParams(Plikes.class));
+        List<String> records = new ArrayList<>();
+        for (Object o:deleteList){
+            // 进行强制类型转换
+            PlikesDTO record = (PlikesDTO)o;
+            records.add(record.getId());
+        }
+        plikesMapper.deleteByIds(records);
+    }
+
+    /**
      * 根据用户id和帖子的id删除记录
      * @param user_ID
      * @param post_ID

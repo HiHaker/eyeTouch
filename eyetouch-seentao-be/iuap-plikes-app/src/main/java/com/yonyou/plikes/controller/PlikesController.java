@@ -136,7 +136,31 @@ public class PlikesController extends BaseController{
     }
 
     /**
-     * 根据关注人和被关注人的id删除记录
+     * 根据用户的id删除其全部点赞记录
+     * @param user_ID
+     */
+    @RequestMapping(value = "/deleteByUserIdAndPostId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByUserId(
+            @RequestParam(required = false) String user_ID
+    ){
+        service.deleteByUserId(user_ID);
+    }
+
+    /**
+     * 根据帖子的id删除其全部点赞记录
+     * @param post_ID
+     */
+    @RequestMapping(value = "/deleteByUserIdAndPostId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByPostId(
+            @RequestParam(required = false) String post_ID
+    ){
+        service.deleteByPostId(post_ID);
+    }
+
+    /**
+     * 根据用户id和帖子id
      * @param user_ID
      * @param post_ID
      */
