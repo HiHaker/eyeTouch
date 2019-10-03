@@ -139,7 +139,7 @@ public class PlikesController extends BaseController{
      * 根据用户的id删除其全部点赞记录
      * @param user_ID
      */
-    @RequestMapping(value = "/deleteByUserIdAndPostId", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deleteByUserId", method = RequestMethod.DELETE)
     @ResponseBody
     public void deleteByUserId(
             @RequestParam(required = false) String user_ID
@@ -151,7 +151,7 @@ public class PlikesController extends BaseController{
      * 根据帖子的id删除其全部点赞记录
      * @param post_ID
      */
-    @RequestMapping(value = "/deleteByUserIdAndPostId", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deleteByPostId", method = RequestMethod.DELETE)
     @ResponseBody
     public void deleteByPostId(
             @RequestParam(required = false) String post_ID

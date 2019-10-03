@@ -299,3 +299,12 @@ alter table pfavorites add constraint FK_Reference_12 foreign key (uid)
 
 alter table pfavorites add constraint FK_Reference_13 foreign key (pid)
       references post (ID) on delete restrict on update restrict;
+
+alter table pcomments add constraint FK_Reference_14 foreign key (auid)
+      references myuser (ID) on delete restrict on update restrict;
+
+alter table pcomments add constraint FK_Reference_15 foreign key (buid)
+      references myuser (ID) on delete restrict on update restrict;
+
+alter table pcomments add constraint FK_Reference_16 foreign key (pid)
+      references post (ID) on delete restrict on update restrict;

@@ -140,6 +140,134 @@ public class PcommentsController extends BaseController{
     }
 
     /**
+     * 根据a用户（主用户，如果用户是对帖子评论，则默认使用a用户表示）id删除其全部评论记录
+     * @param auser_ID
+     */
+    @RequestMapping(value = "/deleteByAUserId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByAUserId(
+            @RequestParam(required = false) String auser_ID
+    ){
+        service.deleteByAUserId(auser_ID);
+    }
+
+    /**
+     * 根据b用户（次用户，如果用户是对用户的评论，则评论的人为a用户，被评论的人为b用户）id删除其全部评论记录
+     * @param buser_ID
+     */
+    @RequestMapping(value = "/deleteByBUserId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByBUserId(
+            @RequestParam(required = false) String buser_ID
+    ){
+        service.deleteByBUserId(buser_ID);
+    }
+
+    /**
+     * 根据帖子id删除其全部评论记录
+     * @param post_ID
+     */
+    @RequestMapping(value = "/deleteByPostId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByPostId(
+            @RequestParam(required = false) String post_ID
+    ){
+        service.deleteByPostId(post_ID);
+    }
+
+    /**
+     * 根据a用户id和b用户id删除其全部评论记录
+     * @param auser_ID
+     * @param buser_ID
+     */
+    @RequestMapping(value = "/deleteByAUserIdAndBUserId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByAUserIdAndBUserId(
+            @RequestParam(required = false) String auser_ID, String buser_ID
+    ){
+        service.deleteByAUserIdAndBUserId(auser_ID, buser_ID);
+    }
+
+    /**
+     * 根据a用户id和帖子id删除其全部评论记录
+     * @param auser_ID
+     * @param post_ID
+     */
+    @RequestMapping(value = "/deleteByAUserIdAndPostId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByAUserIdAndPostId(
+            @RequestParam(required = false) String auser_ID, String post_ID
+    ){
+        service.deleteByAUserIdAndPostId(auser_ID, post_ID);
+    }
+
+    /**
+     * 根据b用户id和帖子id删除其全部评论记录
+     * @param buser_ID
+     * @param post_ID
+     */
+    @RequestMapping(value = "/deleteByBUserIdAndPostId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByBUserIdAndPostId(
+            @RequestParam(required = false) String buser_ID, String post_ID
+    ){
+        service.deleteByBUserIdAndPostId(buser_ID, post_ID);
+    }
+
+    /**
+     * 根据a用户的id得到其所有评论记录
+     * @param auser_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllAUsers", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllAUsers(
+            @RequestParam(required = false) String auser_ID
+    ){
+        return this.buildSuccess(service.getAllAUsers(auser_ID));
+    }
+
+    /**
+     * 根据b用户的id得到其所有被评论记录
+     * @param buser_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllBUsers", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllBUsers(
+            @RequestParam(required = false) String buser_ID
+    ){
+        return this.buildSuccess(service.getAllBUsers(buser_ID));
+    }
+
+    /**
+     * 根据a用户的id和b用户的id得到其所有互动评论记录
+     * @param auser_ID
+     * @param buser_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllABUsers", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllABUsers(
+            @RequestParam(required = false) String auser_ID, String buser_ID
+    ){
+        return this.buildSuccess(service.getAllABUsers(auser_ID, buser_ID));
+    }
+
+    /**
+     * 根据帖子的id得到其所有互动评论记录
+     * @param post_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllPosts", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllPosts(
+            @RequestParam(required = false) String post_ID
+    ){
+        return this.buildSuccess(service.getAllPosts(post_ID));
+    }
+
+    /**
     * 单条添加
     * @param entity 业务实体
     * @return 标准JsonResponse结构
