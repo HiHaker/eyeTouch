@@ -136,6 +136,45 @@ public class PfavoritesController extends BaseController{
     }
 
     /**
+     * 根据关注人和被关注人的id删除记录
+     * @param user_ID
+     * @param post_ID
+     */
+    @RequestMapping(value = "/deleteByUserIdAndPostId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByUserIdAndPostId(
+            @RequestParam(required = false) String user_ID, String post_ID
+    ){
+        service.deleteByUserIdAndPostId(user_ID, post_ID);
+    }
+
+    /**
+     * 根据帖子的id，得到收藏这条贴子的全部用户
+     * @param post_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllUsers", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllUsers(
+            @RequestParam(required = false) String post_ID
+    ){
+        return this.buildSuccess(service.getAllUsers(post_ID));
+    }
+
+    /**
+     * 根据用户的id，得到其收藏的全部帖子
+     * @param user_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllPosts", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllPosts(
+            @RequestParam(required = false) String user_ID
+    ){
+        return this.buildSuccess(service.getAllPosts(user_ID));
+    }
+
+    /**
     * 单条添加
     * @param entity 业务实体
     * @return 标准JsonResponse结构

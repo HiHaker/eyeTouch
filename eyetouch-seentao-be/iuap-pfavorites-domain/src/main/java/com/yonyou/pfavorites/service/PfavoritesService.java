@@ -1,5 +1,9 @@
 package com.yonyou.pfavorites.service;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.yonyou.pfavorites.api.PfavoritesQueryService;
+import com.yonyou.pfavorites.dto.PfavoritesDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.yonyou.iuap.baseservice.intg.support.ServiceFeature;
@@ -18,6 +22,9 @@ public class PfavoritesService extends GenericAssoService<Pfavorites,String>{
     private PfavoritesMapper pfavoritesMapper;
 
     @Autowired
+    PfavoritesQueryService pfavoritesQueryService;
+
+    @Autowired
     public void setPfavoritesMapper(PfavoritesMapper pfavoritesMapper) {
         this.pfavoritesMapper = pfavoritesMapper;
         super.setGenericMapper(pfavoritesMapper);
@@ -32,5 +39,51 @@ public class PfavoritesService extends GenericAssoService<Pfavorites,String>{
     @Override
     protected ServiceFeature[] getFeats() {
         return new ServiceFeature[]{ AUDIT,I18N_ENUM };
+    }
+
+    /**
+     * 根据用户id和帖子的id删除记录
+     * @param user_ID
+     * @param post_ID
+     */
+    public void deleteByUserIdAndPostId(String user_ID, String post_ID){
+        com.yonyou.pfavorites.dto.SimpleSearchDTO pfavoritesSimpleDto = new
+                com.yonyou.pfavorites.dto.SimpleSearchDTO();
+        pfavoritesSimpleDto.setSearch_uid(user_ID);
+        pfavoritesSimpleDto.setSearch_pid(post_ID);
+        List deleteList = pfavoritesQueryService.listPfavorites(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
+        List<String> records = new ArrayList<>();
+        for (Object o:deleteList){
+            // 进行强制类型转换
+            PfavoritesDTO record = (PfavoritesDTO)o;
+            records.add(record.getId());
+        }
+        pfavoritesMapper.deleteByIds(records);
+    }
+
+    /**
+     * 根据帖子的id，得到收藏这条贴子的全部用户
+     * @param post_ID
+     * @return
+     */
+    public Object getAllUsers(String post_ID){
+        com.yonyou.pfavorites.dto.SimpleSearchDTO pfavoritesSimpleDto = new
+                com.yonyou.pfavorites.dto.SimpleSearchDTO();
+        pfavoritesSimpleDto.setSearch_pid(post_ID);
+        List usersList = pfavoritesQueryService.listPfavorites(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
+        return usersList;
+    }
+
+    /**
+     * 根据用户的id，得到其收藏的全部帖子
+     * @param user_ID
+     * @return
+     */
+    public Object getAllPosts(String user_ID){
+        com.yonyou.pfavorites.dto.SimpleSearchDTO pfavoritesSimpleDto = new
+                com.yonyou.pfavorites.dto.SimpleSearchDTO();
+        pfavoritesSimpleDto.setSearch_uid(user_ID);
+        List postsList = pfavoritesQueryService.listPfavorites(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
+        return postsList;
     }
 }

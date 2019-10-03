@@ -1135,3 +1135,254 @@ Caused by: java.lang.ClassCastException: com.yonyou.pimage.dto.PimageDTO cannot 
 2019-10-02 15:37:08.522 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_124_1570001827864] [demo_124_1570001827864] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/relation/relation/deleteByFansAndFollows] [fans_ID=2233&follows_ID=1122] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.deleteByIds:DELETE FROM relation WHERE id IN ( '661775e72a5b427fab75bc30e86cbadb' )&251ms 
 2019-10-02 15:45:52.507 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_125_1570002350906] [demo_125_1570002350906] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/relation/relation/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.insertSelective:INSERT INTO relation ( tenant_id, create_time, last_modify_user, follows, create_user, id, last_modified, dr, fans, ts ) VALUES ( '1', '2019-10-02', '1', '2233', '1', '81d1b3f64ee14aaeb14b12f5b5a9932d', '2019-10-02', 0, '1122', DATE_FORMAT(convert_tz(utc_timestamp(), '+00:00', '+08:00'),'%Y-%m-%d %T.000' ) )&360ms 
 2019-10-02 15:45:52.611 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_125_1570002350906] [demo_125_1570002350906] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/relation/relation/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (id = '81d1b3f64ee14aaeb14b12f5b5a9932d')&103ms 
+2019-10-02 21:06:04.795 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_314_1570021555267] [demo_314_1570021555267] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/list] [pageIndex=0&pageSize=5&r=0.1321265422553517] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 LIMIT 0, 5&406ms 
+2019-10-02 21:07:32.840 ERROR [http-nio-9688-exec-5] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_316_1570021652687] [demo_316_1570021652687] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/list] [pageIndex=0&pageSize=5&r=0.12212523961810118] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 LIMIT 0, 5&150ms 
+2019-10-02 21:07:35.632 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_315_1570021652521] [demo_315_1570021652521] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.insertSelective:INSERT INTO plikes ( tenant_id, uid, create_time, last_modify_user, pid, create_user, time, id, last_modified, dr, ts ) VALUES ( '1', '2233', '2019-10-02', '1', 'aabb', '1', '2019-10-2', '2459d8c9704149fa821470b7b0a80fc5', '2019-10-02', 0, DATE_FORMAT(convert_tz(utc_timestamp(), '+00:00', '+08:00'),'%Y-%m-%d %T.000' ) )&110ms 
+2019-10-02 21:07:35.692 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_315_1570021652521] [demo_315_1570021652521] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 AND (id = '2459d8c9704149fa821470b7b0a80fc5')&58ms 
+2019-10-02 21:07:36.402 ERROR [http-nio-9688-exec-6] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_317_1570021656250] [demo_317_1570021656250] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/list] [pageIndex=0&pageSize=5&r=0.3600806886892063] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 LIMIT 0, 5&149ms 
+2019-10-02 21:07:57.074 ERROR [http-nio-9688-exec-7] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_318_1570021676905] [demo_318_1570021676905] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.insertSelective:INSERT INTO plikes ( tenant_id, uid, create_time, last_modify_user, pid, create_user, time, id, last_modified, dr, ts ) VALUES ( '1', '2233', '2019-10-02', '1', 'bbcc', '1', '2019-10-2', '9f131aa3a9a64d6cb40e450d38c18a06', '2019-10-02', 0, DATE_FORMAT(convert_tz(utc_timestamp(), '+00:00', '+08:00'),'%Y-%m-%d %T.000' ) )&167ms 
+2019-10-02 21:07:57.126 ERROR [http-nio-9688-exec-8] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_319_1570021676977] [demo_319_1570021676977] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/list] [pageIndex=0&pageSize=5&r=0.512979777060584] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 LIMIT 0, 5&148ms 
+2019-10-02 21:07:57.143 ERROR [http-nio-9688-exec-7] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_318_1570021676905] [demo_318_1570021676905] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 AND (id = '9f131aa3a9a64d6cb40e450d38c18a06')&50ms 
+2019-10-02 21:07:57.374 ERROR [http-nio-9688-exec-9] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_320_1570021677273] [demo_320_1570021677273] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/list] [pageIndex=0&pageSize=5&r=0.362676770441261] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 LIMIT 0, 5&100ms 
+2019-10-02 21:08:43.697 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_312_1570021695916] [demo_312_1570021695916] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/list] [pageIndex=0&pageSize=5&r=0.9754013915979831] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 LIMIT 0, 5&27779ms 
+2019-10-02 21:08:43.758 ERROR [http-nio-9688-exec-10] [c.y.i.u.c.e.CommonExceptionHandler] [demo_321_1570021695895] [demo_321_1570021695895] [] [] [1001001000001] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - 出现异常啦 com.yonyou.iuap.ucf.common.exception.BusinessException: 程序员开小差了，请您稍后再试。
+	at com.yonyou.iuap.ucf.core.exception.CommonExceptionHandler.handleThrowable(CommonExceptionHandler.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:408)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:139)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:79)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1297)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1109)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.yonyou.cloud.filter.ZoneFilter.doFilter(ZoneFilter.java:89)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ch.qos.logback.classic.helpers.MDCInsertingServletFilter.doFilter(MDCInsertingServletFilter.java:49)
+	at com.yonyou.iuap.ucf.log.filter.MDCLogFilter.doFilter(MDCLogFilter.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error updating database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy140.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58)
+	at com.yonyou.iuap.ucf.dao.mybatis.UcfMapperProxy.invoke(UcfMapperProxy.java:57)
+	at com.sun.proxy.$Proxy166.insertSelective(Unknown Source)
+	at com.yonyou.iuap.baseservice.intg.service.GenericUcfService.executeInsert(GenericUcfService.java:308)
+	at com.yonyou.iuap.baseservice.intg.service.GenericUcfService.save(GenericUcfService.java:279)
+	at com.yonyou.iuap.baseservice.intg.service.GenericUcfService$$FastClassBySpringCGLIB$$a592c808.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at com.yonyou.plikes.service.PlikesService$$EnhancerBySpringCGLIB$$b0759c0a.save(<generated>)
+	at com.yonyou.plikes.controller.PlikesController.insertSelective(PlikesController.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	... 66 common frames omitted
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error updating database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:200)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 89 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82)
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:338)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at com.yonyou.iuap.ucf.dao.mybatis.ext.UcfQueryInterceptor$PaginationExecutor.update(UcfQueryInterceptor.java:211)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy191.update(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.yonyou.iuap.ucf.log.mw.filter.MDCLogMybatisInterceptor.intercept(MDCLogMybatisInterceptor.java:44)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy191.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	... 95 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:319)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:212)
+	at org.apache.tomcat.jdbc.pool.PooledConnection.reconnect(PooledConnection.java:372)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:825)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:655)
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.getConnection(ConnectionPool.java:198)
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:132)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	... 118 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:562)
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:514)
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:404)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1447)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:165)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:955)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	... 131 common frames omitted
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mysql.cj.protocol.ReadAheadInputStream.fill(ReadAheadInputStream.java:107)
+	at com.mysql.cj.protocol.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:150)
+	at com.mysql.cj.protocol.ReadAheadInputStream.read(ReadAheadInputStream.java:180)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:64)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:556)
+	... 137 common frames omitted
+
+2019-10-02 21:08:51.694 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_313_1570021731529] [demo_313_1570021731529] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/list] [pageIndex=0&pageSize=5&r=0.8503119140770485] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 LIMIT 0, 5&163ms 
+2019-10-02 21:09:22.353 ERROR [http-nio-9688-exec-5] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_316_1570021762198] [demo_316_1570021762198] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.insertSelective:INSERT INTO plikes ( tenant_id, uid, create_time, last_modify_user, pid, create_user, time, id, last_modified, dr, ts ) VALUES ( '1', '3344', '2019-10-02', '1', 'aabb', '1', '2019-10-2', '90c8fe9ebf584ca18f2bef83a9fb8637', '2019-10-02', 0, DATE_FORMAT(convert_tz(utc_timestamp(), '+00:00', '+08:00'),'%Y-%m-%d %T.000' ) )&152ms 
+2019-10-02 21:09:22.404 ERROR [http-nio-9688-exec-5] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_316_1570021762198] [demo_316_1570021762198] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 AND (id = '90c8fe9ebf584ca18f2bef83a9fb8637')&51ms 
+2019-10-02 21:09:22.416 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_315_1570021762262] [demo_315_1570021762262] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/list] [pageIndex=0&pageSize=5&r=0.29604810676643356] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 LIMIT 0, 5&150ms 
+2019-10-02 21:09:22.627 ERROR [http-nio-9688-exec-6] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_317_1570021762524] [demo_317_1570021762524] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/list] [pageIndex=0&pageSize=5&r=0.32106340668193134] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 LIMIT 0, 5&101ms 
+2019-10-02 21:09:31.138 ERROR [http-nio-9688-exec-7] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_318_1570021770989] [demo_318_1570021770989] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/list] [pageIndex=0&pageSize=5&r=0.022572016839697007] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 LIMIT 0, 5&148ms 
+2019-10-02 21:09:52.331 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_315_1570021792228] [demo_315_1570021792228] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/getAllPosts] [user_ID=2233] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 AND (pid = '2233')&100ms 
+2019-10-02 21:10:34.040 ERROR [http-nio-9688-exec-8] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_319_1570021833936] [demo_319_1570021833936] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/getAllPosts] [user_ID=aabb] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 AND (pid = 'aabb')&102ms 
+2019-10-02 21:14:37.868 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_164_1570022077579] [demo_164_1570022077579] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/getAllPosts] [user_ID=2233] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 AND (uid = '2233')&237ms 
+2019-10-02 21:16:09.343 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_167_1570022169237] [demo_167_1570022169237] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/deleteByUserIdAndPostId] [post_ID=aabb&user_ID=2233] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM plikes WHERE dr = 0 AND (pid = 'aabb' AND uid = '2233')&101ms 
+2019-10-02 21:16:09.453 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_167_1570022169237] [demo_167_1570022169237] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/plikes/plikes/deleteByUserIdAndPostId] [post_ID=aabb&user_ID=2233] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.plikes.dao.PlikesMapper.deleteByIds:DELETE FROM plikes WHERE id IN ( '2459d8c9704149fa821470b7b0a80fc5' )&109ms 
+2019-10-02 21:46:13.587 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_237_1570023972716] [demo_237_1570023972716] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/list] [pageIndex=0&pageSize=5&r=0.8482931061821466] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 LIMIT 0, 5&372ms 
+2019-10-02 21:46:15.331 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_236_1570023972716] [demo_236_1570023972716] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.insertSelective:INSERT INTO pfavorites ( tenant_id, uid, create_time, last_modify_user, pid, create_user, time, id, last_modified, dr, ts ) VALUES ( '1', '3344', '2019-10-02', '1', 'aabb', '1', '2019-10-2', 'f25e8e8a5e68451fa27750b0689d2d68', '2019-10-02', 0, DATE_FORMAT(convert_tz(utc_timestamp(), '+00:00', '+08:00'),'%Y-%m-%d %T.000' ) )&117ms 
+2019-10-02 21:46:15.391 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_236_1570023972716] [demo_236_1570023972716] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (id = 'f25e8e8a5e68451fa27750b0689d2d68')&58ms 
+2019-10-02 21:46:15.782 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_238_1570023975680] [demo_238_1570023975680] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/list] [pageIndex=0&pageSize=5&r=0.2987358263928561] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 LIMIT 0, 5&101ms 
+2019-10-02 21:46:49.200 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_239_1570024009044] [demo_239_1570024009044] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.insertSelective:INSERT INTO pfavorites ( tenant_id, uid, create_time, last_modify_user, pid, create_user, time, id, last_modified, dr, ts ) VALUES ( '1', '2233', '2019-10-02', '1', 'bbcc', '1', '2019-10-2', '8fb31d389da643eba7687902ea902c71', '2019-10-02', 0, DATE_FORMAT(convert_tz(utc_timestamp(), '+00:00', '+08:00'),'%Y-%m-%d %T.000' ) )&154ms 
+2019-10-02 21:46:49.202 ERROR [http-nio-9688-exec-5] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_240_1570024009046] [demo_240_1570024009046] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/list] [pageIndex=0&pageSize=5&r=0.12869519235674676] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 LIMIT 0, 5&154ms 
+2019-10-02 21:46:49.253 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_239_1570024009044] [demo_239_1570024009044] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (id = '8fb31d389da643eba7687902ea902c71')&52ms 
+2019-10-02 21:46:49.419 ERROR [http-nio-9688-exec-6] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_241_1570024009318] [demo_241_1570024009318] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/list] [pageIndex=0&pageSize=5&r=0.2524960683438042] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 LIMIT 0, 5&99ms 
+2019-10-02 21:47:26.600 ERROR [http-nio-9688-exec-7] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_242_1570024046445] [demo_242_1570024046445] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.insertSelective:INSERT INTO pfavorites ( tenant_id, uid, create_time, last_modify_user, pid, create_user, time, id, last_modified, dr, ts ) VALUES ( '1', '2233', '2019-10-02', '1', 'bbcc', '1', '2019-10-2', '4ca14f2dcee34ebd821ab8342eb2c3bf', '2019-10-02', 0, DATE_FORMAT(convert_tz(utc_timestamp(), '+00:00', '+08:00'),'%Y-%m-%d %T.000' ) )&154ms 
+2019-10-02 21:47:26.619 ERROR [http-nio-9688-exec-8] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_243_1570024046463] [demo_243_1570024046463] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/list] [pageIndex=0&pageSize=5&r=0.3285451021267447] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 LIMIT 0, 5&155ms 
+2019-10-02 21:47:26.665 ERROR [http-nio-9688-exec-7] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_242_1570024046445] [demo_242_1570024046445] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (id = '4ca14f2dcee34ebd821ab8342eb2c3bf')&64ms 
+2019-10-02 21:47:26.889 ERROR [http-nio-9688-exec-9] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_244_1570024046786] [demo_244_1570024046786] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/list] [pageIndex=0&pageSize=5&r=0.507520774026291] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 LIMIT 0, 5&100ms 
+2019-10-02 21:47:43.398 ERROR [http-nio-9688-exec-10] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_245_1570024063226] [demo_245_1570024063226] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/deleteBatch] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.updateSelective:UPDATE pfavorites SET dr = 1, ts = DATE_FORMAT(convert_tz(utc_timestamp(), '+00:00', '+08:00'),'%Y-%m-%d %T.000' ) WHERE id = '8fb31d389da643eba7687902ea902c71'&159ms 
+2019-10-02 21:47:43.600 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_237_1570024063493] [demo_237_1570024063493] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/list] [pageIndex=0&pageSize=5&r=0.1923594348071771] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 LIMIT 0, 5&105ms 
+2019-10-02 21:48:04.193 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_238_1570024084042] [demo_238_1570024084042] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/list] [pageIndex=0&pageSize=5&r=0.834865110443658] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 LIMIT 0, 5&149ms 
+2019-10-02 21:48:04.197 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_236_1570024084036] [demo_236_1570024084036] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.insertSelective:INSERT INTO pfavorites ( tenant_id, uid, create_time, last_modify_user, pid, create_user, time, id, last_modified, dr, ts ) VALUES ( '1', '2233', '2019-10-02', '1', 'aabb', '1', '2019-10-2', '341664e05fa548e995f60bf6e30a69f2', '2019-10-02', 0, DATE_FORMAT(convert_tz(utc_timestamp(), '+00:00', '+08:00'),'%Y-%m-%d %T.000' ) )&159ms 
+2019-10-02 21:48:04.251 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_236_1570024084036] [demo_236_1570024084036] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/insertSelective] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (id = '341664e05fa548e995f60bf6e30a69f2')&53ms 
+2019-10-02 21:48:04.421 ERROR [http-nio-9688-exec-5] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_240_1570024084308] [demo_240_1570024084308] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/list] [pageIndex=0&pageSize=5&r=0.06882381641264912] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.listPage:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 LIMIT 0, 5&112ms 
+2019-10-02 21:52:05.030 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_239_1570024324854] [demo_239_1570024324854] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/pfavorites/pfavorites/getAllPosts] [user_ID=2233] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (uid = '2233')&172ms 

@@ -287,3 +287,15 @@ alter table relation add constraint FK_Reference_8 foreign key (fans)
 
 alter table relation add constraint FK_Reference_9 foreign key (follows)
       references myuser (ID) on delete restrict on update restrict;
+
+alter table plikes add constraint FK_Reference_10 foreign key (uid)
+      references myuser (ID) on delete restrict on update restrict;
+
+alter table plikes add constraint FK_Reference_11 foreign key (pid)
+      references post (ID) on delete restrict on update restrict;
+
+alter table pfavorites add constraint FK_Reference_12 foreign key (uid)
+      references myuser (ID) on delete restrict on update restrict;
+
+alter table pfavorites add constraint FK_Reference_13 foreign key (pid)
+      references post (ID) on delete restrict on update restrict;
