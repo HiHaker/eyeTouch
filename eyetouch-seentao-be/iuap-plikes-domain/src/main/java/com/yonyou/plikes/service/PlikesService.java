@@ -102,4 +102,32 @@ public class PlikesService extends GenericAssoService<Plikes,String>{
         return postsList;
     }
 
+    /**
+     * 查询某条点赞记录
+     * @param user_ID
+     * @param post_ID
+     * @return
+     */
+    public List<Object> getByUserIdAndPostId(String user_ID, String post_ID){
+        com.yonyou.plikes.dto.SimpleSearchDTO plikesSimpleDto = new
+                com.yonyou.plikes.dto.SimpleSearchDTO();
+        plikesSimpleDto.setSearch_uid(user_ID);
+        plikesSimpleDto.setSearch_pid(post_ID);
+        List recordList = plikesQueryService.listPlikes(plikesSimpleDto.toSearchParams(Plikes.class));
+        return recordList;
+    }
+
+    /**
+     * 得到某条帖子的点赞数
+     * @param post_ID
+     * @return
+     */
+    public Integer eGetLikesNum(String post_ID){
+        List<Object> likesList = this.getAllUsersByPostId(post_ID);
+        if (likesList == null){
+            return 0;
+        } else{
+            return likesList.size();
+        }
+    }
 }

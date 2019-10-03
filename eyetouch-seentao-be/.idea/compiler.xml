@@ -10,7 +10,7 @@
         <module name="iuap-commodity-domain" />
         <module name="iuap-pvideo-app" />
         <module name="iuap-clikes-app" />
-        <module name="iuap-clikes-domain" />
+        <module name="iuap-cfavorites-app" />
         <module name="iuap-plikes-app" />
         <module name="iuap-pvideo-api" />
         <module name="iuap-clikes-api" />
@@ -19,34 +19,34 @@
         <module name="iuap-relation-app" />
         <module name="iuap-myuser-app" />
         <module name="iuap-plikes-api" />
-        <module name="iuap-post-domain" />
+        <module name="iuap-pfavorites-domain" />
         <module name="iuap-ctype-app" />
         <module name="iuap-pvideo-domain" />
         <module name="iuap-myuser-api" />
+        <module name="iuap-pcomments-domain" />
+        <module name="iuap-post-api" />
+        <module name="iuap-cimage-api" />
         <module name="iuap-ctype-api" />
+        <module name="iuap-pcomments-api" />
         <module name="iuap-plikes-domain" />
         <module name="iuap-commodity-app" />
-        <module name="iuap-bootstrap" />
-        <module name="iuap-cimage-app" />
-        <module name="iuap-cfavorites-app" />
         <module name="iuap-commodity-api" />
         <module name="iuap-post-app" />
         <module name="iuap-relation-domain" />
         <module name="iuap-cfavorites-domain" />
         <module name="iuap-ctype-domain" />
         <module name="iuap-cbrand-domain" />
-        <module name="iuap-post-api" />
+        <module name="iuap-cimage-app" />
         <module name="iuap-effacicy-api" />
         <module name="iuap-pfavorites-app" />
         <module name="iuap-effacicy-app" />
         <module name="iuap-myuser-domain" />
         <module name="iuap-cfavorites-api" />
-        <module name="iuap-cimage-api" />
-        <module name="iuap-pcomments-domain" />
+        <module name="iuap-post-domain" />
+        <module name="iuap-clikes-domain" />
         <module name="iuap-pfavorites-api" />
         <module name="iuap-cbrand-api" />
         <module name="iuap-pimage-app" />
-        <module name="iuap-pfavorites-domain" />
         <module name="iuap-effacicy-domain" />
         <module name="iuap-ccomments-api" />
         <module name="iuap-ccomments-app" />
@@ -55,7 +55,7 @@
         <module name="iuap-pcomments-app" />
         <module name="iuap-pimage-domain" />
         <module name="iuap-pimage-api" />
-        <module name="iuap-pcomments-api" />
+        <module name="iuap-bootstrap" />
       </profile>
     </annotationProcessing>
   </component>

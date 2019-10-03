@@ -72,4 +72,20 @@ public class PvideoService extends GenericAssoService<Pvideo,String>{
         List pvideoList = pvideoQueryService.listPvideo(pvideoSimpleDto.toSearchParams(Pvideo.class));
         return pvideoList;
     }
+
+    /**
+     * 得到帖子的视频url列表
+     * @param post_ID
+     * @return
+     */
+    public List<String> eGetVideoUrl(String post_ID){
+        List<Object> videoList = this.getVideoByPostId(post_ID);
+        List<String> urls = new ArrayList<>();
+        for (Object o:videoList){
+            // 强制类型转换
+            PvideoDTO p = (PvideoDTO)o;
+            urls.add(p.getId());
+        }
+        return urls;
+    }
 }

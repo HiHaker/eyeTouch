@@ -1,6 +1,8 @@
 package com.yonyou.post.service;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.yonyou.post.api.PostQueryService;
 import com.yonyou.post.dto.PostDTO;
@@ -87,6 +89,19 @@ public class PostService extends GenericAssoService<Post,String>{
     }
 
     /**
+     * 查询出转发某条帖子的全部帖子
+     * @param forward_ID
+     * @return
+     */
+    public List<Object> getPostByForwardId(String forward_ID){
+        com.yonyou.post.dto.SimpleSearchDTO postSimpleDto = new
+                com.yonyou.post.dto.SimpleSearchDTO();
+        postSimpleDto.setSearch_fpid(forward_ID);
+        List postList = postQueryService.listPost(postSimpleDto.toSearchParams(Post.class));
+        return postList;
+    }
+
+    /**
      * 根据type值查询帖子（1：图文，2：视频）
      * @param
      * @return
@@ -110,5 +125,19 @@ public class PostService extends GenericAssoService<Post,String>{
         postSimpleDto.setSearch_style(style);
         List postList = postQueryService.listPost(postSimpleDto.toSearchParams(Post.class));
         return postList;
+    }
+
+    /**
+     * 得到某条帖子的转发数
+     * @param post_ID
+     * @return
+     */
+    public Integer eGetForwardNum(String post_ID){
+        List<Object> forwardList = this.getPostByForwardId(post_ID);
+        if (forwardList == null){
+            return 0;
+        } else{
+            return forwardList.size();
+        }
     }
 }

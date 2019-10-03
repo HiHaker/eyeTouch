@@ -101,4 +101,33 @@ public class PfavoritesService extends GenericAssoService<Pfavorites,String>{
         List postsList = pfavoritesQueryService.listPfavorites(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
         return postsList;
     }
+
+    /**
+     * 查询某条收藏记录
+     * @param user_ID
+     * @param post_ID
+     * @return
+     */
+    public List<Object> getByUserIdAndPostId(String user_ID, String post_ID){
+        com.yonyou.pfavorites.dto.SimpleSearchDTO pfavoritesSimpleDto = new
+                com.yonyou.pfavorites.dto.SimpleSearchDTO();
+        pfavoritesSimpleDto.setSearch_uid(user_ID);
+        pfavoritesSimpleDto.setSearch_pid(post_ID);
+        List recordList = pfavoritesQueryService.listPfavorites(pfavoritesSimpleDto.toSearchParams(Pfavorites.class));
+        return recordList;
+    }
+
+    /**
+     * 得到某条帖子的收藏数
+     * @param post_ID
+     * @return
+     */
+    public Integer eGetFavoritesNum(String post_ID){
+        List<Object> favoritesList = this.getAllUsersByPostId(post_ID);
+        if (favoritesList == null){
+            return 0;
+        } else{
+            return favoritesList.size();
+        }
+    }
 }

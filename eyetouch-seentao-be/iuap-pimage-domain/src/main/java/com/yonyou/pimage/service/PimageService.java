@@ -73,4 +73,20 @@ public class PimageService extends GenericAssoService<Pimage,String>{
         List pimageList = pimageQueryService.listPimage(pimageSimpleDto.toSearchParams(Pimage.class));
         return pimageList;
     }
+
+    /**
+     * 得到帖子的图片url列表
+     * @param post_ID
+     * @return
+     */
+    public List<String> eGetImagesUrl(String post_ID){
+        List<Object> imgList = this.getImagesByPostId(post_ID);
+        List<String> urls = new ArrayList<>();
+        for (Object o:imgList){
+            // 强制类型转换
+            PimageDTO p = (PimageDTO)o;
+            urls.add(p.getId());
+        }
+        return urls;
+    }
 }

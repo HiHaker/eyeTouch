@@ -166,4 +166,18 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
         List postList = pcommentsQueryService.listPcomments(pcommentsSimpleDto.toSearchParams(Pcomments.class));
         return postList;
     }
+
+    /**
+     * 得到某条帖子的评论数
+     * @param post_ID
+     * @return
+     */
+    public Integer eGetCommentsNum(String post_ID){
+        List<Object> commentsList = this.getAllByPostId(post_ID);
+        if (commentsList == null){
+            return 0;
+        } else{
+            return commentsList.size();
+        }
+    }
 }

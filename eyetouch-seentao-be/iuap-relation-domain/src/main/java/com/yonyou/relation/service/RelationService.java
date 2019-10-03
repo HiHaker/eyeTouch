@@ -80,4 +80,19 @@ public class RelationService extends GenericAssoService<Relation,String>{
         List followsList = relationQueryService.listRelation(relationSimpleDto.toSearchParams(Relation.class));
         return followsList;
     }
+
+    /**
+     * 查询某条关注记录
+     * @param fans_ID
+     * @param follows_ID
+     * @return
+     */
+    public List<Object> getByFansIdAndFollowsId(String fans_ID, String follows_ID){
+        com.yonyou.relation.dto.SimpleSearchDTO relationSimpleDto = new
+                com.yonyou.relation.dto.SimpleSearchDTO();
+        relationSimpleDto.setSearch_fans(fans_ID);
+        relationSimpleDto.setSearch_follows(follows_ID);
+        List recordList = relationQueryService.listRelation(relationSimpleDto.toSearchParams(Relation.class));
+        return recordList;
+    }
 }
