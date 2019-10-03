@@ -95,4 +95,19 @@ public class RelationService extends GenericAssoService<Relation,String>{
         List recordList = relationQueryService.listRelation(relationSimpleDto.toSearchParams(Relation.class));
         return recordList;
     }
+
+    /**
+     * 得到关注用户列表
+     * @param fans_ID
+     * @return
+     */
+    public List<String> eGetAllFollows(String fans_ID){
+        List<Object> usersList = this.getAllFollowsByFansId(fans_ID);
+        List<String> follows = new ArrayList<>();
+        for (Object o:usersList){
+            RelationDTO r = (RelationDTO)o;
+            follows.add(r.getFollows());
+        }
+        return follows;
+    }
 }

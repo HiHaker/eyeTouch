@@ -214,4 +214,20 @@ public class CommunityService {
         }
         return ePostList;
     }
+
+    /**
+     * 获取关注的人发表的帖子
+     * @param user_ID
+     * @return
+     */
+    public Object getFollowsPosts(String user_ID){
+        List<String> follows = relationService.eGetAllFollows(user_ID);
+        Map<String,Object> postsObject = new HashMap<>();
+        // 将关注的人发表的帖子分别封装起来放入Map
+        for (String s:follows){
+            postsObject.put(s,this.encapsulatePost(postService.getPostByUserId(user_ID),user_ID));
+        }
+
+        return postsObject;
+    }
 }
