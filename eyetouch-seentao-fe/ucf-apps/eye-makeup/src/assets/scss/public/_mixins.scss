@@ -1,0 +1,7 @@
+// flex-center  垂直水平居中
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}

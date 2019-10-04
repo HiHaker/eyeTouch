@@ -1,0 +1,59 @@
+{
+  "name": "iuap-demo",
+  "version": "3.5.6",
+  "description": "典型案例",
+  "main": "index.js",
+  "scripts": {
+    "start": "ucf-scripts start --homepage=index.html",
+    "build": "ucf-scripts build",
+    "dic": "node lanbuild.js 1",
+    "dic2": "node lanbuild.js 2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iuap-design/ucf-webapp.git"
+  },
+  "author": "Kvkens(yueming@yonyou.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iuap-design/ucf-webapp/issues"
+  },
+  "homepage": "https://github.com/iuap-design/ucf-webapp#readme",
+  "devDependencies": {
+    "ucf-scripts": "1.1.1",
+    "webpack-bundle-analyzer": "^3.1.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@babel/runtime": "^7.3.1",
+    "ac-attachment": "^0.2.6",
+    "ac-drawer": "0.0.2",
+    "async-validator": "1.10.0",
+    "axios": "0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "bee-checkbox": "^2.0.2",
+    "bee-complex-grid": "^2.0.1",
+    "bee-datepicker": "^2.0.2",
+    "bee-search-panel": "2.0.8",
+    "bee-table": "^2.0.10",
+    "bee-tooltip": "^2.0.3",
+    "classnames": "2.2.6",
+    "exceljs": "^1.7.0",
+    "lanbuild": "^1.0.8-beta.0",
+    "mirrorx": "0.2.12",
+    "moment": "2.23.0",
+    "pap-refer": "1.0.0-beta.7",
+    "prop-types": "15.6.2",
+    "query-string": "5.1.1",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "tinper-bee": "2.0.6",
+    "ref-multiple-table": "2.0.0-beta.3",
+    "ref-tree": "2.0.0-beta.2",
+    "ref-tree-table": "2.0.0-beta.2",
+    "ucf-fe": "^0.1.0",
+    "ucf-request": "^1.0.0",
+    "yyuap-bpm": "0.3.33",
+    "yyuap-ref": "^1.1.62"
+  }
+}

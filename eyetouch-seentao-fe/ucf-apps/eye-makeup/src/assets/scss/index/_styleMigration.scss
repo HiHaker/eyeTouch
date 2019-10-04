@@ -1,0 +1,183 @@
+@import "../public/variables.scss";
+@import "../public/mixins.scss";
+
+#styleMigration{
+  @include flex-center();
+  
+  .container{
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin-top: 20px;
+
+    .sectionA{
+
+      .example{
+        width: 100%;
+        height: 370px;
+        background-color: #fff;
+        display: flex;
+        box-sizing: border-box;
+        padding: 40px;
+        justify-content: space-between;
+
+        .pic1, .pic2, .pic3{
+          width: 200px;
+          border: 1px solid #ADADAD;
+          padding: 10px;
+          border-radius: 2px;
+
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .add, .arrow{
+          height: 300px;
+          line-height: 300px;
+          font-size: 40px;
+          color: #FF6565;
+        }
+      }
+
+      // 自己的照片
+      .myPicture{
+        width: 100%;
+        margin-top: 20px;
+        box-sizing: border-box;
+        padding: 0 40px 40px 40px;
+        background-color: #fff;
+
+        .title{
+          width: 100%;
+          height: 60px;
+          line-height: 60px;
+          font-size: 20px;
+          // border-bottom: 2px solid #D7D7D7;
+          text-shadow: 2px 2px 3px #444444;
+        }
+        .select{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 10px;
+
+          .image{
+            width: 200px;
+            // height: 300px;
+            border: 1px solid #ADADAD;
+            border-radius: 4px;
+            padding: 10px;
+
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .dragUpload{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 750px;
+            height: 250px;
+
+            .el-upload__tip{
+              text-align: center;
+            }
+          }
+        }
+        
+      }
+
+      // 模板图
+      .tempPicture{
+        width: 100%;
+        box-sizing: border-box;
+        // border: 1px solid #686868;
+        box-sizing: border-box;
+        padding: 0 40px 20px 40px;
+        background-color: #fff;
+
+        .title{
+          width: 100%;
+          height: 60px;
+          line-height: 60px;
+          font-size: 20px;
+          text-shadow: 2px 2px 3px #444444;
+        }
+
+        .select{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 20px;
+
+          .image{
+            width: 200px;
+            border: 1px solid #ADADAD;
+            border-radius: 4px;
+            padding: 10px;
+
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .tempSelect{
+            width: 750px;
+            height: 300px;
+            box-sizing: border-box;
+            padding: 0 40px;
+
+            .head{
+              line-height: 50px;
+            }
+
+            .images{
+              height: 150px;
+              // border: 1px solid #000;
+              display: flex;
+              justify-content: space-between;
+
+              li{
+                width: 120px;
+                height: 150px;
+                list-style: none;
+
+                img{
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+            .pagenation{
+              height: 50px;
+              @include flex-center(column);
+            }
+            .selectPictrue{
+              @include flex-center();
+
+              .tip{
+                margin-right: 30px;
+              }
+            }
+          }
+        }
+      }
+
+      .submit{
+        width: 100%;
+        height: 70px;
+        background-color: #fff;
+        @include flex-center(column);
+      }
+    }
+  }
+  .return{
+    position: absolute;
+    left: 5%;
+    top: 12%;
+  }
+}

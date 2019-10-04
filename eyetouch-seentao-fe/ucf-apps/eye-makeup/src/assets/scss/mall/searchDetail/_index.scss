@@ -1,0 +1,73 @@
+@import "../../public/variables.scss";
+@import "../../public/mixins.scss";
+
+#searchDetail{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+
+  .navs{
+    width: 100%;
+    
+    .navBox{
+      width: 100%;
+      height: 50px;
+      box-sizing: border-box;
+      padding: 0 30px;
+      border-bottom: 1px solid #DDDDDD;
+      display: flex;
+      align-items: center;
+
+      .type{
+        width: 120px;
+        font-size: 17px;
+        color: #000;
+      }
+
+      .infos{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        font-size: 15px;
+        color: #1D88B9;
+
+        li{
+          margin-right: 30px;
+          cursor: pointer;
+        }
+        li:hover{
+          color: #ff9797;
+        }
+      }
+    }
+
+    .navBox:last-child{
+      border-bottom: none;
+    }
+  }
+
+  .navbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    // background-color: #FFFFFF;
+    
+    .el-button{
+      margin-right: 15px;
+    }
+  }
+
+  .product-main{
+    li{
+      list-style: none;
+    }
+  }
+
+  .return{
+    position: absolute;
+    left: 5%;
+    top: 12%;
+  }
+}
