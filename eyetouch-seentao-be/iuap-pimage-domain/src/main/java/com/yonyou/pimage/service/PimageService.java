@@ -43,14 +43,6 @@ public class PimageService extends GenericAssoService<Pimage,String>{
     }
 
     /**
-     * 增加一条记录
-     * @param pimage
-     */
-    public void addRecord(Pimage pimage){
-        this.save(pimage,true,true);
-    }
-
-    /**
      * 根据帖子的id删除对应的图片
      * @param post_ID
      */

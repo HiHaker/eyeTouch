@@ -1,5 +1,6 @@
 package com.yonyou.post.controller;
 
+import com.yonyou.commodity.service.CommodityService;
 import com.yonyou.post.service.CommunityService;
 import com.yonyou.post.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ public class CommunityController extends BaseController{
 
     @Autowired
     PostService postService;
+    @Autowired
+    CommodityService commodityService;
 
     /**
      * 获取全部的帖子列表
@@ -28,6 +31,19 @@ public class CommunityController extends BaseController{
             @RequestParam(required = false) String user_ID
     ){
         return this.buildSuccess(communityService.encapsulatePost(postService.getAllPost(),user_ID));
+    }
+
+    /**
+     * 获取全部的商品列表
+     * @param user_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodity", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodity(
+            @RequestParam(required = false) String user_ID
+    ){
+        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodity(), user_ID));
     }
 
     /**

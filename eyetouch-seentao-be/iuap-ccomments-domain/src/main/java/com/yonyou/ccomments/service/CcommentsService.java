@@ -98,5 +98,17 @@ public class CcommentsService extends GenericAssoService<Ccomments,String>{
         return commentsList;
     }
 
-
+    /**
+     * 得到某商品的评论数
+     * @param commodity_ID
+     * @return
+     */
+    public Integer eGetCommentsNum(String commodity_ID){
+        List<Object> commentsList = this.getAllCommentsByCommodityId(commodity_ID);
+        if (commentsList == null){
+            return 0;
+        } else{
+            return commentsList.size();
+        }
+    }
 }

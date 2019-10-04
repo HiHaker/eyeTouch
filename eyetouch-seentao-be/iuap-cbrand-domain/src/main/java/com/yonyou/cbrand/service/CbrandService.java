@@ -33,4 +33,6 @@ public class CbrandService extends GenericAssoService<Cbrand,String>{
     protected ServiceFeature[] getFeats() {
         return new ServiceFeature[]{ AUDIT,I18N_ENUM };
     }
+
+
 }

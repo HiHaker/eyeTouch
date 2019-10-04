@@ -136,20 +136,26 @@ public class CimageController extends BaseController{
     }
 
     /**
+     * 根据商品id删除其所有图片
+     * @param commodity_ID
+     */
+    @RequestMapping(value = "/deleteImagesByCommodityId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteImagesByCommodityId(@RequestParam(required = false) String commodity_ID){
+        service.deleteImagesByCommodityId(commodity_ID);
+    }
+
+    /**
      * 根据商品的id得到其所有的图片
      * @param commodity_ID
      * @return
      */
-    @RequestMapping(value = "/getCommodityImages", method = RequestMethod.GET)
+    @RequestMapping(value = "/getImagesByCommodityId", method = RequestMethod.GET)
     @ResponseBody
-    public Object getPostImg(
+    public Object getImagesByCommodityId(
             @RequestParam(required = false) String commodity_ID
     ){
-        com.yonyou.cimage.dto.SimpleSearchDTO cimageSimpleDto = new
-                com.yonyou.cimage.dto.SimpleSearchDTO();
-        cimageSimpleDto.setSearch_cid(commodity_ID);
-        List pimageList = cimageQueryService.listCimage(cimageSimpleDto.toSearchParams(Cimage.class));
-        return this.buildSuccess(pimageList);
+        return this.buildSuccess(service.getImagesByCommodityId(commodity_ID));
     }
 
     /**
