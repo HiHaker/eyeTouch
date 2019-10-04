@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "start": "ucf-scripts start --homepage=index.html",
+    "build": "ucf-scripts build",
+    "dic": "node lanbuild.js 1",
+    "dic2": "node lanbuild.js 2"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -16,6 +18,8 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
     "@vue/cli-service": "^3.10.0",
+    "ucf-scripts": "1.1.1",
+    "webpack-bundle-analyzer": "^3.1.0",
     "axios": "^0.18.0",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
