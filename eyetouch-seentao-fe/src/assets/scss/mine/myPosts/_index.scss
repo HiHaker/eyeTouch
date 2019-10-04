@@ -1,9 +1,0 @@
-@import "../../public/variables.scss";
-@import "../../public/mixins.scss";
-
-#myPosts{
-	@include flex-center();
-  .post-li{
-    max-width: 600px;
-  }
-}
