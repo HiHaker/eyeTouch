@@ -308,3 +308,15 @@ alter table pcomments add constraint FK_Reference_15 foreign key (buid)
 
 alter table pcomments add constraint FK_Reference_16 foreign key (pid)
       references post (ID) on delete restrict on update restrict;
+
+alter table ccomments add constraint FK_Reference_17 foreign key (uid)
+      references myuser (ID) on delete restrict on update restrict;
+
+alter table ccomments add constraint FK_Reference_18 foreign key (cid)
+      references commodity (ID) on delete restrict on update restrict;
+
+alter table clikes add constraint FK_Reference_19 foreign key (uid)
+      references myuser (ID) on delete restrict on update restrict;
+
+alter table clikes add constraint FK_Reference_20 foreign key (cid)
+      references commodity (ID) on delete restrict on update restrict;

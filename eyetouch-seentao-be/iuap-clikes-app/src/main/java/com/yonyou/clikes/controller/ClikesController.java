@@ -136,6 +136,81 @@ public class ClikesController extends BaseController{
     }
 
     /**
+     * 根据用户的id删除其全部点赞记录
+     * @param user_ID
+     */
+    @RequestMapping(value = "/deleteByUserId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByUserId(
+            @RequestParam(required = false) String user_ID
+    ){
+        service.deleteByUserId(user_ID);
+    }
+
+    /**
+     * 根据商品的id删除其全部点赞记录
+     * @param commodity_ID
+     */
+    @RequestMapping(value = "/deleteByCommodityId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByCommodityId(
+            @RequestParam(required = false) String commodity_ID
+    ){
+        service.deleteByCommodityId(commodity_ID);
+    }
+
+    /**
+     * 根据用户的id和商品的id删除其点赞记录
+     * @param commodity_ID
+     */
+    @RequestMapping(value = "/deleteByUserIdAndCommodityId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByUserIdAndCommodityId(
+            @RequestParam(required = false) String user_ID, String commodity_ID
+    ){
+        service.deleteByUserIdAndCommodityId(user_ID, commodity_ID);
+    }
+
+    /**
+     * 得到某商品的全部点赞用户
+     * @param commodity_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllUsersByCommodityId", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllUsersByCommodityId(
+            @RequestParam(required = false) String commodity_ID
+    ){
+        return this.buildSuccess(service.getAllUsersByCommodityId(commodity_ID));
+    }
+
+    /**
+     * 得到某用户点赞的全部商品
+     * @param user_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByUserId", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByUserId(
+            @RequestParam(required = false) String user_ID
+    ){
+        return this.buildSuccess(service.getAllCommodityByUserId(user_ID));
+    }
+
+    /**
+     * 查询某条点赞记录
+     * @param user_ID
+     * @return
+     */
+    @RequestMapping(value = "/getByUserIdAndCommodityId", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getByUserIdAndCommodityId(
+            @RequestParam(required = false) String user_ID, String commodity_ID
+    ){
+        return this.buildSuccess(service.getByUserIdAndCommodityId(user_ID,commodity_ID));
+    }
+
+    /**
     * 单条添加
     * @param entity 业务实体
     * @return 标准JsonResponse结构

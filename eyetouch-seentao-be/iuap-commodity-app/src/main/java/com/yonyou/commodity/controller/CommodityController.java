@@ -142,6 +142,112 @@ public class CommodityController extends BaseController{
     }
 
     /**
+     * 根据商品的id删除商品
+     * @param commodity_ID
+     */
+    @RequestMapping(value = "/deleteCommodityById", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteCommodityById(
+            @RequestParam(required = false) String commodity_ID
+    ){
+        service.deleteCommodityById(commodity_ID);
+    }
+
+    /**
+     * 获取全部商品列表
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodity", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodity(){
+        return this.buildSuccess(service.getAllCommodity());
+    }
+
+    /**
+     * 根据商品类型获得全部商品
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByType", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodity(
+            @RequestParam(required = false) String type
+    ){
+        return this.buildSuccess(service.getAllCommodityByType(type));
+    }
+
+    /**
+     * 根据商品品牌获得全部商品
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByBrand", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByBrand(
+            @RequestParam(required = false) String brand
+    ){
+        return this.buildSuccess(service.getAllCommodityByBrand(brand));
+    }
+
+    /**
+     * 根据商品功效获得全部商品
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByEffacicy", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByEffacicy(
+            @RequestParam(required = false) String effacicy
+    ){
+        return this.buildSuccess(service.getAllCommodityByEffacicy(effacicy));
+    }
+
+    /**
+     * 根据商品类型和商品功效获得全部商品
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByTypeAndEffacicy", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByTypeAndEffacicy(
+            @RequestParam(required = false) String type, String effacicy
+    ){
+        return this.buildSuccess(service.getAllCommodityByTypeAndEffacicy(type, effacicy));
+    }
+
+    /**
+     * 根据商品类型和商品品牌获得全部商品
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByTypeAndBrand", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByTypeAndBrand(
+            @RequestParam(required = false) String type, String brand
+    ){
+        return this.buildSuccess(service.getAllCommodityByTypeAndBrand(type, brand));
+    }
+
+    /**
+     * 根据商品功效和商品品牌获得全部商品
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByEffacicyAndBrand", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByEffacicyAndBrand(
+            @RequestParam(required = false) String effacicy, String brand
+    ){
+        return this.buildSuccess(service.getAllCommodityByEffacicyAndBrand(effacicy, brand));
+    }
+
+    /**
+     * 根据商品类别和商品功效和商品品牌获得全部商品
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByTypeAndEffacicyAndBrand", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByTypeAndEffacicyAndBrand(
+            @RequestParam(required = false) String type, String effacicy, String brand
+    ){
+        return this.buildSuccess(service.getAllCommodityByTypeAndEffacicyAndBrand(type, effacicy, brand));
+    }
+
+    /**
     * 单条添加
     * @param entity 业务实体
     * @return 标准JsonResponse结构

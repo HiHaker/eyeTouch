@@ -138,6 +138,68 @@ public class CcommentsController extends BaseController{
     }
 
     /**
+     * 根据用户id删除其全部评论
+     * @param user_ID
+     */
+    @RequestMapping(value = "/deleteByUserId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByUserId(
+            @RequestParam(required = false) String user_ID
+    ){
+        service.deleteByUserId(user_ID);
+    }
+
+    /**
+     * 根据商品id删除其全部评论
+     * @param commodity_ID
+     */
+    @RequestMapping(value = "/deleteByCommodityId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByCommodityId(
+            @RequestParam(required = false) String commodity_ID
+    ){
+        service.deleteByCommodityId(commodity_ID);
+    }
+
+    /**
+     * 根据商品id和用户id删除其评论记录
+     * @param commodity_ID
+     */
+    @RequestMapping(value = "/deleteByCommodityIdAndUserId", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteByCommodityIdAndUserId(
+            @RequestParam(required = false) String commodity_ID, String user_ID
+    ){
+        service.deleteByCommodityIdAndUserId(commodity_ID, user_ID);
+    }
+
+    /**
+     * 根据商品id查询全部评论记录
+     * @param commodity_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommentsByCommodityId", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommentsByCommodityId(
+            @RequestParam(required = false) String commodity_ID
+    ){
+        return this.buildSuccess(service.getAllCommentsByCommodityId(commodity_ID));
+    }
+
+    /**
+     * 根据用户id查询其全部评论记录
+     * @param user_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommentsByUserId", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommentsByUserId(
+            @RequestParam(required = false) String user_ID
+    ){
+        return this.buildSuccess(service.getAllCommentsByUserId(user_ID));
+    }
+
+    /**
     * 单条添加
     * @param entity 业务实体
     * @return 标准JsonResponse结构

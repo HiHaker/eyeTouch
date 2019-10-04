@@ -56,6 +56,28 @@ public class RelationService extends GenericAssoService<Relation,String>{
     }
 
     /**
+     * 根据关注人（粉丝）的id删除记录
+     * @param fans_ID
+     */
+    public void deleteByFansId(String fans_ID){
+        com.yonyou.relation.dto.SimpleSearchDTO relationSimpleDto = new
+                com.yonyou.relation.dto.SimpleSearchDTO();
+        relationSimpleDto.setSearch_fans(fans_ID);
+        relationMapper.delete(relationSimpleDto.toSearchParams(Relation.class));
+    }
+
+    /**
+     * 根据被关注人的id删除记录
+     * @param follows_ID
+     */
+    public void deleteByFollowsId(String follows_ID){
+        com.yonyou.relation.dto.SimpleSearchDTO relationSimpleDto = new
+                com.yonyou.relation.dto.SimpleSearchDTO();
+        relationSimpleDto.setSearch_follows(follows_ID);
+        relationMapper.delete(relationSimpleDto.toSearchParams(Relation.class));
+    }
+
+    /**
      * 根据被关注的用户的id，得到他所有的粉丝的id
      * @param follows_ID
      * @return

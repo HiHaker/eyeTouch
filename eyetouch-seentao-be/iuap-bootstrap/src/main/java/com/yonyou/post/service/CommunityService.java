@@ -11,6 +11,7 @@ import com.yonyou.post.po.Post;
 import com.yonyou.pvideo.service.PvideoService;
 import com.yonyou.relation.service.RelationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -213,6 +214,20 @@ public class CommunityService {
             postObject = new HashMap<>();
         }
         return ePostList;
+    }
+
+    /**
+     * 根据用户的id删除用户
+     * 因为用户有外键引用，所以在删除之前要先删除那些记录
+     * @param user_ID
+     */
+    @Transactional
+    public void deleteUserById(String user_ID){
+        // 删除关注的记录
+        relationService.deleteByFansId(user_ID);
+        relationService.deleteByFollowsId(user_ID);
+        // 删除点赞的记录
+
     }
 
     /**

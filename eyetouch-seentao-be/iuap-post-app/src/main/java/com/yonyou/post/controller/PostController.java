@@ -174,8 +174,7 @@ public class PostController extends BaseController{
     @RequestMapping(value = "/getAllPost", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllPost(){
-        List postList = service.getAllPost();
-        return this.buildSuccess(postList);
+        return this.buildSuccess(service.getAllPost());
     }
 
     /**
@@ -197,6 +196,8 @@ public class PostController extends BaseController{
      * @param user_ID
      * @return
      */
+    @RequestMapping(value = "/getPostByUserId", method = RequestMethod.GET)
+    @ResponseBody
     public Object getPostByUserId(
             @RequestParam(required = false) String user_ID
     ){
@@ -209,6 +210,8 @@ public class PostController extends BaseController{
      * @param type
      * @return
      */
+    @RequestMapping(value = "/getPostByType", method = RequestMethod.GET)
+    @ResponseBody
     public Object getPostByType(
             @RequestParam(required = false) String type
     ){
@@ -221,6 +224,8 @@ public class PostController extends BaseController{
      * @param style
      * @return
      */
+    @RequestMapping(value = "/getPostByStyle", method = RequestMethod.GET)
+    @ResponseBody
     public Object getPostByStyle(
             @RequestParam(required = false) String style
     ){

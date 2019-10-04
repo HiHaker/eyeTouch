@@ -19,9 +19,9 @@ import com.yonyou.myuser.po.Myuser;
 public class MyuserService extends GenericAssoService<Myuser,String>{
 
     private MyuserMapper myuserMapper;
-
     @Autowired
     MyuserQueryService myuserQueryService;
+
 
     @Autowired
     public void setMyuserMapper(MyuserMapper myuserMapper) {
