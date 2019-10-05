@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * RPC provider端
  * @author  
- * @date 2019-10-5 11:43:16
+ * @date 2019-10-5 11:44:39
  */
 @Service("com.yonyou.myimg.impl.MyimgQueryServiceImpl")
 public class MyimgQueryServiceImpl implements MyimgQueryService {

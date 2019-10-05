@@ -25,7 +25,7 @@ import java.util.ArrayList;
 /**
 * 说明：迁移图片基础Controller——提供数据增(CREATE)、删(DELETE、改(UPDATE)、查(READ)等rest接口
 * @author  
-* @date 2019-10-5 11:43:16
+* @date 2019-10-5 11:44:39
 */
 @RestController("com.yonyou.myimg.controller.MyimgController")
 @RequestMapping(value = "/myimg/myimg")
