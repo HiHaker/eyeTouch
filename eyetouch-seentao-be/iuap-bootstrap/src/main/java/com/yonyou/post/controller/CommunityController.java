@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
  * Created on 2019/10/3 0003
  * BY Jianlong
  */
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/community/community")
 public class CommunityController extends BaseController{

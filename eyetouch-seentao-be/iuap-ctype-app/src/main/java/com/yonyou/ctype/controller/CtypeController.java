@@ -27,6 +27,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-9-26 10:19:47
 */
+@CrossOrigin
 @RestController("com.yonyou.ctype.controller.CtypeController")
 @RequestMapping(value = "/ctype/ctype")
 public class CtypeController extends BaseController{

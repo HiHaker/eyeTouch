@@ -27,6 +27,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-9-29 21:10:18
 */
+@CrossOrigin
 @RestController("com.yonyou.myuser.controller.MyuserController")
 @RequestMapping(value = "/myuser/myuser")
 public class MyuserController extends BaseController{

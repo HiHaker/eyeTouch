@@ -27,6 +27,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-9-25 21:06:23
 */
+@CrossOrigin
 @RestController("com.yonyou.cbrand.controller.CbrandController")
 @RequestMapping(value = "/cbrand/cbrand")
 public class CbrandController extends BaseController{

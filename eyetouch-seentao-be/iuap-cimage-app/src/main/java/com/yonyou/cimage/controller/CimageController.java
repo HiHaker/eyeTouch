@@ -28,6 +28,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-9-20 11:19:29
 */
+@CrossOrigin
 @RestController("com.yonyou.cimage.controller.CimageController")
 @RequestMapping(value = "/cimage/cimage")
 public class CimageController extends BaseController{

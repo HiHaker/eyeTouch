@@ -27,6 +27,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-9-26 10:07:37
 */
+@CrossOrigin
 @RestController("com.yonyou.effacicy.controller.EffacicyController")
 @RequestMapping(value = "/effacicy/effacicy")
 public class EffacicyController extends BaseController{

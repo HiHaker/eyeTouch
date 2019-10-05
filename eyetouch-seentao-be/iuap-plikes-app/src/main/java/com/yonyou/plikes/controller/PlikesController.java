@@ -27,6 +27,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-10-2 16:58:44
 */
+@CrossOrigin
 @RestController("com.yonyou.plikes.controller.PlikesController")
 @RequestMapping(value = "/plikes/plikes")
 public class PlikesController extends BaseController{

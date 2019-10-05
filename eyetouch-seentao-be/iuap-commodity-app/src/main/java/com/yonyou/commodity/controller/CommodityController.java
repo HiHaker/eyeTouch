@@ -27,6 +27,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-9-20 9:52:28
 */
+@CrossOrigin
 @RestController("com.yonyou.commodity.controller.CommodityController")
 @RequestMapping(value = "/commodity/commodity")
 public class CommodityController extends BaseController{

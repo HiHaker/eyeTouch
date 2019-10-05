@@ -27,6 +27,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-10-2 18:16:06
 */
+@CrossOrigin
 @RestController("com.yonyou.cfavorites.controller.CfavoritesController")
 @RequestMapping(value = "/cfavorites/cfavorites")
 public class CfavoritesController extends BaseController{

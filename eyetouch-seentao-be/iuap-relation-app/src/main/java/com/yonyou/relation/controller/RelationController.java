@@ -28,6 +28,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-9-30 9:09:38
 */
+@CrossOrigin
 @RestController("com.yonyou.relation.controller.RelationController")
 @RequestMapping(value = "/relation/relation")
 public class RelationController extends BaseController{

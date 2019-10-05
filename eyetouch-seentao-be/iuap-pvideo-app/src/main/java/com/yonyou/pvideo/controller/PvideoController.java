@@ -28,6 +28,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-9-20 8:47:16
 */
+@CrossOrigin
 @RestController("com.yonyou.pvideo.controller.PvideoController")
 @RequestMapping(value = "/pvideo/pvideo")
 public class PvideoController extends BaseController{

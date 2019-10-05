@@ -27,6 +27,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-10-2 20:20:07
 */
+@CrossOrigin
 @RestController("com.yonyou.ccomments.controller.CcommentsController")
 @RequestMapping(value = "/ccomments/ccomments")
 public class CcommentsController extends BaseController{

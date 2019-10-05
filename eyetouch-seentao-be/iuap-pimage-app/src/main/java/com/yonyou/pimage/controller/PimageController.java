@@ -28,6 +28,7 @@ import java.util.ArrayList;
 * @author  
 * @date 2019-9-12 10:58:51
 */
+@CrossOrigin
 @RestController("com.yonyou.pimage.controller.PimageController")
 @RequestMapping(value = "/pimage/pimage")
 public class PimageController extends BaseController{
