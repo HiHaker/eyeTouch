@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>com.yonyou.iuap</groupId>
-            <artifactId>iuap-ccomments-app</artifactId>
+            <artifactId>iuap-myimg-app</artifactId>
             <version>${project.version}</version>
         </dependency>
 

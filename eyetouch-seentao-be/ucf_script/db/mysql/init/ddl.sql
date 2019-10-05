@@ -1,12 +1,9 @@
 
--- drop table if EXISTS ccomments;
-CREATE TABLE `ccomments` (
+-- drop table if EXISTS myimg;
+CREATE TABLE `myimg` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
-    `time` VARCHAR(64) DEFAULT NULL COMMENT '发表时间',
-    `cid` VARCHAR(64) DEFAULT NULL COMMENT '商品id',
-    `uid` VARCHAR(64) DEFAULT NULL COMMENT '用户id',
-    `content` VARCHAR(64) DEFAULT NULL COMMENT '评论内容',
+    `course` VARCHAR(8000) DEFAULT NULL COMMENT '教程',
         `TENANT_ID` varchar(64) DEFAULT NULL,
         `DR` int(11) DEFAULT NULL COMMENT '是否删除',
         `TS` varchar(64) DEFAULT NULL COMMENT '时间戳',
