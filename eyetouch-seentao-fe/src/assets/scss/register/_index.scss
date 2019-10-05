@@ -1,0 +1,73 @@
+@import "../public/variables.scss";
+@import "../public/mixins.scss";
+
+#register{
+  height:calc(100vh - 120px);
+
+  .master{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    // background-color: rgba(#000, .3);
+    background-image: url('~@/assets/images/bg1.jpg');
+    background-size: 100vw 100vh;
+    background-origin: top left;
+    background-attachment: fixed;
+    z-index: 10000;
+    @include flex-center(column);
+
+    .loginbox{
+      position: relative;
+      width: 500px;
+      height: 370px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-sizing: border-box;
+      padding: 10px 50px;
+
+      .el-button--default{
+        background-color: #fff;
+        color: #ff9797;
+        box-sizing: border-box;
+      }
+      .title{
+        font-size: 20px;
+        font-weight: bold;
+        height: 60px;
+        line-height: 60px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .operate{
+        text-align: center;
+        margin-top: 20px;
+
+        .tip{
+          font-size: 14px;
+          text-align: right;
+          margin-top: 15px;
+
+          .words{
+            
+            .link{
+              color: #5F8FEC;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .el-icon-close{
+        position: absolute;
+        color: #fff;
+        font-weight: bold;
+        font-size: 30px;
+        top: -24px;
+        right: -24px;
+        cursor: pointer;
+      }
+    }
+  }
+}

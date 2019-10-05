@@ -1,0 +1,17 @@
+@import "../public/variables.scss";
+@import "../public/mixins.scss";
+
+#g-footer{
+  height: 60px;
+
+  .el-row{
+    height: 100%;
+    background-color: #fff;
+
+    .el-col{
+      @include flex-center(column);
+      height: 100%;
+      // border: 1px solid #CCCCCC;
+    }
+  }
+}
