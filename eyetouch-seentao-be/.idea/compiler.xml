@@ -8,8 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="iuap-relation-api" />
         <module name="iuap-commodity-domain" />
+        <module name="iuap-myimg-domain" />
         <module name="iuap-pvideo-app" />
         <module name="iuap-clikes-app" />
+        <module name="iuap-myimg-api" />
         <module name="iuap-cfavorites-app" />
         <module name="iuap-plikes-app" />
         <module name="iuap-pvideo-api" />
@@ -47,6 +49,7 @@
         <module name="iuap-pfavorites-api" />
         <module name="iuap-cbrand-api" />
         <module name="iuap-pimage-app" />
+        <module name="iuap-myimg-app" />
         <module name="iuap-effacicy-domain" />
         <module name="iuap-ccomments-api" />
         <module name="iuap-ccomments-app" />
@@ -87,6 +90,9 @@
       <module name="iuap-effacicy-api" options="-parameters" />
       <module name="iuap-effacicy-app" options="-parameters" />
       <module name="iuap-effacicy-domain" options="-parameters" />
+      <module name="iuap-myimg-api" options="-parameters" />
+      <module name="iuap-myimg-app" options="-parameters" />
+      <module name="iuap-myimg-domain" options="-parameters" />
       <module name="iuap-myuser-api" options="-parameters" />
       <module name="iuap-myuser-app" options="-parameters" />
       <module name="iuap-myuser-domain" options="-parameters" />

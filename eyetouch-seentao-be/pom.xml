@@ -59,6 +59,9 @@
         <module>iuap-ccomments-api</module>
         <module>iuap-ccomments-app</module>
         <module>iuap-ccomments-domain</module>
+        <module>iuap-myimg-api</module>
+        <module>iuap-myimg-app</module>
+        <module>iuap-myimg-domain</module>
     </modules>
 
     <packaging>pom</packaging>

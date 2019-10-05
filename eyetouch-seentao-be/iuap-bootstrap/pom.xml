@@ -96,6 +96,11 @@
             <artifactId>iuap-ccomments-app</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.yonyou.iuap</groupId>
+            <artifactId>iuap-myimg-app</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>com.yonyou.iuap</groupId>
