@@ -14,24 +14,24 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/community/community")
 public class CommunityController extends BaseController{
+    @Autowired
     CommunityService communityService;
-
     @Autowired
     PostService postService;
     @Autowired
     CommodityService commodityService;
 
-    @RequestMapping(value = "/test1（测试Map对象）", method = RequestMethod.GET)
-    @ResponseBody
-    public Object test1(){
-        return this.buildSuccess(communityService.EPtest1());
-    }
-
-    @RequestMapping(value = "/test2（测试List封装Map对象）", method = RequestMethod.GET)
-    @ResponseBody
-    public Object test2(){
-        return this.buildSuccess(communityService.EPtest2());
-    }
+//    @RequestMapping(value = "/test3", method = RequestMethod.GET)
+//    @ResponseBody
+//    public Object test3(){
+//        return this.buildSuccess(communityService.EPTest3(postService.getAllPost()));
+//    }
+//
+//    @RequestMapping(value = "/test4", method = RequestMethod.GET)
+//    @ResponseBody
+//    public Object test4(){
+//        return this.buildSuccess(communityService.eGetForwardPost("aabb"));
+//    }
 
     /**
      * 获取全部的帖子列表

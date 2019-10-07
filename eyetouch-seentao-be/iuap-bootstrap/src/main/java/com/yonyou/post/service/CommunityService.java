@@ -1,5 +1,6 @@
 package com.yonyou.post.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.yonyou.cbrand.service.CbrandService;
 import com.yonyou.ccomments.dto.CcommentsDTO;
 import com.yonyou.ccomments.service.CcommentsService;
@@ -21,6 +22,7 @@ import com.yonyou.post.po.Post;
 import com.yonyou.pvideo.service.PvideoService;
 import com.yonyou.relation.service.RelationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
@@ -33,6 +35,7 @@ import java.util.Map;
  * BY Jianlong
  * 东方眼秀社区服务
  */
+@Service
 public class CommunityService {
     @Autowired
     PostService postService;
@@ -82,7 +85,7 @@ public class CommunityService {
      * @return
      */
     public Object eGetForwardPost(String post_ID){
-        Map<String,Object> postObject = new HashMap<>();
+        JSONObject postObject = new JSONObject();
         Post p = postService.getAssoVo(post_ID).getEntity();
         postObject.put("uid",p.getUid());
         postObject.put("nickname",myuserService.getAssoVo(p.getUid()).getEntity().getNickname());
@@ -281,30 +284,71 @@ public class CommunityService {
         return eCommodityList;
     }
 
-    /**
-     * 测试Map对象
-     * @return
-     */
-    public Object EPtest1(){
-        Map<String,Object> postObject = new HashMap<>();
-        postObject.put("hello","test");
-        return postObject;
-    }
+//    /**
+//     * 测试Map对象
+//     * @return
+//     */
+//    public Object EPtest1(){
+//        JSONObject postObject = new JSONObject();
+////        Map<String,Object> postObject = new HashMap<>();
+//        postObject.put("hello","test");
+//        return postObject;
+//    }
+//
+//    /**
+//     * 测试List封装Map对象
+//     * @return
+//     */
+//    public Object EPtest2(){
+//        Map<String,Object> postObject = new HashMap<>();
+//        List<Object> ePostList = new ArrayList<>();
+//        postObject.put("hello","test");
+//        ePostList.add(postObject);
+//        postObject = new HashMap<>();
+//        postObject.put("hello2","test2");
+//        ePostList.add(postObject);
+//        return ePostList;
+//    }
 
-    /**
-     * 测试List封装Map对象
-     * @return
-     */
-    public Object EPtest2(){
-        Map<String,Object> postObject = new HashMap<>();
-        List<Object> ePostList = new ArrayList<>();
-        postObject.put("hello","test");
-        ePostList.add(postObject);
-        postObject = new HashMap<>();
-        postObject.put("hello2","test2");
-        ePostList.add(postObject);
-        return ePostList;
-    }
+//    public Object EPTest3(List<Object> postList){
+//        Map<String,Object> postObject = new HashMap<>();
+//        List<Object> ePostList = new ArrayList<>();
+//        for (Object o:postList) {
+//            // 强制类型转换
+//            PostDTO p = (PostDTO) o;
+//            // 帖子的id
+//            postObject.put("pid",p.getId());
+//            // 帖子的标题
+//            postObject.put("title",p.getTitle());
+//            // 帖子的类型（1：图文，2：视频）
+//            postObject.put("type",p.getType());
+//            // 帖子的风格（0：心情随笔，1：妆容分享，2：眼妆教程，3：妆品推荐）
+//            postObject.put("style",p.getStyle());
+//            // 发表的帖子的用户id
+//            postObject.put("uid",p.getUid());
+//            // 头像的url
+//            postObject.put("avatarUrl",myuserService.getAssoVo(p.getUid()).getEntity().getAvatar());
+//            // 用户昵称
+//            postObject.put("nickname",myuserService.getAssoVo(p.getUid()).getEntity().getNickname());
+//            // 发表时间
+//            postObject.put("postTime",p.getTime());
+//            // 图像url列表
+//            postObject.put("images",pimageService.eGetImagesUrl(p.getId()));
+//            // 视频url
+//            postObject.put("video",pvideoService.eGetVideoUrl(p.getId()));
+//            // body
+//            postObject.put("body",p.getContent());
+//            // 判断帖子是否是转发的,为"1"说明不是转发的
+//            if (p.getFpid().equals("1")){
+//                postObject.put("forward",null);
+//            } else {
+//                postObject.put("forward",this.eGetForwardPost(p.getFpid()));
+//            }
+//            ePostList.add(postObject);
+//            postObject = new HashMap<>();
+//        }
+//        return ePostList;
+//    }
 
     /**
      * 将查询到的帖子封装成前端需要的格式
@@ -313,7 +357,7 @@ public class CommunityService {
      * @return
      */
     public List<Object> encapsulatePost(List<Object> postList, String user_ID){
-        Map<String,Object> postObject = new HashMap<>();
+        JSONObject postObject = new JSONObject();
         List<Object> ePostList = new ArrayList<>();
         for (Object o:postList){
             // 强制类型转换
@@ -341,8 +385,8 @@ public class CommunityService {
             // body
             postObject.put("body",p.getContent());
 
-            // 判断帖子是否是转发的,为"1"说明不是转发的
-            if (p.getFpid().equals("1")){
+            // 判断帖子是否是转发的,为"-1"说明不是转发的
+            if (p.getFpid().equals("-1")){
                 postObject.put("forward",null);
             } else {
                 postObject.put("forward",this.eGetForwardPost(p.getFpid()));
@@ -372,7 +416,7 @@ public class CommunityService {
             // 将封装好的对象加入列表
             ePostList.add(postObject);
 
-            postObject = new HashMap<>();
+            postObject = new JSONObject();
         }
         return ePostList;
     }
