@@ -20,7 +20,7 @@ public class ShiroConfig {
         public FilterRegistrationBean regShiroDelegatingFilterProxy() {
                 FilterRegistrationBean registration = new FilterRegistrationBean();
                 registration.setFilter(new org.springframework.web.filter.DelegatingFilterProxy());
-                registration.addUrlPatterns("/*");
+                registration.addUrlPatterns("/data");
                 registration.addInitParameter("targetFilterLifecycle", "true");
                 registration.setName("shiroFilter");
                 registration.setOrder(3);

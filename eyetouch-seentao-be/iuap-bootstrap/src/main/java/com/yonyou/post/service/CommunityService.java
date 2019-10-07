@@ -282,6 +282,31 @@ public class CommunityService {
     }
 
     /**
+     * 测试Map对象
+     * @return
+     */
+    public Object EPtest1(){
+        Map<String,Object> postObject = new HashMap<>();
+        postObject.put("hello","test");
+        return postObject;
+    }
+
+    /**
+     * 测试List封装Map对象
+     * @return
+     */
+    public Object EPtest2(){
+        Map<String,Object> postObject = new HashMap<>();
+        List<Object> ePostList = new ArrayList<>();
+        postObject.put("hello","test");
+        ePostList.add(postObject);
+        postObject = new HashMap<>();
+        postObject.put("hello2","test2");
+        ePostList.add(postObject);
+        return ePostList;
+    }
+
+    /**
      * 将查询到的帖子封装成前端需要的格式
      * @param postList
      * @param user_ID
@@ -290,7 +315,6 @@ public class CommunityService {
     public List<Object> encapsulatePost(List<Object> postList, String user_ID){
         Map<String,Object> postObject = new HashMap<>();
         List<Object> ePostList = new ArrayList<>();
-
         for (Object o:postList){
             // 强制类型转换
             PostDTO p = (PostDTO)o;
@@ -325,9 +349,9 @@ public class CommunityService {
             }
 
             // 是否被当前用户关注
-            postObject.put("isAttent",this.eIfFollows(user_ID,p.getUid()));
+            postObject.put("isAttent",this.eIfFollows(user_ID,p.getId()));
             // 是否被当前用户点赞
-            postObject.put("isLike",this.eIfLikes(user_ID,p.getUid()));
+            postObject.put("isLike",this.eIfLikes(user_ID,p.getId()));
             // 是否被当前用户收藏
             postObject.put("isCollect",this.eIfFavorites(user_ID,p.getId()));
 

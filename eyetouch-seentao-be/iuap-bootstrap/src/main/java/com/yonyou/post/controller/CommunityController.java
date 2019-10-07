@@ -21,6 +21,18 @@ public class CommunityController extends BaseController{
     @Autowired
     CommodityService commodityService;
 
+    @RequestMapping(value = "/test1（测试Map对象）", method = RequestMethod.GET)
+    @ResponseBody
+    public Object test1(){
+        return this.buildSuccess(communityService.EPtest1());
+    }
+
+    @RequestMapping(value = "/test2（测试List封装Map对象）", method = RequestMethod.GET)
+    @ResponseBody
+    public Object test2(){
+        return this.buildSuccess(communityService.EPtest2());
+    }
+
     /**
      * 获取全部的帖子列表
      * @param user_ID

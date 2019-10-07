@@ -120,7 +120,9 @@ public class CommodityDTO  implements AuditTrail{
         return this.effacicy;
     }
 
-
+    private String price;   // 商品价格
+    public void setPrice(String price){ this.price = price; }
+    public String getPrice() { return this.getPrice(); }
 
     private String name;        //商品名称
 

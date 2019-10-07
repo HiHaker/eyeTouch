@@ -102,6 +102,12 @@ public class Commodity extends BasePO implements AuditTrail{
         return this.effacicy;
     }
 
+    @Condition(match=Match.EQ)
+    @Column(name="price")
+    private String price;        //商品价格
+
+    public void setPrice(String price){ this.price = price; }
+    public String getPrice() { return this.getPrice(); }
 
     @Condition(match=Match.EQ)
     @Column(name="name")

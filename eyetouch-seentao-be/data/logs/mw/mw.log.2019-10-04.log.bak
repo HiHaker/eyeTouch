@@ -1,4 +1,4 @@
-2019-10-06 11:46:52.874 ERROR [http-nio-9688-exec-1] [c.y.i.u.c.e.CommonExceptionHandler] [demo_155_1570333612856] [demo_155_1570333612856] [] [] [1001001000001] [http://127.0.0.1:9688/eyetouch-seentao-be/community/community/test1%EF%BC%88%E6%B5%8B%E8%AF%95Map%E5%AF%B9%E8%B1%A1%EF%BC%89] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - 出现异常啦 com.yonyou.iuap.ucf.common.exception.BusinessException: 程序员开小差了，请您稍后再试。
+2019-10-04 11:42:17.731 ERROR [http-nio-9688-exec-6] [c.y.i.u.c.e.CommonExceptionHandler] [demo_176_1570160537521] [demo_176_1570160537521] [] [] [1001001000001] [http://127.0.0.1:9688/eyetouch-seentao-be/v2/api-docs] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - 出现异常啦 com.yonyou.iuap.ucf.common.exception.BusinessException: 程序员开小差了，请您稍后再试。
 	at com.yonyou.iuap.ucf.core.exception.CommonExceptionHandler.handleThrowable(CommonExceptionHandler.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -7,7 +7,7 @@
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
-	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:412)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:408)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
 	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:139)
 	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:79)
@@ -80,24 +80,52 @@
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.NullPointerException: null
-	at com.yonyou.post.controller.CommunityController.test1(CommunityController.java:27)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+Caused by: org.apache.catalina.connector.ClientAbortException: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:341)
+	at org.apache.catalina.connector.OutputBuffer.flushByteBuffer(OutputBuffer.java:766)
+	at org.apache.catalina.connector.OutputBuffer.append(OutputBuffer.java:671)
+	at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:376)
+	at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:354)
+	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:96)
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator._flushBuffer(UTF8JsonGenerator.java:2085)
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.writeRaw(UTF8JsonGenerator.java:631)
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.writeRaw(UTF8JsonGenerator.java:603)
+	at com.fasterxml.jackson.core.base.GeneratorBase.writeRawValue(GeneratorBase.java:320)
+	at com.fasterxml.jackson.databind.ser.std.RawSerializer.serialize(RawSerializer.java:31)
+	at com.fasterxml.jackson.databind.ser.std.JsonValueSerializer.serialize(JsonValueSerializer.java:181)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:480)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:319)
+	at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1396)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:913)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:287)
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:103)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:290)
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:223)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:119)
 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
 	... 66 common frames omitted
+Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:134)
+	at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:105)
+	at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:144)
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1223)
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:748)
+	at org.apache.tomcat.util.net.SocketWrapperBase.writeBlocking(SocketWrapperBase.java:518)
+	at org.apache.tomcat.util.net.SocketWrapperBase.write(SocketWrapperBase.java:456)
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.doWrite(Http11OutputBuffer.java:530)
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.doWrite(ChunkedOutputFilter.java:112)
+	at org.apache.coyote.http11.Http11OutputBuffer.doWrite(Http11OutputBuffer.java:189)
+	at org.apache.coyote.Response.doWrite(Response.java:599)
+	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:329)
+	... 91 common frames omitted
 
-2019-10-06 14:40:56.476 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_215_1570344055948] [demo_215_1570344055948] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/post/post/getAllPost] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0&412ms 
-2019-10-06 14:44:14.197 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_215_1570344254030] [demo_215_1570344254030] [] [] [] [http://10.100.79.147:9688/eyetouch-seentao-be/post/post/getAllPost] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0&166ms 
-2019-10-06 14:47:16.278 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_153_1570344435859] [demo_153_1570344435859] [] [] [] [http://10.100.79.147:9688/eyetouch-seentao-be/post/post/getAllPost] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0&274ms 
-2019-10-06 23:08:26.089 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [998eb387e0202210] [998eb387e0202210] [] [] [] [http://10.100.79.147:9688/eyetouch-seentao-be/post/post/getAllPost] [] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0&294ms 
-2019-10-06 23:08:40.002 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [84d88e5c6910116f] [84d88e5c6910116f] [] [] [] [http://10.100.79.147:9688/eyetouch-seentao-be/post/post/getAllPost] [] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0&197ms 
-2019-10-06 23:09:21.066 ERROR [http-nio-9688-exec-5] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [7a6c874b61df4d43] [7a6c874b61df4d43] [] [] [] [http://10.100.79.147:9688/eyetouch-seentao-be/post/post/getAllPost] [] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0&205ms 
+2019-10-04 11:44:37.040 ERROR [http-nio-9688-exec-7] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [demo_177_1570160676570] [demo_177_1570160676570] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/commodity/commodity/getAllCommodity] [] [iuap,iuap-eyetouch-seentao-server,demo,1,1,,] - DB Signature&com.yonyou.commodity.dao.CommodityMapper.list:SELECT tenant_id,create_time,link,type,content,dr,last_modify_user,name,create_user,id,last_modified,brand,effacicy,ts FROM commodity WHERE dr = 0&325ms 
