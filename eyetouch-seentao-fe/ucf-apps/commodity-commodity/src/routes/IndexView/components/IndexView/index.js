@@ -213,6 +213,12 @@ export default class IndexView extends Component {
 
     commodityColumn = [
         {
+            title: "商品价格",
+            dataIndex: "price",
+            key: "price",
+            width: 150,
+        },
+        {
             title: "商品内容",
             dataIndex: "content",
             key: "content",

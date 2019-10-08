@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * RPC provider端
  * @author  
- * @date 2019-9-20 9:52:27
+ * @date 2019-10-8 17:00:35
  */
 @Service("com.yonyou.commodity.impl.CommodityQueryServiceImpl")
 public class CommodityQueryServiceImpl implements CommodityQueryService {

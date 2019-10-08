@@ -177,6 +177,33 @@ class AddEditcommodity extends Component {
                 <FormList className="formlist">
                                 <FormItem>
         <Label >
+            商品价格
+        </Label>
+        <FormControl disabled={typeof btnFlag != 'undefined' && btnFlag == 2
+}
+            {
+            ...getFieldProps('price', {
+                validateTrigger: 'onBlur',
+                initialValue: (typeof rowData === 'undefined' || typeof rowData.price === 'undefined') ? "" : rowData.price
+,
+                rules: [{
+                    type:'string',required: false,pattern:/\S+/ig, message: '请输入商品价格',
+                }],
+                onChange(value) {
+if(typeof rowData !== 'undefined'){
+    let tempRow = Object.assign({},rowData,{ price: value });
+    _this.setState({
+        rowData:tempRow
+    })
+}
+                }
+            }
+            )}
+        />
+        <FormError errorMsg={getFieldError('price')}/>
+                                </FormItem>
+                                <FormItem>
+        <Label >
             商品内容
         </Label>
         <FormControl disabled={typeof btnFlag != 'undefined' && btnFlag == 2

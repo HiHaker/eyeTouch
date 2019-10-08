@@ -25,7 +25,7 @@ import java.util.ArrayList;
 /**
 * 说明：商品基础Controller——提供数据增(CREATE)、删(DELETE、改(UPDATE)、查(READ)等rest接口
 * @author  
-* @date 2019-9-20 9:52:28
+* @date 2019-10-8 17:00:35
 */
 @RestController("com.yonyou.commodity.controller.CommodityController")
 @RequestMapping(value = "/commodity/commodity")
@@ -46,6 +46,7 @@ public class CommodityController extends BaseController{
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public Object list(@RequestParam( defaultValue = "0")Integer pageIndex,@RequestParam( defaultValue = "10")Integer pageSize
+            ,@RequestParam(required = false) String search_price
             ,@RequestParam(required = false) String search_content
             ,@RequestParam(required = false) String search_effacicy
             ,@RequestParam(required = false) String search_name
@@ -54,6 +55,7 @@ public class CommodityController extends BaseController{
             ,@RequestParam(required = false) String search_link
     ) {
         SimpleSearchDTO searchDTO = new SimpleSearchDTO();
+            searchDTO.setSearch_price(search_price);
             searchDTO.setSearch_content(search_content);
             searchDTO.setSearch_effacicy(search_effacicy);
             searchDTO.setSearch_name(search_name);

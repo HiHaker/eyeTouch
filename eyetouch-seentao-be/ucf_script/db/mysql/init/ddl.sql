@@ -1,9 +1,15 @@
 
--- drop table if EXISTS myimg;
-CREATE TABLE `myimg` (
+-- drop table if EXISTS commodity;
+CREATE TABLE `commodity` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
-    `course` VARCHAR(8000) DEFAULT NULL COMMENT '教程',
+    `price` VARCHAR(64) DEFAULT NULL COMMENT '商品价格',
+    `content` VARCHAR(64) DEFAULT NULL COMMENT '商品内容',
+    `effacicy` VARCHAR(64) DEFAULT NULL COMMENT '商品功效',
+    `name` VARCHAR(64) DEFAULT NULL COMMENT '商品名称',
+    `brand` VARCHAR(64) DEFAULT NULL COMMENT '商品品牌',
+    `type` VARCHAR(64) DEFAULT NULL COMMENT '商品类型',
+    `link` VARCHAR(64) DEFAULT NULL COMMENT '商品链接',
         `TENANT_ID` varchar(64) DEFAULT NULL,
         `DR` int(11) DEFAULT NULL COMMENT '是否删除',
         `TS` varchar(64) DEFAULT NULL COMMENT '时间戳',

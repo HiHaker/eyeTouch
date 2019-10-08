@@ -17,7 +17,7 @@ import java.util.Random;
 /**
  * 商品
  * @since v5.0.0
- * @date 2019-9-20 9:52:27
+ * @date 2019-10-8 17:00:35
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -78,6 +78,18 @@ public class Commodity extends BasePO implements AuditTrail{
     public void setLastModifyUser(String lastModifyUser) {
         this.lastModifyUser = lastModifyUser;
     }
+
+    @Condition(match=Match.EQ)
+    @Column(name="price")
+    private String price;        //商品价格
+
+    public void setPrice(String price){
+        this.price = price;
+    }
+    public String getPrice(){
+        return this.price;
+    }
+
 
     @Condition(match=Match.EQ)
     @Column(name="content")

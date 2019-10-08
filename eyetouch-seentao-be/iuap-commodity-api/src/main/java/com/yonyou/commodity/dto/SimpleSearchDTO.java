@@ -18,11 +18,20 @@ import java.util.*;
  /**
   * 用于构造查询条件
   * @since v5.0.0
-  * @date 2019-9-20 9:52:28
+  * @date 2019-10-8 17:00:35
   */
 public class SimpleSearchDTO {
     private static Logger logger = LoggerFactory.getLogger(SimpleSearchDTO.class);
     private static String PARAM_SEARCH_PREFIX = "search_";
+        private String search_price;     //商品价格
+
+        public void setSearch_price(String price){
+            this.search_price = price;
+        }
+        public String getSearch_price(){
+            return this.search_price;
+        }
+
         private String search_content;     //商品内容
 
         public void setSearch_content(String content){
