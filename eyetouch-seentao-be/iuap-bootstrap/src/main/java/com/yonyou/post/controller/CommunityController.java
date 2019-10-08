@@ -21,17 +21,41 @@ public class CommunityController extends BaseController{
     @Autowired
     CommodityService commodityService;
 
-//    @RequestMapping(value = "/test3", method = RequestMethod.GET)
-//    @ResponseBody
-//    public Object test3(){
-//        return this.buildSuccess(communityService.EPTest3(postService.getAllPost()));
-//    }
-//
-//    @RequestMapping(value = "/test4", method = RequestMethod.GET)
-//    @ResponseBody
-//    public Object test4(){
-//        return this.buildSuccess(communityService.eGetForwardPost("aabb"));
-//    }
+    /**
+     * 根据商品的id删除商品
+     * @param commodity_ID
+     */
+    @RequestMapping(value = "/deleteCommodityById", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteCommodityById(
+            @RequestParam(required = false) String commodity_ID
+    ){
+        communityService.deleteCommodityById(commodity_ID);
+    }
+
+    /**
+     * 根据帖子的id删除帖子
+     * @param post_ID
+     */
+    @RequestMapping(value = "/deletePostById", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deletePostById(
+            @RequestParam(required = false) String post_ID
+    ){
+        communityService.deletePostById(post_ID);
+    }
+
+    /**
+     * 根据用户的id删除用户
+     * @param user_ID
+     */
+    @RequestMapping(value = "/deleteUserById", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteUserById(
+            @RequestParam(required = false) String user_ID
+    ){
+        communityService.deleteUserById(user_ID);
+    }
 
     /**
      * 获取全部的帖子列表
@@ -98,6 +122,48 @@ public class CommunityController extends BaseController{
             @RequestParam(required = false) String user_ID, String style
     ){
         return this.buildSuccess(communityService.encapsulatePost(postService.getPostByStyle(style),user_ID));
+    }
+
+    /**
+     * 根据类别获取全部的商品列表
+     * @param user_ID
+     * @param type
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByType", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByType(
+            @RequestParam(required = false) String user_ID, String type
+    ){
+        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByType(type),user_ID));
+    }
+
+    /**
+     * 根据类别获取全部的商品列表
+     * @param user_ID
+     * @param brand
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByBrand", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByBrand(
+            @RequestParam(required = false) String user_ID, String brand
+    ){
+        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByBrand(brand),user_ID));
+    }
+
+    /**
+     * 根据功效获取全部的商品列表
+     * @param user_ID
+     * @param effacicy
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByEffacicy", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByEffacicy(
+            @RequestParam(required = false) String user_ID, String effacicy
+    ){
+        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByEffacicy(effacicy),user_ID));
     }
 
     /**

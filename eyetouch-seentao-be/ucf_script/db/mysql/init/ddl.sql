@@ -334,3 +334,9 @@ alter table clikes add constraint FK_Reference_19 foreign key (uid)
 
 alter table clikes add constraint FK_Reference_20 foreign key (cid)
       references commodity (ID) on delete restrict on update restrict;
+
+alter table cfavorites add constraint FK_Reference_21 foreign key (cid)
+      references commodity (ID) on delete restrict on update restrict;
+
+alter table cfavorites add constraint FK_Reference_22 foreign key (uid)
+      references myuser (ID) on delete restrict on update restrict;
