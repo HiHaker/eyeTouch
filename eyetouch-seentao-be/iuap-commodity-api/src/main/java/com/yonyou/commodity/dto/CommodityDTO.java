@@ -13,7 +13,7 @@ import java.util.Random;
 /**
  * 商品
  * @since v5.0.0
- * @date 2019-9-20 9:52:28
+ * @date 2019-10-8 17:00:35
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -100,6 +100,17 @@ public class CommodityDTO  implements AuditTrail{
     }
 
 
+    private String price;        //商品价格
+
+    public void setPrice(String price){
+        this.price = price;
+    }
+    public String getPrice(){
+        return this.price;
+    }
+
+
+
     private String content;        //商品内容
 
     public void setContent(String content){
@@ -120,9 +131,7 @@ public class CommodityDTO  implements AuditTrail{
         return this.effacicy;
     }
 
-    private String price;   // 商品价格
-    public void setPrice(String price){ this.price = price; }
-    public String getPrice() { return this.getPrice(); }
+
 
     private String name;        //商品名称
 

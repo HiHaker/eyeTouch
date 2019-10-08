@@ -51,6 +51,7 @@ drop table if EXISTS commodity;
 CREATE TABLE `commodity` (
 `ID` VARCHAR(64) NOT NULL COMMENT '主键',
     PRIMARY KEY (`ID`),
+    `price` VARCHAR(64) DEFAULT NULL COMMENT '商品价格',
     `content` VARCHAR(64) DEFAULT NULL COMMENT '商品内容',
     `effacicy` VARCHAR(64) DEFAULT NULL COMMENT '商品功效',
     `name` VARCHAR(64) DEFAULT NULL COMMENT '商品名称',
@@ -65,7 +66,6 @@ CREATE TABLE `commodity` (
         `CREATE_TIME` varchar(64) DEFAULT NULL COMMENT '创建时间',
         `CREATE_USER` varchar(64) DEFAULT NULL COMMENT '创建人'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
-
 
 drop table if EXISTS cimage;
 CREATE TABLE `cimage` (
@@ -335,8 +335,8 @@ alter table clikes add constraint FK_Reference_19 foreign key (uid)
 alter table clikes add constraint FK_Reference_20 foreign key (cid)
       references commodity (ID) on delete restrict on update restrict;
 
-alter table cfavorites add constraint FK_Reference_21 foreign key (cid)
+alter table cfavorites add constraint FK_Reference_22 foreign key (cid)
       references commodity (ID) on delete restrict on update restrict;
 
-alter table cfavorites add constraint FK_Reference_22 foreign key (uid)
+alter table cfavorites add constraint FK_Reference_21 foreign key (uid)
       references myuser (ID) on delete restrict on update restrict;
