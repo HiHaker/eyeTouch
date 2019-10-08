@@ -43,6 +43,16 @@ public class PimageService extends GenericAssoService<Pimage,String>{
     }
 
     /**
+     * 插入图片列表
+     * @param pimageList
+     */
+    public void insertImages(List<Pimage> pimageList){
+        for (Pimage p:pimageList){
+            this.save(p,true,true);
+        }
+    }
+
+    /**
      * 根据帖子的id删除对应的图片
      * @param post_ID
      */

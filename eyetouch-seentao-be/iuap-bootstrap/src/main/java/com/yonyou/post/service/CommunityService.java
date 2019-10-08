@@ -15,10 +15,12 @@ import com.yonyou.myuser.service.MyuserService;
 import com.yonyou.pcomments.dto.PcommentsDTO;
 import com.yonyou.pcomments.service.PcommentsService;
 import com.yonyou.pfavorites.service.PfavoritesService;
+import com.yonyou.pimage.po.Pimage;
 import com.yonyou.pimage.service.PimageService;
 import com.yonyou.plikes.service.PlikesService;
 import com.yonyou.post.dto.PostDTO;
 import com.yonyou.post.po.Post;
+import com.yonyou.pvideo.po.Pvideo;
 import com.yonyou.pvideo.service.PvideoService;
 import com.yonyou.relation.service.RelationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -353,6 +355,38 @@ public class CommunityService {
             postObject = new JSONObject();
         }
         return ePostList;
+    }
+
+    /**
+     * 发表帖子（图片）
+     * @param jsonObject
+     */
+    @Transactional
+    public void publishPostImg(JSONObject jsonObject){
+        Object j1 = jsonObject.getJSONObject("post");
+        Post p = (Post)j1;
+        List<Object> objectList = jsonObject.getJSONArray("images");
+        List<Pimage> pimageList = new ArrayList<>();
+        for (Object j2:objectList){
+            Pimage i = (Pimage)j2;
+            pimageList.add(i);
+        }
+        postService.save(p,true,true);
+        pimageService.insertImages(pimageList);
+    }
+
+    /**
+     * 发表帖子（视频）
+     * @param jsonObject
+     */
+    @Transactional
+    public void publishPostVideo(JSONObject jsonObject){
+        Object j1 = jsonObject.getJSONObject("post");
+        Post p = (Post)j1;
+        Object j2 = jsonObject.getJSONObject("video");
+        Pvideo v = (Pvideo)j2;
+        postService.save(p,true,true);
+        pvideoService.save(v,true,true);
     }
 
     /**

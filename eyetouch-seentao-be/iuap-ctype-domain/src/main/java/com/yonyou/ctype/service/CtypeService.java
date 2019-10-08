@@ -1,4 +1,5 @@
 package com.yonyou.ctype.service;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +33,15 @@ public class CtypeService extends GenericAssoService<Ctype,String>{
     @Override
     protected ServiceFeature[] getFeats() {
         return new ServiceFeature[]{ AUDIT,I18N_ENUM };
+    }
+
+    /**
+     * 根据id删除记录
+     * @param id
+     */
+    public void deleteById(String id){
+        List<String> ids = new ArrayList<>();
+        ids.add(id);
+        ctypeMapper.deleteByIds(ids);
     }
 }

@@ -133,6 +133,18 @@ public class CtypeController extends BaseController{
     }
 
     /**
+     * 根据id删除记录
+     * @param id
+     */
+    @RequestMapping(value = "/deleteById", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteById(
+            @RequestParam(required = false) String id
+    ){
+        service.deleteById(id);
+    }
+
+    /**
     * 单条添加
     * @param entity 业务实体
     * @return 标准JsonResponse结构

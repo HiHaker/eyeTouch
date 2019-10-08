@@ -137,6 +137,16 @@ public class PimageController extends BaseController{
     }
 
     /**
+     * 插入图片
+     * @param pimageList
+     */
+    @RequestMapping(value = "/insertImages", method = RequestMethod.POST)
+    @ResponseBody
+    public void insertImages(@RequestBody List<Pimage> pimageList){
+        service.insertImages(pimageList);
+    }
+
+    /**
      * 根据帖子id删除其所有图片
      * @param post_ID
      */

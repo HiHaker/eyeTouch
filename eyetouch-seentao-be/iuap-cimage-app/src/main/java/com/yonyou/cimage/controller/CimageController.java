@@ -137,6 +137,16 @@ public class CimageController extends BaseController{
     }
 
     /**
+     * 插入图片
+     * @param cimageList
+     */
+    @RequestMapping(value = "/insertImages", method = RequestMethod.POST)
+    @ResponseBody
+    public void insertImages(@RequestBody List<Cimage> cimageList){
+        service.insertImages(cimageList);
+    }
+
+    /**
      * 根据商品id删除其所有图片
      * @param commodity_ID
      */

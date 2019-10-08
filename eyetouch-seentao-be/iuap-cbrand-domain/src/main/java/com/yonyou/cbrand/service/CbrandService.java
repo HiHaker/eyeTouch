@@ -1,4 +1,5 @@
 package com.yonyou.cbrand.service;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,5 +35,13 @@ public class CbrandService extends GenericAssoService<Cbrand,String>{
         return new ServiceFeature[]{ AUDIT,I18N_ENUM };
     }
 
-
+    /**
+     * 根据id删除记录
+     * @param id
+     */
+    public void deleteById(String id){
+        List<String> ids = new ArrayList<>();
+        ids.add(id);
+        cbrandMapper.deleteByIds(ids);
+    }
 }

@@ -1,10 +1,16 @@
 package com.yonyou.post.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.yonyou.commodity.service.CommodityService;
+import com.yonyou.pimage.po.Pimage;
+import com.yonyou.post.po.Post;
 import com.yonyou.post.service.CommunityService;
 import com.yonyou.post.service.PostService;
+import com.yonyou.pvideo.po.Pvideo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created on 2019/10/3 0003
@@ -20,6 +26,30 @@ public class CommunityController extends BaseController{
     PostService postService;
     @Autowired
     CommodityService commodityService;
+
+    /**
+     * 发表帖子（图文）
+     * @param jsonObject
+     */
+    @RequestMapping(value = "/publishPostImg", method = RequestMethod.POST)
+    @ResponseBody
+    public void publishPostImg(
+            @RequestBody JSONObject jsonObject
+            ){
+        communityService.publishPostImg(jsonObject);
+    }
+
+    /**
+     * 发表帖子（视频）
+     * @param jsonObject
+     */
+    @RequestMapping(value = "/publishPostVideo", method = RequestMethod.POST)
+    @ResponseBody
+    public void publishPostVideo(
+            @RequestBody JSONObject jsonObject
+    ){
+        communityService.publishPostVideo(jsonObject);
+    }
 
     /**
      * 根据商品的id删除商品

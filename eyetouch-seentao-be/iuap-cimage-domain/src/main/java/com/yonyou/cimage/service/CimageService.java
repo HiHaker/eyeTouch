@@ -42,6 +42,16 @@ public class CimageService extends GenericAssoService<Cimage,String>{
     }
 
     /**
+     * 插入图片列表
+     * @param cimageList
+     */
+    public void insertImages(List<Cimage> cimageList){
+        for (Cimage c:cimageList){
+            this.save(c,true,true);
+        }
+    }
+
+    /**
      * 根据商品的id删除对应的图片
      * @param commodity_ID
      */
