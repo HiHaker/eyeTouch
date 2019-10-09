@@ -10,6 +10,7 @@ import com.yonyou.pvideo.po.Pvideo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,27 +38,43 @@ public class CommunityController extends BaseController{
 
     /**
      * 发表帖子（图文）
-     * @param post
-     * @param pimageList
+     * @param jsonObject
      */
     @RequestMapping(value = "/publishPostImg", method = RequestMethod.POST)
-    @ResponseBody
     public void publishPostImg(
-            @RequestBody Post post, @RequestBody List<Pimage> pimageList
-            ){
+            @RequestBody JSONObject jsonObject
+    ){
+        // 获得帖子
+        Object o1 = jsonObject.getJSONObject("post");
+        Post post = (Post)o1;
+        // 获得图片
+        List<Object> oList = jsonObject.getJSONArray("images");
+        List<Pimage> pimageList = new ArrayList<>();
+        for (Object o2:oList){
+            Pimage i = (Pimage)o2;
+            pimageList.add(i);
+        }
+
         communityService.publishPostImg(post, pimageList);
     }
 
     /**
      * 发表帖子（视频）
-     * @param post
-     * @param pvideo
+     * @param jsonObject
      */
     @RequestMapping(value = "/publishPostVideo", method = RequestMethod.POST)
     @ResponseBody
     public void publishPostVideo(
-            @RequestBody Post post, @RequestBody Pvideo pvideo
+            @RequestBody JSONObject jsonObject
     ){
+        // 获得帖子
+        Object o1 = jsonObject.getJSONObject("post");
+        Post post = (Post)o1;
+
+        // 获得视频
+        Object o2 = jsonObject.getJSONObject("video");
+        Pvideo pvideo = (Pvideo) o2;
+
         communityService.publishPostVideo(post, pvideo);
     }
 
