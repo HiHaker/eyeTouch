@@ -359,32 +359,22 @@ public class CommunityService {
 
     /**
      * 发表帖子（图片）
-     * @param jsonObject
+     * @param p
+     * @param pimageList
      */
     @Transactional
-    public void publishPostImg(JSONObject jsonObject){
-        Object j1 = jsonObject.getJSONObject("post");
-        Post p = (Post)j1;
-        List<Object> objectList = jsonObject.getJSONArray("images");
-        List<Pimage> pimageList = new ArrayList<>();
-        for (Object j2:objectList){
-            Pimage i = (Pimage)j2;
-            pimageList.add(i);
-        }
+    public void publishPostImg(Post p, List<Pimage> pimageList){
         postService.save(p,true,true);
         pimageService.insertImages(pimageList);
     }
 
     /**
      * 发表帖子（视频）
-     * @param jsonObject
+     * @param p
+     * @param v
      */
     @Transactional
-    public void publishPostVideo(JSONObject jsonObject){
-        Object j1 = jsonObject.getJSONObject("post");
-        Post p = (Post)j1;
-        Object j2 = jsonObject.getJSONObject("video");
-        Pvideo v = (Pvideo)j2;
+    public void publishPostVideo(Post p, Pvideo v){
         postService.save(p,true,true);
         pvideoService.save(v,true,true);
     }

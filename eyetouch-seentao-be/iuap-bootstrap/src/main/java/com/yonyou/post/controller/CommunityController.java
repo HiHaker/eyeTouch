@@ -27,28 +27,38 @@ public class CommunityController extends BaseController{
     @Autowired
     CommodityService commodityService;
 
+    @RequestMapping(value = "/publishTest", method = RequestMethod.POST)
+    @ResponseBody
+    public void Test(
+            @RequestBody Post post, @RequestBody List<Pimage> pimageList
+    ){
+
+    }
+
     /**
      * 发表帖子（图文）
-     * @param jsonObject
+     * @param post
+     * @param pimageList
      */
     @RequestMapping(value = "/publishPostImg", method = RequestMethod.POST)
     @ResponseBody
     public void publishPostImg(
-            @RequestBody JSONObject jsonObject
+            @RequestBody Post post, @RequestBody List<Pimage> pimageList
             ){
-        communityService.publishPostImg(jsonObject);
+        communityService.publishPostImg(post, pimageList);
     }
 
     /**
      * 发表帖子（视频）
-     * @param jsonObject
+     * @param post
+     * @param pvideo
      */
     @RequestMapping(value = "/publishPostVideo", method = RequestMethod.POST)
     @ResponseBody
     public void publishPostVideo(
-            @RequestBody JSONObject jsonObject
+            @RequestBody Post post, @RequestBody Pvideo pvideo
     ){
-        communityService.publishPostVideo(jsonObject);
+        communityService.publishPostVideo(post, pvideo);
     }
 
     /**
