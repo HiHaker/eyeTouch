@@ -2,8 +2,11 @@ package com.yonyou.post.controller;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.yonyou.commodity.dto.CommodityDTO;
+import com.yonyou.commodity.po.Commodity;
 import com.yonyou.commodity.service.CommodityService;
 import com.yonyou.pimage.po.Pimage;
+import com.yonyou.post.dto.PostDTO;
 import com.yonyou.post.po.Post;
 import com.yonyou.post.service.CommunityService;
 import com.yonyou.post.service.PostService;
@@ -140,6 +143,73 @@ public class CommunityController extends BaseController{
             @RequestParam(required = false) String user_ID
     ){
         communityService.deleteUserById(user_ID);
+    }
+
+    /**
+     * 根据帖子id获得帖子对象
+     * @param post_ID
+     * @return
+     */
+    @RequestMapping(value = "/getPostById", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getPostById(
+            @RequestParam(required = false) String post_ID, String user_ID
+    ){
+        // 转换为DTO
+        Post post = postService.getAssoVo(post_ID).getEntity();
+        PostDTO pd = new PostDTO();
+        pd.setId(post.getId());
+        pd.setUid(post.getUid());
+        pd.setTitle(post.getTitle());
+        pd.setContent(post.getContent());
+        pd.setType(post.getType());
+        pd.setStyle(post.getStyle());
+        pd.setFpid(post.getFpid());
+        pd.setTime(post.getTime());
+        pd.setCreateUser(post.getCreateUser());
+        pd.setCreateTime(post.getCreateTime());
+        pd.setDr(post.getDr());
+        pd.setTs(post.getTs());
+        pd.setTenantId(post.getTenantId());
+        pd.setLastModifyUser(post.getLastModifyUser());
+        pd.setLastModified(post.getLastModified());
+        // 封装成帖子列表
+        List<Object> postList = new ArrayList<>();
+        postList.add(pd);
+        return this.buildSuccess(communityService.encapsulatePost(postList,user_ID));
+    }
+
+    /**
+     * 根据商品id获得商品对象
+     * @param commodity_ID
+     * @return
+     */
+    @RequestMapping(value = "/getCommodityById", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getCommodityById(
+            @RequestParam(required = false) String commodity_ID, String user_ID
+    ){
+        // 转换为DTO
+        Commodity commodity = commodityService.getAssoVo(commodity_ID).getEntity();
+        CommodityDTO cd = new CommodityDTO();
+        cd.setId(commodity.getId());
+        cd.setName(commodity.getName());
+        cd.setPrice(commodity.getPrice());
+        cd.setLink(commodity.getLink());
+        cd.setType(commodity.getType());
+        cd.setBrand(commodity.getBrand());
+        cd.setEffacicy(commodity.getEffacicy());
+        cd.setCreateUser(commodity.getCreateUser());
+        cd.setCreateTime(commodity.getCreateTime());
+        cd.setDr(commodity.getDr());
+        cd.setTs(commodity.getTs());
+        cd.setTenantId(commodity.getTenantId());
+        cd.setLastModifyUser(commodity.getLastModifyUser());
+        cd.setLastModified(commodity.getLastModified());
+        // 封装成帖子列表
+        List<Object> commodityList = new ArrayList<>();
+        commodityList.add(cd);
+        return this.buildSuccess(communityService.encapsulateCommodity(commodityList,user_ID));
     }
 
     /**
