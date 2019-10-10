@@ -1,5 +1,6 @@
 package com.yonyou.post.controller;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.yonyou.commodity.service.CommodityService;
 import com.yonyou.pimage.po.Pimage;
@@ -28,31 +29,49 @@ public class CommunityController extends BaseController{
     @Autowired
     CommodityService commodityService;
 
+    /**
+     * 测试
+     * @param jsonObjectAll
+     * @return
+     */
     @RequestMapping(value = "/publishTest", method = RequestMethod.POST)
     @ResponseBody
-    public void Test(
-            @RequestBody Post post, @RequestBody List<Pimage> pimageList
+    public Object Test(
+            @RequestBody JSONObject jsonObjectAll
     ){
-
+       return "test";
     }
 
     /**
      * 发表帖子（图文）
-     * @param jsonObject
+     * @param jsonObjectAll
      */
     @RequestMapping(value = "/publishPostImg", method = RequestMethod.POST)
+    @ResponseBody
     public void publishPostImg(
-            @RequestBody JSONObject jsonObject
+            @RequestBody JSONObject jsonObjectAll
     ){
         // 获得帖子
-        Object o1 = jsonObject.getJSONObject("post");
-        Post post = (Post)o1;
-        // 获得图片
-        List<Object> oList = jsonObject.getJSONArray("images");
+        Post post = new Post();
+        JSONObject jsonObjectPost = jsonObjectAll.getJSONObject("post");
+        post.setId(jsonObjectPost.getString("id"));
+        post.setUid(jsonObjectPost.getString("uid"));
+        post.setTitle(jsonObjectPost.getString("title"));
+        post.setContent(jsonObjectPost.getString("content"));
+        post.setType(jsonObjectPost.getString("type"));
+        post.setStyle(jsonObjectPost.getString("style"));
+        post.setFpid(jsonObjectPost.getString("fpid"));
+        post.setTime(jsonObjectPost.getString("time"));
+
+        // 获得帖子图片
         List<Pimage> pimageList = new ArrayList<>();
-        for (Object o2:oList){
-            Pimage i = (Pimage)o2;
-            pimageList.add(i);
+        JSONArray imgJsons = jsonObjectAll.getJSONArray("images");
+
+        for (int i=0; i<imgJsons.size(); i++){
+            Pimage p = new Pimage();
+            p.setId(imgJsons.getJSONObject(i).getString("id"));
+            p.setPid(imgJsons.getJSONObject(i).getString("pid"));
+            pimageList.add(p);
         }
 
         communityService.publishPostImg(post, pimageList);
@@ -60,21 +79,30 @@ public class CommunityController extends BaseController{
 
     /**
      * 发表帖子（视频）
-     * @param jsonObject
+     * @param jsonObjectAll
      */
     @RequestMapping(value = "/publishPostVideo", method = RequestMethod.POST)
     @ResponseBody
     public void publishPostVideo(
-            @RequestBody JSONObject jsonObject
+            @RequestBody JSONObject jsonObjectAll
     ){
         // 获得帖子
-        Object o1 = jsonObject.getJSONObject("post");
-        Post post = (Post)o1;
+        Post post = new Post();
+        JSONObject jsonObjectPost = jsonObjectAll.getJSONObject("post");
+        post.setId(jsonObjectPost.getString("id"));
+        post.setUid(jsonObjectPost.getString("uid"));
+        post.setTitle(jsonObjectPost.getString("title"));
+        post.setContent(jsonObjectPost.getString("content"));
+        post.setType(jsonObjectPost.getString("type"));
+        post.setStyle(jsonObjectPost.getString("style"));
+        post.setFpid(jsonObjectPost.getString("fpid"));
+        post.setTime(jsonObjectPost.getString("time"));
 
-        // 获得视频
-        Object o2 = jsonObject.getJSONObject("video");
-        Pvideo pvideo = (Pvideo) o2;
-
+        // 获得帖子
+        Pvideo pvideo = new Pvideo();
+        JSONObject jsonObjectVideo = jsonObjectAll.getJSONObject("video");
+        pvideo.setId(jsonObjectVideo.getString("id"));
+        pvideo.setPid(jsonObjectVideo.getString("pid"));
         communityService.publishPostVideo(post, pvideo);
     }
 
