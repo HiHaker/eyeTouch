@@ -174,7 +174,7 @@ public class CommunityService {
      * @return
      */
     public boolean eIfFollows(String auser_ID, String buser_ID){
-        if (relationService.getByFansIdAndFollowsId(auser_ID, buser_ID) == null){
+        if (relationService.getByFansIdAndFollowsId(auser_ID, buser_ID).size() == 0){
             return false;
         } else{
             return true;
@@ -188,7 +188,7 @@ public class CommunityService {
      * @return
      */
     public boolean eIfLikesC(String user_ID, String commodity_ID){
-        if (clikesService.getByUserIdAndCommodityId(user_ID, commodity_ID) == null){
+        if (clikesService.getByUserIdAndCommodityId(user_ID, commodity_ID).size() == 0){
             return false;
         } else{
             return true;
@@ -202,7 +202,7 @@ public class CommunityService {
      * @return
      */
     public boolean eIfFavoritesC(String user_ID, String commodity_ID){
-        if (cfavoritesService.getByUserIdAndCommodityId(user_ID, commodity_ID) == null){
+        if (cfavoritesService.getByUserIdAndCommodityId(user_ID, commodity_ID).size() == 0){
             return false;
         } else{
             return true;
@@ -216,7 +216,7 @@ public class CommunityService {
      * @return
      */
     public boolean eIfLikes(String user_ID, String post_ID){
-        if (plikesService.getByUserIdAndPostId(user_ID, post_ID) == null){
+        if (plikesService.getByUserIdAndPostId(user_ID, post_ID).size() == 0){
             return false;
         } else{
             return true;
@@ -230,7 +230,7 @@ public class CommunityService {
      * @return
      */
     public boolean eIfFavorites(String user_ID, String post_ID){
-        if (pfavoritesService.getByUserIdAndPostId(user_ID, post_ID) == null){
+        if (pfavoritesService.getByUserIdAndPostId(user_ID, post_ID).size() == 0){
             return false;
         } else{
             return true;

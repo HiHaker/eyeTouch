@@ -6,6 +6,10 @@ import com.yonyou.commodity.dto.CommodityDTO;
 import com.yonyou.commodity.po.Commodity;
 import com.yonyou.commodity.service.CommodityService;
 import com.yonyou.pimage.po.Pimage;
+import com.yonyou.plikes.api.PlikesQueryService;
+import com.yonyou.plikes.dto.PlikesDTO;
+import com.yonyou.plikes.po.Plikes;
+import com.yonyou.plikes.service.PlikesService;
 import com.yonyou.post.dto.PostDTO;
 import com.yonyou.post.po.Post;
 import com.yonyou.post.service.CommunityService;
@@ -32,6 +36,9 @@ public class CommunityController extends BaseController{
     @Autowired
     CommodityService commodityService;
 
+    @Autowired
+    PlikesQueryService plikesQueryService;
+
     /**
      * 测试
      * @param
@@ -39,10 +46,10 @@ public class CommunityController extends BaseController{
      */
     @RequestMapping(value = "/Test", method = RequestMethod.POST)
     @ResponseBody
-    public Object Test(
-            @RequestParam(required = false) String post_ID, String user_ID
+    public void Test(
+
     ){
-       return communityService.eIfLikes(user_ID,post_ID);
+
     }
 
     /**
