@@ -34,15 +34,15 @@ public class CommunityController extends BaseController{
 
     /**
      * 测试
-     * @param jsonObjectAll
+     * @param
      * @return
      */
-    @RequestMapping(value = "/publishTest", method = RequestMethod.POST)
+    @RequestMapping(value = "/Test", method = RequestMethod.POST)
     @ResponseBody
     public Object Test(
-            @RequestBody JSONObject jsonObjectAll
+            @RequestParam(required = false) String post_ID, String user_ID
     ){
-       return "test";
+       return communityService.eIfLikes(user_ID,post_ID);
     }
 
     /**
@@ -116,7 +116,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/deleteCommodityById", method = RequestMethod.DELETE)
     @ResponseBody
     public void deleteCommodityById(
-            @RequestParam(required = false) String commodity_ID
+            @RequestParam String commodity_ID
     ){
         communityService.deleteCommodityById(commodity_ID);
     }
@@ -128,7 +128,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/deletePostById", method = RequestMethod.DELETE)
     @ResponseBody
     public void deletePostById(
-            @RequestParam(required = false) String post_ID
+            @RequestParam String post_ID
     ){
         communityService.deletePostById(post_ID);
     }
@@ -140,7 +140,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/deleteUserById", method = RequestMethod.DELETE)
     @ResponseBody
     public void deleteUserById(
-            @RequestParam(required = false) String user_ID
+            @RequestParam String user_ID
     ){
         communityService.deleteUserById(user_ID);
     }
@@ -153,7 +153,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getPostById", method = RequestMethod.GET)
     @ResponseBody
     public Object getPostById(
-            @RequestParam(required = false) String post_ID, String user_ID
+            @RequestParam String post_ID, String user_ID
     ){
         // 转换为DTO
         Post post = postService.getAssoVo(post_ID).getEntity();
@@ -187,7 +187,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getCommodityById", method = RequestMethod.GET)
     @ResponseBody
     public Object getCommodityById(
-            @RequestParam(required = false) String commodity_ID, String user_ID
+            @RequestParam String commodity_ID, String user_ID
     ){
         // 转换为DTO
         Commodity commodity = commodityService.getAssoVo(commodity_ID).getEntity();
@@ -220,7 +220,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getAllPosts", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllPosts(
-            @RequestParam(required = false) String user_ID
+            @RequestParam String user_ID
     ){
         return this.buildSuccess(communityService.encapsulatePost(postService.getAllPost(),user_ID));
     }
@@ -233,7 +233,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getAllCommodity", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllCommodity(
-            @RequestParam(required = false) String user_ID
+            @RequestParam String user_ID
     ){
         return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodity(), user_ID));
     }
@@ -246,7 +246,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getFollowsPosts", method = RequestMethod.GET)
     @ResponseBody
     public Object getFollowsPosts(
-            @RequestParam(required = false) String user_ID
+            @RequestParam String user_ID
     ){
         return this.buildSuccess(communityService.getFollowsPosts(user_ID));
     }
@@ -260,7 +260,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getAllPostsByType", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllPostsByType(
-            @RequestParam(required = false) String user_ID, String type
+            @RequestParam String user_ID, String type
     ){
         return this.buildSuccess(communityService.encapsulatePost(postService.getPostByType(type),user_ID));
     }
@@ -274,7 +274,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getAllPostsByStyle", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllPostsByStyle(
-            @RequestParam(required = false) String user_ID, String style
+            @RequestParam String user_ID, String style
     ){
         return this.buildSuccess(communityService.encapsulatePost(postService.getPostByStyle(style),user_ID));
     }
@@ -288,7 +288,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getAllCommodityByType", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllCommodityByType(
-            @RequestParam(required = false) String user_ID, String type
+            @RequestParam String user_ID, String type
     ){
         return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByType(type),user_ID));
     }
@@ -302,7 +302,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getAllCommodityByBrand", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllCommodityByBrand(
-            @RequestParam(required = false) String user_ID, String brand
+            @RequestParam String user_ID, String brand
     ){
         return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByBrand(brand),user_ID));
     }
@@ -316,7 +316,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getAllCommodityByEffacicy", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllCommodityByEffacicy(
-            @RequestParam(required = false) String user_ID, String effacicy
+            @RequestParam String user_ID, String effacicy
     ){
         return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByEffacicy(effacicy),user_ID));
     }
@@ -329,7 +329,7 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getPostsComments", method = RequestMethod.GET)
     @ResponseBody
     public Object getPostsComments(
-            @RequestParam(required = false) String post_ID
+            @RequestParam String post_ID
     ){
         return this.buildSuccess(communityService.eGetComments(post_ID));
     }

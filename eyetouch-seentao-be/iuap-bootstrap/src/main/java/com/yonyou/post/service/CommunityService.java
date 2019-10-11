@@ -287,7 +287,7 @@ public class CommunityService {
     }
 
     /**
-     * 将查询到的帖子封装成前端需要的格式
+     * 将查询到的帖子封装成前端需要的格式1(用户登录状态下)
      * @param postList
      * @param user_ID
      * @return
