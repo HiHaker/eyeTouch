@@ -46,7 +46,7 @@ public class CfavoritesController extends BaseController{
     */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public Object list(@RequestParam( defaultValue = "0")Integer pageIndex,@RequestParam( defaultValue = "10")Integer pageSize
+    public Object list(@RequestParam( defaultValue = "0")Integer pageIndex,@RequestParam( defaultValue = "1000")Integer pageSize
             ,@RequestParam(required = false) String search_time
             ,@RequestParam(required = false) String search_cid
             ,@RequestParam(required = false) String search_uid

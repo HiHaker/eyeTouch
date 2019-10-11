@@ -46,7 +46,7 @@ public class CommodityController extends BaseController{
     */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public Object list(@RequestParam( defaultValue = "0")Integer pageIndex,@RequestParam( defaultValue = "10")Integer pageSize
+    public Object list(@RequestParam( defaultValue = "0")Integer pageIndex,@RequestParam( defaultValue = "1000")Integer pageSize
             ,@RequestParam(required = false) String search_content
             ,@RequestParam(required = false) String search_effacicy
             ,@RequestParam(required = false) String search_name
