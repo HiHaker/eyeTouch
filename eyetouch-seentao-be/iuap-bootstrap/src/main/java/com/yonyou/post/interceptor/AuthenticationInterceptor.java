@@ -55,7 +55,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 if (token == null){
                     throw new RuntimeException("没有token，请重新登录!");
                 }
-                // 获取token中的userID（User）
+                // 获取token中的login_name（User）
                 String id;
                 try{
                     id = JWT.decode(token).getAudience().get(0);
@@ -63,7 +63,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                     throw new RuntimeException("401");
                 }
                 // 根据token里存储的id查询用户
-                Myuser user = myuserService.getAssoVo(id).getEntity();
+                Myuser user = myuserService.getUserByLoginName(id);
                 // 如果用户为空，提示重新登录
                 if (user == null){
                     throw new RuntimeException("用户不存在，请重新登录!");

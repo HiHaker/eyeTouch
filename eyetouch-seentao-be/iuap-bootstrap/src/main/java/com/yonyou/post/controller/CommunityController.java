@@ -62,7 +62,11 @@ public class CommunityController extends BaseController{
             @RequestBody Myuser myuser
     ){
         JSONObject jsonObject = new JSONObject();
-        Myuser user = myuserService.getAssoVo(myuser.getId()).getEntity();
+        Myuser user = myuserService.getUserByLoginName(myuser.getLogin_name());
+        if (user == null){
+            jsonObject.put("message","登陆失败，用户不存在!");
+            return jsonObject;
+        }
         if (!user.getPassword().equals(myuser.getPassword())){
             jsonObject.put("message","登陆失败，密码错误!");
             return jsonObject;
@@ -187,6 +191,40 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getPostById", method = RequestMethod.GET)
     @ResponseBody
     public Object getPostById(
+            @RequestParam String post_ID
+    ){
+        // 转换为DTO
+        Post post = postService.getAssoVo(post_ID).getEntity();
+        PostDTO pd = new PostDTO();
+        pd.setId(post.getId());
+        pd.setUid(post.getUid());
+        pd.setTitle(post.getTitle());
+        pd.setContent(post.getContent());
+        pd.setType(post.getType());
+        pd.setStyle(post.getStyle());
+        pd.setFpid(post.getFpid());
+        pd.setTime(post.getTime());
+        pd.setCreateUser(post.getCreateUser());
+        pd.setCreateTime(post.getCreateTime());
+        pd.setDr(post.getDr());
+        pd.setTs(post.getTs());
+        pd.setTenantId(post.getTenantId());
+        pd.setLastModifyUser(post.getLastModifyUser());
+        pd.setLastModified(post.getLastModified());
+        // 封装成帖子列表
+        List<Object> postList = new ArrayList<>();
+        postList.add(pd);
+        return this.buildSuccess(communityService.encapsulatePost(postList));
+    }
+
+    /**
+     * 根据帖子id获得帖子对象(登录)
+     * @param post_ID
+     * @return
+     */
+    @RequestMapping(value = "/getPostByIdLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getPostByIdLogin(
             @RequestParam String post_ID, String user_ID
     ){
         // 转换为DTO
@@ -221,6 +259,40 @@ public class CommunityController extends BaseController{
     @RequestMapping(value = "/getCommodityById", method = RequestMethod.GET)
     @ResponseBody
     public Object getCommodityById(
+            @RequestParam String commodity_ID
+    ){
+        // 转换为DTO
+        Commodity commodity = commodityService.getAssoVo(commodity_ID).getEntity();
+        CommodityDTO cd = new CommodityDTO();
+        cd.setId(commodity.getId());
+        cd.setName(commodity.getName());
+        cd.setPrice(commodity.getPrice());
+        cd.setLink(commodity.getLink());
+        cd.setType(commodity.getType());
+        cd.setBrand(commodity.getBrand());
+        cd.setEffacicy(commodity.getEffacicy());
+        cd.setCreateUser(commodity.getCreateUser());
+        cd.setCreateTime(commodity.getCreateTime());
+        cd.setDr(commodity.getDr());
+        cd.setTs(commodity.getTs());
+        cd.setTenantId(commodity.getTenantId());
+        cd.setLastModifyUser(commodity.getLastModifyUser());
+        cd.setLastModified(commodity.getLastModified());
+        // 封装成帖子列表
+        List<Object> commodityList = new ArrayList<>();
+        commodityList.add(cd);
+        return this.buildSuccess(communityService.encapsulateCommodity(commodityList));
+    }
+
+    /**
+     * 根据商品id获得商品对象(登录)
+     * @param commodity_ID
+     * @param user_ID
+     * @return
+     */
+    @RequestMapping(value = "/getCommodityByIdLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getCommodityByIdLogin(
             @RequestParam String commodity_ID, String user_ID
     ){
         // 转换为DTO
@@ -248,12 +320,22 @@ public class CommunityController extends BaseController{
 
     /**
      * 获取全部的帖子列表
-     * @param user_ID
      * @return
      */
     @RequestMapping(value = "/getAllPosts", method = RequestMethod.GET)
     @ResponseBody
-    public Object getAllPosts(
+    public Object getAllPosts(){
+        return this.buildSuccess(communityService.encapsulatePost(postService.getAllPost()));
+    }
+
+    /**
+     * 获取全部的帖子列表(登录)
+     * @param user_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllPostsLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllPostsLogin(
             @RequestParam String user_ID
     ){
         return this.buildSuccess(communityService.encapsulatePostLogin(postService.getAllPost(),user_ID));
@@ -261,12 +343,22 @@ public class CommunityController extends BaseController{
 
     /**
      * 获取全部的商品列表
-     * @param user_ID
      * @return
      */
     @RequestMapping(value = "/getAllCommodity", method = RequestMethod.GET)
     @ResponseBody
-    public Object getAllCommodity(
+    public Object getAllCommodity(){
+        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodity()));
+    }
+
+    /**
+     * 获取全部的商品列表(登录)
+     * @param user_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityLogin(
             @RequestParam String user_ID
     ){
         return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodity(), user_ID));
@@ -287,13 +379,26 @@ public class CommunityController extends BaseController{
 
     /**
      * 根据类型（type）获取全部的帖子列表
-     * @param user_ID
      * @param type
      * @return
      */
     @RequestMapping(value = "/getAllPostsByType", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllPostsByType(
+            @RequestParam String type
+    ){
+        return this.buildSuccess(communityService.encapsulatePost(postService.getPostByType(type)));
+    }
+
+    /**
+     * 根据类型（type）获取全部的帖子列表(登录)
+     * @param user_ID
+     * @param type
+     * @return
+     */
+    @RequestMapping(value = "/getAllPostsByTypeLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllPostsByTypeLogin(
             @RequestParam String user_ID, String type
     ){
         return this.buildSuccess(communityService.encapsulatePostLogin(postService.getPostByType(type),user_ID));
@@ -301,13 +406,26 @@ public class CommunityController extends BaseController{
 
     /**
      * 根据风格（style）获取全部的帖子列表
-     * @param user_ID
      * @param style
      * @return
      */
     @RequestMapping(value = "/getAllPostsByStyle", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllPostsByStyle(
+            @RequestParam String style
+    ){
+        return this.buildSuccess(communityService.encapsulatePost(postService.getPostByStyle(style)));
+    }
+
+    /**
+     * 根据风格（style）获取全部的帖子列表(登录)
+     * @param user_ID
+     * @param style
+     * @return
+     */
+    @RequestMapping(value = "/getAllPostsByStyleLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllPostsByStyleLogin(
             @RequestParam String user_ID, String style
     ){
         return this.buildSuccess(communityService.encapsulatePostLogin(postService.getPostByStyle(style),user_ID));
@@ -315,13 +433,26 @@ public class CommunityController extends BaseController{
 
     /**
      * 根据类别获取全部的商品列表
-     * @param user_ID
      * @param type
      * @return
      */
     @RequestMapping(value = "/getAllCommodityByType", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllCommodityByType(
+            @RequestParam String type
+    ){
+        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByType(type)));
+    }
+
+    /**
+     * 根据类别获取全部的商品列表(登录)
+     * @param user_ID
+     * @param type
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByTypeLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByTypeLogin(
             @RequestParam String user_ID, String type
     ){
         return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodityByType(type),user_ID));
@@ -329,13 +460,26 @@ public class CommunityController extends BaseController{
 
     /**
      * 根据品牌获取全部的商品列表
-     * @param user_ID
      * @param brand
      * @return
      */
     @RequestMapping(value = "/getAllCommodityByBrand", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllCommodityByBrand(
+            @RequestParam String brand
+    ){
+        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByBrand(brand)));
+    }
+
+    /**
+     * 根据品牌获取全部的商品列表(登录)
+     * @param user_ID
+     * @param brand
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByBrandLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByBrandLogin(
             @RequestParam String user_ID, String brand
     ){
         return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodityByBrand(brand),user_ID));
@@ -343,13 +487,26 @@ public class CommunityController extends BaseController{
 
     /**
      * 根据功效获取全部的商品列表
-     * @param user_ID
      * @param effacicy
      * @return
      */
     @RequestMapping(value = "/getAllCommodityByEffacicy", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllCommodityByEffacicy(
+            @RequestParam String effacicy
+    ){
+        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByEffacicy(effacicy)));
+    }
+
+    /**
+     * 根据功效获取全部的商品列表(登录)
+     * @param user_ID
+     * @param effacicy
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityByEffacicyLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityByEffacicyLogin(
             @RequestParam String user_ID, String effacicy
     ){
         return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodityByEffacicy(effacicy),user_ID));

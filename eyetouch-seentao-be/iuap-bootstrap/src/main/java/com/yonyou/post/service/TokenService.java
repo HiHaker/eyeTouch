@@ -16,8 +16,8 @@ public class TokenService {
     public String getToken(Myuser user){
         String token="";
         try{
-            // 将 user id 保存到 token 里面, 以 password 作为 token 的密钥
-            token= JWT.create().withAudience(user.getId()).sign(Algorithm.HMAC256(user.getPassword()));
+            // 将 user login_name 保存到 token 里面, 以 password 作为 token 的密钥
+            token= JWT.create().withAudience(user.getLogin_name()).sign(Algorithm.HMAC256(user.getPassword()));
         } catch (UnsupportedEncodingException e){
             e.printStackTrace();
         }
