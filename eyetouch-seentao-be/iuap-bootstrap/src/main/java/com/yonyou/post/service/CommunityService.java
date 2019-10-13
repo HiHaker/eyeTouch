@@ -153,7 +153,7 @@ public class CommunityService {
         for (Object o:commentsList){
             // 强制类型转换
             PcommentsDTO c = (PcommentsDTO)o;
-
+            commentObject.put("id",c.getId());
             commentObject.put("userId",c.getAuid());
             commentObject.put("nickname", myuserService.getAssoVo(c.getAuid()).getEntity().getNickname());
             commentObject.put("objectId",c.getBuid());
@@ -238,12 +238,12 @@ public class CommunityService {
     }
 
     /**
-     * 将查询到的商品封装成前端需要的格式
+     * 将查询到的商品封装成前端需要的格式（用户登录状态下）
      * @param commodity
      * @param user_ID
      * @return
      */
-    public List<Object> encapsulateCommodity(List<Object> commodity, String user_ID){
+    public List<Object> encapsulateCommodityLogin(List<Object> commodity, String user_ID){
         Map<String,Object> commodityObject = new HashMap<>();
         List<Object> eCommodityList = new ArrayList<>();
 
@@ -287,12 +287,56 @@ public class CommunityService {
     }
 
     /**
-     * 将查询到的帖子封装成前端需要的格式1(用户登录状态下)
+     * 将查询到的商品封装成前端需要的格式（访客模式）
+     * @param commodity
+     * @return
+     */
+    public List<Object> encapsulateCommodity(List<Object> commodity){
+        Map<String,Object> commodityObject = new HashMap<>();
+        List<Object> eCommodityList = new ArrayList<>();
+
+        for (Object o:commodity){
+            // 强制类型转换
+            CommodityDTO c = (CommodityDTO)o;
+            // 商品的id
+            commodityObject.put("cid",c.getId());
+            // 商品名称
+            commodityObject.put("name",c.getName());
+            // 商品内容
+            commodityObject.put("content",c.getContent());
+            // 商品链接
+            commodityObject.put("link",c.getLink());
+            // 商品品牌
+            commodityObject.put("brand",cbrandService.getAssoVo(c.getId()).getEntity().getName());
+            // 商品功效
+            commodityObject.put("effacicy",effacicyService.getAssoVo(c.getId()).getEntity().getName());
+            // 商品类型
+            commodityObject.put("type",ctypeService.getAssoVo(c.getId()).getEntity().getName());
+            // 点赞数
+            commodityObject.put("likesCount",clikesService.eGetLikesNum(c.getId()));
+            // 收藏数
+            commodityObject.put("collectCount",cfavoritesService.eGetFavoritesNum(c.getId()));
+            // 评论数
+            commodityObject.put("commentCount",ccommentsService.eGetCommentsNum(c.getId()));
+            // 商品图片
+            commodityObject.put("imgUrl",cimageService.eGetImagesUrl(c.getId()));
+            // 商品评论
+            commodityObject.put("comments",this.eGetCommentsC(c.getId()));
+
+            // 将封装好的对象加入列表
+            eCommodityList.add(commodityObject);
+            commodityObject = new HashMap<>();
+        }
+        return eCommodityList;
+    }
+
+    /**
+     * 将查询到的帖子封装成前端需要的格式（用户登录状态下）
      * @param postList
      * @param user_ID
      * @return
      */
-    public List<Object> encapsulatePost(List<Object> postList, String user_ID){
+    public List<Object> encapsulatePostLogin(List<Object> postList, String user_ID){
         JSONObject postObject = new JSONObject();
         List<Object> ePostList = new ArrayList<>();
         for (Object o:postList){
@@ -334,6 +378,69 @@ public class CommunityService {
             postObject.put("isLike",this.eIfLikes(user_ID,p.getId()));
             // 是否被当前用户收藏
             postObject.put("isCollect",this.eIfFavorites(user_ID,p.getId()));
+
+            // 点赞数
+            postObject.put("likeCount",plikesService.eGetLikesNum(p.getId()));
+            // 收藏数
+            postObject.put("collectionCount",pfavoritesService.eGetFavoritesNum(p.getId()));
+            // 评论数
+            postObject.put("commentCount",pcommentsService.eGetCommentsNum(p.getId()));
+            // 转发数
+            postObject.put("forwardCount",postService.eGetForwardNum(p.getId()));
+
+            // 获取评论列表
+            postObject.put("comments",this.eGetComments(p.getId()));
+            // fpid
+            postObject.put("fpid",p.getFpid());
+
+            // 将封装好的对象加入列表
+            ePostList.add(postObject);
+
+            postObject = new JSONObject();
+        }
+        return ePostList;
+    }
+
+    /**
+     * 将查询到的帖子封装成前端需要的格式（访客模式）
+     * @param postList
+     * @return
+     */
+    public List<Object> encapsulatePost(List<Object> postList){
+        JSONObject postObject = new JSONObject();
+        List<Object> ePostList = new ArrayList<>();
+        for (Object o:postList){
+            // 强制类型转换
+            PostDTO p = (PostDTO)o;
+            // 帖子的id
+            postObject.put("pid",p.getId());
+            // 帖子的标题
+            postObject.put("title",p.getTitle());
+            // 帖子的类型（1：图文，2：视频）
+            postObject.put("type",p.getType());
+            // 帖子的风格（0：心情随笔，1：妆容分享，2：眼妆教程，3：妆品推荐）
+            postObject.put("style",p.getStyle());
+            // 发表的帖子的用户id
+            postObject.put("uid",p.getUid());
+            // 头像的url
+            postObject.put("avatarUrl",myuserService.getAssoVo(p.getUid()).getEntity().getAvatar());
+            // 用户昵称
+            postObject.put("nickname",myuserService.getAssoVo(p.getUid()).getEntity().getNickname());
+            // 发表时间
+            postObject.put("postTime",p.getTime());
+            // 图像url列表
+            postObject.put("images",pimageService.eGetImagesUrl(p.getId()));
+            // 视频url
+            postObject.put("video",pvideoService.eGetVideoUrl(p.getId()));
+            // body
+            postObject.put("body",p.getContent());
+
+            // 判断帖子是否是转发的,为"-1"说明不是转发的
+            if (p.getFpid().equals("-1")){
+                postObject.put("forward",null);
+            } else {
+                postObject.put("forward",this.eGetForwardPost(p.getFpid()));
+            }
 
             // 点赞数
             postObject.put("likeCount",plikesService.eGetLikesNum(p.getId()));
@@ -464,7 +571,7 @@ public class CommunityService {
         Map<String,Object> postsObject = new HashMap<>();
         // 将关注的人发表的帖子分别封装起来放入Map
         for (String s:follows){
-            postsObject.put(s,this.encapsulatePost(postService.getPostByUserId(user_ID),user_ID));
+            postsObject.put(s,this.encapsulatePostLogin(postService.getPostByUserId(user_ID),user_ID));
         }
 
         return postsObject;

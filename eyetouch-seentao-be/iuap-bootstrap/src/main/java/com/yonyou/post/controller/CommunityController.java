@@ -5,15 +5,14 @@ import com.alibaba.fastjson.JSONObject;
 import com.yonyou.commodity.dto.CommodityDTO;
 import com.yonyou.commodity.po.Commodity;
 import com.yonyou.commodity.service.CommodityService;
+import com.yonyou.myuser.po.Myuser;
+import com.yonyou.myuser.service.MyuserService;
 import com.yonyou.pimage.po.Pimage;
-import com.yonyou.plikes.api.PlikesQueryService;
-import com.yonyou.plikes.dto.PlikesDTO;
-import com.yonyou.plikes.po.Plikes;
-import com.yonyou.plikes.service.PlikesService;
 import com.yonyou.post.dto.PostDTO;
 import com.yonyou.post.po.Post;
 import com.yonyou.post.service.CommunityService;
 import com.yonyou.post.service.PostService;
+import com.yonyou.post.service.TokenService;
 import com.yonyou.pvideo.po.Pvideo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,12 +31,13 @@ public class CommunityController extends BaseController{
     @Autowired
     CommunityService communityService;
     @Autowired
+    MyuserService myuserService;
+    @Autowired
     PostService postService;
     @Autowired
-    CommodityService commodityService;
-
+    TokenService tokenService;
     @Autowired
-    PlikesQueryService plikesQueryService;
+    CommodityService commodityService;
 
     /**
      * 测试
@@ -46,10 +46,31 @@ public class CommunityController extends BaseController{
      */
     @RequestMapping(value = "/Test", method = RequestMethod.POST)
     @ResponseBody
-    public void Test(
-
+    public Object Test(
+            @RequestBody Myuser myuser
     ){
+        return myuser;
+    }
 
+    /**
+     * 用户登录
+     * @param myuser
+     */
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @ResponseBody
+    public Object userLogin(
+            @RequestBody Myuser myuser
+    ){
+        JSONObject jsonObject = new JSONObject();
+        Myuser user = myuserService.getAssoVo(myuser.getId()).getEntity();
+        if (!user.getPassword().equals(myuser.getPassword())){
+            jsonObject.put("message","登陆失败，密码错误!");
+            return jsonObject;
+        } else{
+            String token = tokenService.getToken(myuser);
+            jsonObject.put("token",token);
+            return jsonObject;
+        }
     }
 
     /**
@@ -58,7 +79,7 @@ public class CommunityController extends BaseController{
      */
     @RequestMapping(value = "/publishPostImg", method = RequestMethod.POST)
     @ResponseBody
-    public void publishPostImg(
+    public Object publishPostImg(
             @RequestBody JSONObject jsonObjectAll
     ){
         // 获得帖子
@@ -85,6 +106,8 @@ public class CommunityController extends BaseController{
         }
 
         communityService.publishPostImg(post, pimageList);
+
+        return this.buildSuccess(jsonObjectAll);
     }
 
     /**
@@ -93,7 +116,7 @@ public class CommunityController extends BaseController{
      */
     @RequestMapping(value = "/publishPostVideo", method = RequestMethod.POST)
     @ResponseBody
-    public void publishPostVideo(
+    public Object publishPostVideo(
             @RequestBody JSONObject jsonObjectAll
     ){
         // 获得帖子
@@ -114,6 +137,7 @@ public class CommunityController extends BaseController{
         pvideo.setId(jsonObjectVideo.getString("id"));
         pvideo.setPid(jsonObjectVideo.getString("pid"));
         communityService.publishPostVideo(post, pvideo);
+        return this.buildSuccess(jsonObjectAll);
     }
 
     /**
@@ -122,10 +146,11 @@ public class CommunityController extends BaseController{
      */
     @RequestMapping(value = "/deleteCommodityById", method = RequestMethod.DELETE)
     @ResponseBody
-    public void deleteCommodityById(
+    public Object deleteCommodityById(
             @RequestParam String commodity_ID
     ){
         communityService.deleteCommodityById(commodity_ID);
+        return "success";
     }
 
     /**
@@ -134,10 +159,11 @@ public class CommunityController extends BaseController{
      */
     @RequestMapping(value = "/deletePostById", method = RequestMethod.DELETE)
     @ResponseBody
-    public void deletePostById(
+    public Object deletePostById(
             @RequestParam String post_ID
     ){
         communityService.deletePostById(post_ID);
+        return "success";
     }
 
     /**
@@ -146,10 +172,11 @@ public class CommunityController extends BaseController{
      */
     @RequestMapping(value = "/deleteUserById", method = RequestMethod.DELETE)
     @ResponseBody
-    public void deleteUserById(
+    public Object deleteUserById(
             @RequestParam String user_ID
     ){
         communityService.deleteUserById(user_ID);
+        return "success";
     }
 
     /**
@@ -183,7 +210,7 @@ public class CommunityController extends BaseController{
         // 封装成帖子列表
         List<Object> postList = new ArrayList<>();
         postList.add(pd);
-        return this.buildSuccess(communityService.encapsulatePost(postList,user_ID));
+        return this.buildSuccess(communityService.encapsulatePostLogin(postList,user_ID));
     }
 
     /**
@@ -216,7 +243,7 @@ public class CommunityController extends BaseController{
         // 封装成帖子列表
         List<Object> commodityList = new ArrayList<>();
         commodityList.add(cd);
-        return this.buildSuccess(communityService.encapsulateCommodity(commodityList,user_ID));
+        return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityList,user_ID));
     }
 
     /**
@@ -229,7 +256,7 @@ public class CommunityController extends BaseController{
     public Object getAllPosts(
             @RequestParam String user_ID
     ){
-        return this.buildSuccess(communityService.encapsulatePost(postService.getAllPost(),user_ID));
+        return this.buildSuccess(communityService.encapsulatePostLogin(postService.getAllPost(),user_ID));
     }
 
     /**
@@ -242,7 +269,7 @@ public class CommunityController extends BaseController{
     public Object getAllCommodity(
             @RequestParam String user_ID
     ){
-        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodity(), user_ID));
+        return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodity(), user_ID));
     }
 
     /**
@@ -269,7 +296,7 @@ public class CommunityController extends BaseController{
     public Object getAllPostsByType(
             @RequestParam String user_ID, String type
     ){
-        return this.buildSuccess(communityService.encapsulatePost(postService.getPostByType(type),user_ID));
+        return this.buildSuccess(communityService.encapsulatePostLogin(postService.getPostByType(type),user_ID));
     }
 
     /**
@@ -283,7 +310,7 @@ public class CommunityController extends BaseController{
     public Object getAllPostsByStyle(
             @RequestParam String user_ID, String style
     ){
-        return this.buildSuccess(communityService.encapsulatePost(postService.getPostByStyle(style),user_ID));
+        return this.buildSuccess(communityService.encapsulatePostLogin(postService.getPostByStyle(style),user_ID));
     }
 
     /**
@@ -297,11 +324,11 @@ public class CommunityController extends BaseController{
     public Object getAllCommodityByType(
             @RequestParam String user_ID, String type
     ){
-        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByType(type),user_ID));
+        return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodityByType(type),user_ID));
     }
 
     /**
-     * 根据类别获取全部的商品列表
+     * 根据品牌获取全部的商品列表
      * @param user_ID
      * @param brand
      * @return
@@ -311,7 +338,7 @@ public class CommunityController extends BaseController{
     public Object getAllCommodityByBrand(
             @RequestParam String user_ID, String brand
     ){
-        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByBrand(brand),user_ID));
+        return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodityByBrand(brand),user_ID));
     }
 
     /**
@@ -325,7 +352,7 @@ public class CommunityController extends BaseController{
     public Object getAllCommodityByEffacicy(
             @RequestParam String user_ID, String effacicy
     ){
-        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByEffacicy(effacicy),user_ID));
+        return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodityByEffacicy(effacicy),user_ID));
     }
 
     /**
