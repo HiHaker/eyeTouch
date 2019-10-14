@@ -141,6 +141,18 @@ public class PcommentsController extends BaseController{
     }
 
     /**
+     * 根据评论id删除其全部评论记录
+     * @param id
+     */
+    @RequestMapping(value = "/deleteById", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void deleteById(
+            @RequestParam(required = false) String id
+    ){
+        service.deleteById(id);
+    }
+
+    /**
      * 根据a用户（主用户，如果用户是对帖子评论，则默认使用a用户表示）id删除其全部评论记录
      * @param auser_ID
      */

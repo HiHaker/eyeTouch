@@ -524,4 +524,27 @@ public class CommunityController extends BaseController{
     ){
         return this.buildSuccess(communityService.eGetComments(post_ID));
     }
+
+    /**
+     * 获取全部的关注用户
+     */
+    @RequestMapping(value = "/getAllFollows", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllFollows(
+            @RequestParam String user_ID
+    ){
+        return this.buildSuccess(communityService.getAllFollows(user_ID));
+    }
+
+    /**
+     * 获取全部的粉丝用户
+     */
+    @RequestMapping(value = "/getAllFans", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllFans(
+            @RequestParam String user_ID
+    ){
+        return this.buildSuccess(communityService.getAllFans(user_ID));
+    }
+
 }

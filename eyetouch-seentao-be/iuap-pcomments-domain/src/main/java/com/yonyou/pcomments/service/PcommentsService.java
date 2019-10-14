@@ -42,6 +42,16 @@ public class PcommentsService extends GenericAssoService<Pcomments,String>{
     }
 
     /**
+     * 根据评论的id删除评论
+     * @param id
+     */
+    public void deleteById(String id){
+        List<String> ids = new ArrayList<>();
+        ids.add(id);
+        pcommentsMapper.deleteByIds(ids);
+    }
+
+    /**
      * 根据a用户（主用户，如果用户是对帖子评论，则默认使用a用户表示）id删除其全部评论记录
      * @param auser_ID
      */

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yonyou.myuser.api.MyuserQueryService;
+import com.yonyou.myuser.dto.MyuserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.yonyou.iuap.baseservice.intg.support.ServiceFeature;
@@ -60,15 +61,36 @@ public class MyuserService extends GenericAssoService<Myuser,String>{
     }
 
     /**
-     * 根据用户名查询用户
+     * 根据用户名查询用户（用户名唯一，返回一条记录）
      * @param loginName
      * @return
      */
-    public List<Object> getUserByLoginName(String loginName){
+    public Myuser getUserByLoginName(String loginName){
         com.yonyou.myuser.dto.SimpleSearchDTO myuserSimpleDto = new
                 com.yonyou.myuser.dto.SimpleSearchDTO();
         myuserSimpleDto.setSearch_login_name(loginName);
         List myuserList = myuserQueryService.listMyuser(myuserSimpleDto.toSearchParams(Myuser.class));
-        return myuserList;
+        Myuser myuser = new Myuser();
+
+        if (myuserList.size() == 0){
+            myuser = null;
+        } else{
+            Object o = myuserList.get(0);
+            MyuserDTO myuserDTO = (MyuserDTO)o;
+
+            myuser.setId(myuserDTO.getId());
+            myuser.setLogin_name(myuserDTO.getLogin_name());
+            myuser.setPassword(myuserDTO.getPassword());
+            myuser.setAvatar(myuserDTO.getAvatar());
+            myuser.setNickname(myuser.getNickname());
+            myuser.setMailbox(myuserDTO.getMailbox());
+            myuser.setBirthday(myuser.getBirthday());
+            myuser.setPhone_number(myuser.getPhone_number());
+            myuser.setProfile(myuser.getProfile());
+            myuser.setSex(myuser.getSex());
+            myuser.setRegister_date(myuser.getRegister_date());
+        }
+
+        return myuser;
     }
 }

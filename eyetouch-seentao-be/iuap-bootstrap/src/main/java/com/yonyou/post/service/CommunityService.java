@@ -11,6 +11,7 @@ import com.yonyou.commodity.dto.CommodityDTO;
 import com.yonyou.commodity.service.CommodityService;
 import com.yonyou.ctype.service.CtypeService;
 import com.yonyou.effacicy.service.EffacicyService;
+import com.yonyou.myuser.po.Myuser;
 import com.yonyou.myuser.service.MyuserService;
 import com.yonyou.pcomments.dto.PcommentsDTO;
 import com.yonyou.pcomments.service.PcommentsService;
@@ -22,6 +23,7 @@ import com.yonyou.post.dto.PostDTO;
 import com.yonyou.post.po.Post;
 import com.yonyou.pvideo.po.Pvideo;
 import com.yonyou.pvideo.service.PvideoService;
+import com.yonyou.relation.dto.RelationDTO;
 import com.yonyou.relation.service.RelationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -373,7 +375,7 @@ public class CommunityService {
             }
 
             // 是否被当前用户关注
-            postObject.put("isAttent",this.eIfFollows(user_ID,p.getId()));
+            postObject.put("isAttent",this.eIfFollows(user_ID,p.getUid()));
             // 是否被当前用户点赞
             postObject.put("isLike",this.eIfLikes(user_ID,p.getId()));
             // 是否被当前用户收藏
@@ -568,12 +570,42 @@ public class CommunityService {
      */
     public Object getFollowsPosts(String user_ID){
         List<String> follows = relationService.eGetAllFollows(user_ID);
-        Map<String,Object> postsObject = new HashMap<>();
+        JSONObject postsObject = new JSONObject();
         // 将关注的人发表的帖子分别封装起来放入Map
         for (String s:follows){
-            postsObject.put(s,this.encapsulatePostLogin(postService.getPostByUserId(user_ID),user_ID));
+            postsObject.put("followsID: "+s,this.encapsulatePostLogin(postService.getPostByUserId(s),user_ID));
         }
 
         return postsObject;
+    }
+
+    /**
+     * 获取全部的关注用户
+     */
+    public List<Object> getAllFollows(String user_ID){
+        List<Object> relationList = relationService.getAllFollowsByFansId(user_ID);
+        List<Object> followsList = new ArrayList<>();
+        for (Object o:relationList){
+            // 类型转换
+            RelationDTO rd = (RelationDTO)o;
+            Myuser myuser = myuserService.getAssoVo(rd.getFollows()).getEntity();
+            followsList.add(myuser);
+        }
+        return followsList;
+    }
+
+    /**
+     * 获取全部的粉丝用户
+     */
+    public List<Object> getAllFans(String user_ID){
+        List<Object> relationList = relationService.getAllFansByFollowsId(user_ID);
+        List<Object> fansList = new ArrayList<>();
+        for (Object o:relationList){
+            // 类型转换
+            RelationDTO rd = (RelationDTO)o;
+            Myuser myuser = myuserService.getAssoVo(rd.getFollows()).getEntity();
+            fansList.add(myuser);
+        }
+        return fansList;
     }
 }

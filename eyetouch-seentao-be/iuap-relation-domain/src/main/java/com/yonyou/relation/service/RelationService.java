@@ -78,7 +78,7 @@ public class RelationService extends GenericAssoService<Relation,String>{
     }
 
     /**
-     * 根据被关注的用户的id，得到他所有的粉丝的id
+     * 根据被关注的用户的id，得到他所有的粉丝
      * @param follows_ID
      * @return
      */
