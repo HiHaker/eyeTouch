@@ -404,6 +404,38 @@ public class CommunityService {
     }
 
     /**
+     * 封装帖子测试
+     */
+    public List<Object> encapsulatePostTest(List<Object> postList){
+        JSONObject postObject = new JSONObject();
+        List<Object> ePostList = new ArrayList<>();
+        for (Object o:postList){
+            // 强制类型转换
+            PostDTO p = (PostDTO)o;
+            // 帖子的id
+            postObject.put("pid",p.getId());
+            // 帖子的标题
+            postObject.put("title",p.getTitle());
+            // 帖子的类型（1：图文，2：视频）
+            postObject.put("type",p.getType());
+            // 帖子的风格（0：心情随笔，1：妆容分享，2：眼妆教程，3：妆品推荐）
+            postObject.put("style",p.getStyle());
+            // 发表的帖子的用户id
+            postObject.put("uid",p.getUid());
+            // 头像的url
+            postObject.put("avatarUrl",myuserService.getAssoVo(p.getUid()).getEntity().getAvatar());
+            // 用户昵称
+            postObject.put("nickname",myuserService.getAssoVo(p.getUid()).getEntity().getNickname());
+
+            // 将封装好的对象加入列表
+            ePostList.add(postObject);
+
+            postObject = new JSONObject();
+        }
+        return ePostList;
+    }
+
+    /**
      * 将查询到的帖子封装成前端需要的格式（访客模式）
      * @param postList
      * @return
@@ -522,6 +554,21 @@ public class CommunityService {
         pfavoritesService.deleteByPostId(post_ID);
         // 删除评论
         pcommentsService.deleteByPostId(post_ID);
+        // 删除子贴（转发了这条帖子的帖子）
+        List<String> forwardIds = postService.eGetForwardList(post_ID);
+        for (String id:forwardIds){
+            // 删除图片
+            pimageService.deleteImagesByPostId(id);
+            // 删除视频
+            pvideoService.deleteVideoByPostId(id);
+            // 删除点赞
+            plikesService.deleteByPostId(id);
+            // 删除收藏
+            pfavoritesService.deleteByPostId(id);
+            // 删除评论
+            pcommentsService.deleteByPostId(id);
+            postService.deletePostById(id);
+        }
         // 最后删除自身
         postService.deletePostById(post_ID);
     }

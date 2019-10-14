@@ -128,6 +128,21 @@ public class PostService extends GenericAssoService<Post,String>{
     }
 
     /**
+     * 得到某条帖子的转发id列表
+     * @param post_ID
+     * @return
+     */
+    public List<String> eGetForwardList(String post_ID){
+        List<Object> forwardList = this.getPostByForwardId(post_ID);
+        List<String> forwardIds = new ArrayList<>();
+        for (Object o:forwardList){
+            PostDTO pd = (PostDTO)o;
+            forwardIds.add(pd.getId());
+        }
+        return forwardIds;
+    }
+
+    /**
      * 得到某条帖子的转发数
      * @param post_ID
      * @return

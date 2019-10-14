@@ -40,19 +40,6 @@ public class CommunityController extends BaseController{
     CommodityService commodityService;
 
     /**
-     * 测试
-     * @param
-     * @return
-     */
-    @RequestMapping(value = "/Test", method = RequestMethod.POST)
-    @ResponseBody
-    public Object Test(
-            @RequestBody Myuser myuser
-    ){
-        return myuser;
-    }
-
-    /**
      * 用户登录
      * @param myuser
      */
@@ -73,6 +60,7 @@ public class CommunityController extends BaseController{
         } else{
             String token = tokenService.getToken(myuser);
             jsonObject.put("token",token);
+            jsonObject.put("userMessage",user);
             return jsonObject;
         }
     }
@@ -316,6 +304,18 @@ public class CommunityController extends BaseController{
         List<Object> commodityList = new ArrayList<>();
         commodityList.add(cd);
         return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityList,user_ID));
+    }
+
+    /**
+     * 测试
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/testGetPosts", method = RequestMethod.POST)
+    @ResponseBody
+    public Object Test(
+    ){
+        return this.buildSuccess(communityService.encapsulatePostTest(postService.getAllPost()));
     }
 
     /**
