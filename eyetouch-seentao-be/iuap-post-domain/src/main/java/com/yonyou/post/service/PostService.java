@@ -128,6 +128,21 @@ public class PostService extends GenericAssoService<Post,String>{
     }
 
     /**
+     * 根据帖子的类型和风格获取帖子列表
+     * @param type
+     * @param style
+     * @return
+     */
+    public List<Object> getPostByTypeAndStyle(String type, String style){
+        com.yonyou.post.dto.SimpleSearchDTO postSimpleDto = new
+                com.yonyou.post.dto.SimpleSearchDTO();
+        postSimpleDto.setSearch_type(type);
+        postSimpleDto.setSearch_style(style);
+        List postList = postQueryService.listPost(postSimpleDto.toSearchParams(Post.class));
+        return postList;
+    }
+
+    /**
      * 得到某条帖子的转发id列表
      * @param post_ID
      * @return

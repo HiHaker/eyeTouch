@@ -261,11 +261,11 @@ public class CommunityService {
             // 商品链接
             commodityObject.put("link",c.getLink());
             // 商品品牌
-            commodityObject.put("brand",cbrandService.getAssoVo(c.getId()).getEntity().getName());
+            commodityObject.put("brand",cbrandService.getAssoVo(c.getBrand()).getEntity().getName());
             // 商品功效
-            commodityObject.put("effacicy",effacicyService.getAssoVo(c.getId()).getEntity().getName());
+            commodityObject.put("effacicy",effacicyService.getAssoVo(c.getEffacicy()).getEntity().getName());
             // 商品类型
-            commodityObject.put("type",ctypeService.getAssoVo(c.getId()).getEntity().getName());
+            commodityObject.put("type",ctypeService.getAssoVo(c.getType()).getEntity().getName());
             // 是否被当前用户点赞
             commodityObject.put("isLike",this.eIfLikesC(user_ID,c.getId()));
             // 是否被当前用户收藏
@@ -280,6 +280,32 @@ public class CommunityService {
             commodityObject.put("imgUrl",cimageService.eGetImagesUrl(c.getId()));
             // 商品评论
             commodityObject.put("comments",this.eGetCommentsC(c.getId()));
+
+            // 将封装好的对象加入列表
+            eCommodityList.add(commodityObject);
+            commodityObject = new HashMap<>();
+        }
+        return eCommodityList;
+    }
+
+    /**
+     * 封装商品测试
+     */
+    public List<Object> encapsulateCommodityTest(List<Object> commodity){
+        Map<String,Object> commodityObject = new HashMap<>();
+        List<Object> eCommodityList = new ArrayList<>();
+
+        for (Object o:commodity){
+            // 强制类型转换
+            CommodityDTO c = (CommodityDTO)o;
+            // 商品的id
+            commodityObject.put("cid",c.getId());
+            // 商品品牌
+            commodityObject.put("brand",cbrandService.getAssoVo(c.getBrand()).getEntity().getName());
+            // 商品功效
+            commodityObject.put("effacicy",effacicyService.getAssoVo(c.getEffacicy()).getEntity().getName());
+            // 商品类型
+            commodityObject.put("type",ctypeService.getAssoVo(c.getType()).getEntity().getName());
 
             // 将封装好的对象加入列表
             eCommodityList.add(commodityObject);
@@ -309,11 +335,11 @@ public class CommunityService {
             // 商品链接
             commodityObject.put("link",c.getLink());
             // 商品品牌
-            commodityObject.put("brand",cbrandService.getAssoVo(c.getId()).getEntity().getName());
+            commodityObject.put("brand",cbrandService.getAssoVo(c.getBrand()).getEntity().getName());
             // 商品功效
-            commodityObject.put("effacicy",effacicyService.getAssoVo(c.getId()).getEntity().getName());
+            commodityObject.put("effacicy",effacicyService.getAssoVo(c.getEffacicy()).getEntity().getName());
             // 商品类型
-            commodityObject.put("type",ctypeService.getAssoVo(c.getId()).getEntity().getName());
+            commodityObject.put("type",ctypeService.getAssoVo(c.getType()).getEntity().getName());
             // 点赞数
             commodityObject.put("likesCount",clikesService.eGetLikesNum(c.getId()));
             // 收藏数
@@ -394,38 +420,6 @@ public class CommunityService {
             postObject.put("comments",this.eGetComments(p.getId()));
             // fpid
             postObject.put("fpid",p.getFpid());
-
-            // 将封装好的对象加入列表
-            ePostList.add(postObject);
-
-            postObject = new JSONObject();
-        }
-        return ePostList;
-    }
-
-    /**
-     * 封装帖子测试
-     */
-    public List<Object> encapsulatePostTest(List<Object> postList){
-        JSONObject postObject = new JSONObject();
-        List<Object> ePostList = new ArrayList<>();
-        for (Object o:postList){
-            // 强制类型转换
-            PostDTO p = (PostDTO)o;
-            // 帖子的id
-            postObject.put("pid",p.getId());
-            // 帖子的标题
-            postObject.put("title",p.getTitle());
-            // 帖子的类型（1：图文，2：视频）
-            postObject.put("type",p.getType());
-            // 帖子的风格（0：心情随笔，1：妆容分享，2：眼妆教程，3：妆品推荐）
-            postObject.put("style",p.getStyle());
-            // 发表的帖子的用户id
-            postObject.put("uid",p.getUid());
-            // 头像的url
-            postObject.put("avatarUrl",myuserService.getAssoVo(p.getUid()).getEntity().getAvatar());
-            // 用户昵称
-            postObject.put("nickname",myuserService.getAssoVo(p.getUid()).getEntity().getNickname());
 
             // 将封装好的对象加入列表
             ePostList.add(postObject);

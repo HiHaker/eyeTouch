@@ -307,18 +307,6 @@ public class CommunityController extends BaseController{
     }
 
     /**
-     * 测试
-     * @param
-     * @return
-     */
-    @RequestMapping(value = "/testGetPosts", method = RequestMethod.POST)
-    @ResponseBody
-    public Object Test(
-    ){
-        return this.buildSuccess(communityService.encapsulatePostTest(postService.getAllPost()));
-    }
-
-    /**
      * 获取全部的帖子列表
      * @return
      */
@@ -339,6 +327,16 @@ public class CommunityController extends BaseController{
             @RequestParam String user_ID
     ){
         return this.buildSuccess(communityService.encapsulatePostLogin(postService.getAllPost(),user_ID));
+    }
+
+    /**
+     * 获取全部的商品列表
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityTest", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityTest(){
+        return this.buildSuccess(communityService.encapsulateCommodityTest(commodityService.getAllCommodity()));
     }
 
     /**
@@ -429,6 +427,34 @@ public class CommunityController extends BaseController{
             @RequestParam String user_ID, String style
     ){
         return this.buildSuccess(communityService.encapsulatePostLogin(postService.getPostByStyle(style),user_ID));
+    }
+
+    /**
+     * 根据类型和风格获取全部的帖子列表
+     * @param type
+     * @param style
+     * @return
+     */
+    @RequestMapping(value = "/getAllPostsByTypeAndStyle", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllPostsByTypeAndStyle(
+            @RequestParam String type, String style
+    ){
+        return this.buildSuccess(communityService.encapsulatePost(postService.getPostByTypeAndStyle(type, style)));
+    }
+
+    /**
+     * 根据类型和风格获取全部的帖子列表(登录)
+     * @param user_ID
+     * @param style
+     * @return
+     */
+    @RequestMapping(value = "/getAllPostsByTypeAndStyleLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllPostsByTypeAndStyleLogin(
+            @RequestParam String user_ID, String type, String style
+    ){
+        return this.buildSuccess(communityService.encapsulatePostLogin(postService.getPostByTypeAndStyle(type, style),user_ID));
     }
 
     /**
