@@ -82,13 +82,13 @@ public class MyuserService extends GenericAssoService<Myuser,String>{
             myuser.setLogin_name(myuserDTO.getLogin_name());
             myuser.setPassword(myuserDTO.getPassword());
             myuser.setAvatar(myuserDTO.getAvatar());
-            myuser.setNickname(myuser.getNickname());
+            myuser.setNickname(myuserDTO.getNickname());
             myuser.setMailbox(myuserDTO.getMailbox());
-            myuser.setBirthday(myuser.getBirthday());
-            myuser.setPhone_number(myuser.getPhone_number());
-            myuser.setProfile(myuser.getProfile());
-            myuser.setSex(myuser.getSex());
-            myuser.setRegister_date(myuser.getRegister_date());
+            myuser.setBirthday(myuserDTO.getBirthday());
+            myuser.setPhone_number(myuserDTO.getPhone_number());
+            myuser.setProfile(myuserDTO.getProfile());
+            myuser.setSex(myuserDTO.getSex());
+            myuser.setRegister_date(myuserDTO.getRegister_date());
         }
 
         return myuser;
