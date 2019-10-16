@@ -158,16 +158,22 @@ public class PostService extends GenericAssoService<Post,String>{
     }
 
     /**
+     * 得到用户发表的帖子数
+     * @param user_ID
+     * @return
+     */
+    public Integer eGetPostsNum(String user_ID){
+        List<Object> postsList = this.getPostByUserId(user_ID);
+        return postsList.size();
+    }
+
+    /**
      * 得到某条帖子的转发数
      * @param post_ID
      * @return
      */
     public Integer eGetForwardNum(String post_ID){
         List<Object> forwardList = this.getPostByForwardId(post_ID);
-        if (forwardList == null){
-            return 0;
-        } else{
-            return forwardList.size();
-        }
+        return forwardList.size();
     }
 }

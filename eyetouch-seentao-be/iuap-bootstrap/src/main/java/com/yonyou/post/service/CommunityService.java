@@ -67,12 +67,6 @@ public class CommunityService {
     CfavoritesService cfavoritesService;
     @Autowired
     CcommentsService ccommentsService;
-    @Autowired
-    CbrandService cbrandService;
-    @Autowired
-    CtypeService ctypeService;
-    @Autowired
-    EffacicyService effacicyService;
 
     /**
      * 得到转发的帖子的封装对象
@@ -102,40 +96,7 @@ public class CommunityService {
     }
 
     /**
-     * 得到商品的封装评论对象
-     * comments: [
-     *      *     {
-     *      *       userId: "",     // 评论帖子的人
-     *      *       nickName: "",
-     *      *       content: ""
-     *      *     }
-     *      *   ]
-     * @param commodity_ID
-     * @return
-     */
-    public List<Object> eGetCommentsC(String commodity_ID){
-        List<Object> commentsList = ccommentsService.getAllCommentsByCommodityId(commodity_ID);
-        Map<String,Object> commentObject = new HashMap<>();
-        List<Object> eCommentList = new ArrayList<>();
-
-        for (Object o:commentsList){
-            // 强制类型转换
-            CcommentsDTO c = (CcommentsDTO)o;
-
-            commentObject.put("userId",c.getUid());
-            commentObject.put("nickname", myuserService.getAssoVo(c.getUid()).getEntity().getNickname());
-            commentObject.put("content",c.getContent());
-
-            // 加入list
-            eCommentList.add(commentObject);
-            commentObject = new HashMap<>();
-        }
-        return eCommentList;
-    }
-
-    /**
-     * 得到帖子的封装评论对象
-     * comments: [
+     * 得到帖子的封装评论对象     * comments: [
      *     {
      *       userId: "",     // 评论帖子的人
      *       nickName: "",
@@ -184,34 +145,6 @@ public class CommunityService {
     }
 
     /**
-     * 判断当前用户是否点赞了商品
-     * @param user_ID
-     * @param commodity_ID
-     * @return
-     */
-    public boolean eIfLikesC(String user_ID, String commodity_ID){
-        if (clikesService.getByUserIdAndCommodityId(user_ID, commodity_ID).size() == 0){
-            return false;
-        } else{
-            return true;
-        }
-    }
-
-    /**
-     * 判断当前用户是否收藏了当前商品
-     * @param user_ID
-     * @param commodity_ID
-     * @return
-     */
-    public boolean eIfFavoritesC(String user_ID, String commodity_ID){
-        if (cfavoritesService.getByUserIdAndCommodityId(user_ID, commodity_ID).size() == 0){
-            return false;
-        } else{
-            return true;
-        }
-    }
-
-    /**
      * 判断当前用户是否点赞了当前帖子
      * @param user_ID
      * @param post_ID
@@ -237,125 +170,6 @@ public class CommunityService {
         } else{
             return true;
         }
-    }
-
-    /**
-     * 将查询到的商品封装成前端需要的格式（用户登录状态下）
-     * @param commodity
-     * @param user_ID
-     * @return
-     */
-    public List<Object> encapsulateCommodityLogin(List<Object> commodity, String user_ID){
-        Map<String,Object> commodityObject = new HashMap<>();
-        List<Object> eCommodityList = new ArrayList<>();
-
-        for (Object o:commodity){
-            // 强制类型转换
-            CommodityDTO c = (CommodityDTO)o;
-            // 商品的id
-            commodityObject.put("cid",c.getId());
-            // 商品名称
-            commodityObject.put("name",c.getName());
-            // 商品内容
-            commodityObject.put("content",c.getContent());
-            // 商品链接
-            commodityObject.put("link",c.getLink());
-            // 商品品牌
-            commodityObject.put("brand",cbrandService.getAssoVo(c.getBrand()).getEntity().getName());
-            // 商品功效
-            commodityObject.put("effacicy",effacicyService.getAssoVo(c.getEffacicy()).getEntity().getName());
-            // 商品类型
-            commodityObject.put("type",ctypeService.getAssoVo(c.getType()).getEntity().getName());
-            // 是否被当前用户点赞
-            commodityObject.put("isLike",this.eIfLikesC(user_ID,c.getId()));
-            // 是否被当前用户收藏
-            commodityObject.put("isCollect",this.eIfFavoritesC(user_ID,c.getId()));
-            // 点赞数
-            commodityObject.put("likesCount",clikesService.eGetLikesNum(c.getId()));
-            // 收藏数
-            commodityObject.put("collectCount",cfavoritesService.eGetFavoritesNum(c.getId()));
-            // 评论数
-            commodityObject.put("commentCount",ccommentsService.eGetCommentsNum(c.getId()));
-            // 商品图片
-            commodityObject.put("imgUrl",cimageService.eGetImagesUrl(c.getId()));
-            // 商品评论
-            commodityObject.put("comments",this.eGetCommentsC(c.getId()));
-
-            // 将封装好的对象加入列表
-            eCommodityList.add(commodityObject);
-            commodityObject = new HashMap<>();
-        }
-        return eCommodityList;
-    }
-
-    /**
-     * 封装商品测试
-     */
-    public List<Object> encapsulateCommodityTest(List<Object> commodity){
-        Map<String,Object> commodityObject = new HashMap<>();
-        List<Object> eCommodityList = new ArrayList<>();
-
-        for (Object o:commodity){
-            // 强制类型转换
-            CommodityDTO c = (CommodityDTO)o;
-            // 商品的id
-            commodityObject.put("cid",c.getId());
-            // 商品品牌
-            commodityObject.put("brand",cbrandService.getAssoVo(c.getBrand()).getEntity().getName());
-            // 商品功效
-            commodityObject.put("effacicy",effacicyService.getAssoVo(c.getEffacicy()).getEntity().getName());
-            // 商品类型
-            commodityObject.put("type",ctypeService.getAssoVo(c.getType()).getEntity().getName());
-
-            // 将封装好的对象加入列表
-            eCommodityList.add(commodityObject);
-            commodityObject = new HashMap<>();
-        }
-        return eCommodityList;
-    }
-
-    /**
-     * 将查询到的商品封装成前端需要的格式（访客模式）
-     * @param commodity
-     * @return
-     */
-    public List<Object> encapsulateCommodity(List<Object> commodity){
-        Map<String,Object> commodityObject = new HashMap<>();
-        List<Object> eCommodityList = new ArrayList<>();
-
-        for (Object o:commodity){
-            // 强制类型转换
-            CommodityDTO c = (CommodityDTO)o;
-            // 商品的id
-            commodityObject.put("cid",c.getId());
-            // 商品名称
-            commodityObject.put("name",c.getName());
-            // 商品内容
-            commodityObject.put("content",c.getContent());
-            // 商品链接
-            commodityObject.put("link",c.getLink());
-            // 商品品牌
-            commodityObject.put("brand",cbrandService.getAssoVo(c.getBrand()).getEntity().getName());
-            // 商品功效
-            commodityObject.put("effacicy",effacicyService.getAssoVo(c.getEffacicy()).getEntity().getName());
-            // 商品类型
-            commodityObject.put("type",ctypeService.getAssoVo(c.getType()).getEntity().getName());
-            // 点赞数
-            commodityObject.put("likesCount",clikesService.eGetLikesNum(c.getId()));
-            // 收藏数
-            commodityObject.put("collectCount",cfavoritesService.eGetFavoritesNum(c.getId()));
-            // 评论数
-            commodityObject.put("commentCount",ccommentsService.eGetCommentsNum(c.getId()));
-            // 商品图片
-            commodityObject.put("imgUrl",cimageService.eGetImagesUrl(c.getId()));
-            // 商品评论
-            commodityObject.put("comments",this.eGetCommentsC(c.getId()));
-
-            // 将封装好的对象加入列表
-            eCommodityList.add(commodityObject);
-            commodityObject = new HashMap<>();
-        }
-        return eCommodityList;
     }
 
     /**
@@ -515,23 +329,6 @@ public class CommunityService {
     }
 
     /**
-     * 根据商品的id删除商品
-     * 因为商品有外键引用，需要先删除那些记录
-     */
-    @Transactional
-    public void deleteCommodityById(String commodity_ID){
-        // 删除点赞
-        clikesService.deleteByCommodityId(commodity_ID);
-        // 删除收藏
-        cfavoritesService.deleteByCommodityId(commodity_ID);
-        // 删除评论
-        ccommentsService.deleteByCommodityId(commodity_ID);
-
-        // 删除自身
-        commodityService.deleteCommodityById(commodity_ID);
-    }
-
-    /**
      * 根据帖子的id删除帖子
      * 因为帖子有外键引用，所以需要先删除那些记录
      * @param post_ID
@@ -568,43 +365,6 @@ public class CommunityService {
     }
 
     /**
-     * 根据用户的id删除用户
-     * 因为用户有外键引用，所以在删除之前要先删除那些记录
-     * @param user_ID
-     */
-    @Transactional
-    public void deleteUserById(String user_ID){
-        // 删除关注的记录
-        relationService.deleteByFansId(user_ID);
-        relationService.deleteByFollowsId(user_ID);
-        // 帖子
-        // 删除点赞的记录
-        plikesService.deleteByUserId(user_ID);
-        // 删除收藏的记录
-        pfavoritesService.deleteByUserId(user_ID);
-        // 删除评论的记录
-        pcommentsService.deleteByAUserId(user_ID);
-        pcommentsService.deleteByBUserId(user_ID);
-        // 商品
-        // 删除点赞
-        clikesService.deleteByUserId(user_ID);
-        // 删除收藏
-        cfavoritesService.deleteByUserId(user_ID);
-        // 删除评论
-        ccommentsService.deleteByUserId(user_ID);
-
-        // 删除帖子
-        List<Object> posts = postService.getPostByUserId(user_ID);
-        for (Object o:posts){
-            PostDTO p = (PostDTO) o;
-            this.deletePostById(p.getId());
-        }
-
-        // 删除自身
-        myuserService.deleteUserById(user_ID);
-    }
-
-    /**
      * 获取关注的人发表的帖子
      * @param user_ID
      * @return
@@ -618,35 +378,5 @@ public class CommunityService {
         }
 
         return postsObject;
-    }
-
-    /**
-     * 获取全部的关注用户
-     */
-    public List<Object> getAllFollows(String user_ID){
-        List<Object> relationList = relationService.getAllFollowsByFansId(user_ID);
-        List<Object> followsList = new ArrayList<>();
-        for (Object o:relationList){
-            // 类型转换
-            RelationDTO rd = (RelationDTO)o;
-            Myuser myuser = myuserService.getAssoVo(rd.getFollows()).getEntity();
-            followsList.add(myuser);
-        }
-        return followsList;
-    }
-
-    /**
-     * 获取全部的粉丝用户
-     */
-    public List<Object> getAllFans(String user_ID){
-        List<Object> relationList = relationService.getAllFansByFollowsId(user_ID);
-        List<Object> fansList = new ArrayList<>();
-        for (Object o:relationList){
-            // 类型转换
-            RelationDTO rd = (RelationDTO)o;
-            Myuser myuser = myuserService.getAssoVo(rd.getFollows()).getEntity();
-            fansList.add(myuser);
-        }
-        return fansList;
     }
 }

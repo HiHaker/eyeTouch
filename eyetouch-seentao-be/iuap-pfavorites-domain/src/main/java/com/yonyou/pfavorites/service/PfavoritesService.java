@@ -118,16 +118,22 @@ public class PfavoritesService extends GenericAssoService<Pfavorites,String>{
     }
 
     /**
+     * 得到用户收藏的帖子数
+     * @param user_ID
+     * @return
+     */
+    public Integer eGetUserFavoritesNum(String user_ID){
+        List<Object> favoritesList = this.getAllPostsByUserId(user_ID);
+        return favoritesList.size();
+    }
+
+    /**
      * 得到某条帖子的收藏数
      * @param post_ID
      * @return
      */
     public Integer eGetFavoritesNum(String post_ID){
         List<Object> favoritesList = this.getAllUsersByPostId(post_ID);
-        if (favoritesList == null){
-            return 0;
-        } else{
-            return favoritesList.size();
-        }
+        return favoritesList.size();
     }
 }

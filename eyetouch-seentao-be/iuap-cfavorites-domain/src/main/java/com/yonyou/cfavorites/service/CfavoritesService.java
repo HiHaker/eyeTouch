@@ -114,16 +114,22 @@ public class CfavoritesService extends GenericAssoService<Cfavorites,String>{
     }
 
     /**
-     * 得到某条帖子的收藏数
+     * 得到用户收藏的商品数
+     * @param user_ID
+     * @return
+     */
+    public Integer eGetUserFavoritesNum(String user_ID){
+        List<Object> favoritesList = this.getAllCommodityByUserId(user_ID);
+        return favoritesList.size();
+    }
+
+    /**
+     * 得到某条商品的收藏数
      * @param commodity_ID
      * @return
      */
     public Integer eGetFavoritesNum(String commodity_ID){
         List<Object> favoritesList = this.getAllUsersByCommodityId(commodity_ID);
-        if (favoritesList == null){
-            return 0;
-        } else{
-            return favoritesList.size();
-        }
+        return favoritesList.size();
     }
 }

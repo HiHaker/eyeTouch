@@ -2,8 +2,6 @@ package com.yonyou.post.controller;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.yonyou.commodity.dto.CommodityDTO;
-import com.yonyou.commodity.po.Commodity;
 import com.yonyou.commodity.service.CommodityService;
 import com.yonyou.myuser.po.Myuser;
 import com.yonyou.myuser.service.MyuserService;
@@ -38,32 +36,6 @@ public class CommunityController extends BaseController{
     TokenService tokenService;
     @Autowired
     CommodityService commodityService;
-
-    /**
-     * 用户登录
-     * @param myuser
-     */
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    @ResponseBody
-    public Object userLogin(
-            @RequestBody Myuser myuser
-    ){
-        JSONObject jsonObject = new JSONObject();
-        Myuser user = myuserService.getUserByLoginName(myuser.getLogin_name());
-        if (user == null){
-            jsonObject.put("message","登陆失败，用户不存在!");
-            return jsonObject;
-        }
-        if (!user.getPassword().equals(myuser.getPassword())){
-            jsonObject.put("message","登陆失败，密码错误!");
-            return jsonObject;
-        } else{
-            String token = tokenService.getToken(myuser);
-            jsonObject.put("token",token);
-            jsonObject.put("userMessage",user);
-            return jsonObject;
-        }
-    }
 
     /**
      * 发表帖子（图文）
@@ -133,19 +105,6 @@ public class CommunityController extends BaseController{
     }
 
     /**
-     * 根据商品的id删除商品
-     * @param commodity_ID
-     */
-    @RequestMapping(value = "/deleteCommodityById", method = RequestMethod.DELETE)
-    @ResponseBody
-    public Object deleteCommodityById(
-            @RequestParam String commodity_ID
-    ){
-        communityService.deleteCommodityById(commodity_ID);
-        return "success";
-    }
-
-    /**
      * 根据帖子的id删除帖子
      * @param post_ID
      */
@@ -155,19 +114,6 @@ public class CommunityController extends BaseController{
             @RequestParam String post_ID
     ){
         communityService.deletePostById(post_ID);
-        return "success";
-    }
-
-    /**
-     * 根据用户的id删除用户
-     * @param user_ID
-     */
-    @RequestMapping(value = "/deleteUserById", method = RequestMethod.DELETE)
-    @ResponseBody
-    public Object deleteUserById(
-            @RequestParam String user_ID
-    ){
-        communityService.deleteUserById(user_ID);
         return "success";
     }
 
@@ -240,73 +186,6 @@ public class CommunityController extends BaseController{
     }
 
     /**
-     * 根据商品id获得商品对象
-     * @param commodity_ID
-     * @return
-     */
-    @RequestMapping(value = "/getCommodityById", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getCommodityById(
-            @RequestParam String commodity_ID
-    ){
-        // 转换为DTO
-        Commodity commodity = commodityService.getAssoVo(commodity_ID).getEntity();
-        CommodityDTO cd = new CommodityDTO();
-        cd.setId(commodity.getId());
-        cd.setName(commodity.getName());
-        cd.setPrice(commodity.getPrice());
-        cd.setLink(commodity.getLink());
-        cd.setType(commodity.getType());
-        cd.setBrand(commodity.getBrand());
-        cd.setEffacicy(commodity.getEffacicy());
-        cd.setCreateUser(commodity.getCreateUser());
-        cd.setCreateTime(commodity.getCreateTime());
-        cd.setDr(commodity.getDr());
-        cd.setTs(commodity.getTs());
-        cd.setTenantId(commodity.getTenantId());
-        cd.setLastModifyUser(commodity.getLastModifyUser());
-        cd.setLastModified(commodity.getLastModified());
-        // 封装成帖子列表
-        List<Object> commodityList = new ArrayList<>();
-        commodityList.add(cd);
-        return this.buildSuccess(communityService.encapsulateCommodity(commodityList));
-    }
-
-    /**
-     * 根据商品id获得商品对象(登录)
-     * @param commodity_ID
-     * @param user_ID
-     * @return
-     */
-    @RequestMapping(value = "/getCommodityByIdLogin", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getCommodityByIdLogin(
-            @RequestParam String commodity_ID, String user_ID
-    ){
-        // 转换为DTO
-        Commodity commodity = commodityService.getAssoVo(commodity_ID).getEntity();
-        CommodityDTO cd = new CommodityDTO();
-        cd.setId(commodity.getId());
-        cd.setName(commodity.getName());
-        cd.setPrice(commodity.getPrice());
-        cd.setLink(commodity.getLink());
-        cd.setType(commodity.getType());
-        cd.setBrand(commodity.getBrand());
-        cd.setEffacicy(commodity.getEffacicy());
-        cd.setCreateUser(commodity.getCreateUser());
-        cd.setCreateTime(commodity.getCreateTime());
-        cd.setDr(commodity.getDr());
-        cd.setTs(commodity.getTs());
-        cd.setTenantId(commodity.getTenantId());
-        cd.setLastModifyUser(commodity.getLastModifyUser());
-        cd.setLastModified(commodity.getLastModified());
-        // 封装成帖子列表
-        List<Object> commodityList = new ArrayList<>();
-        commodityList.add(cd);
-        return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityList,user_ID));
-    }
-
-    /**
      * 获取全部的帖子列表
      * @return
      */
@@ -327,39 +206,6 @@ public class CommunityController extends BaseController{
             @RequestParam String user_ID
     ){
         return this.buildSuccess(communityService.encapsulatePostLogin(postService.getAllPost(),user_ID));
-    }
-
-    /**
-     * 获取全部的商品列表
-     * @return
-     */
-    @RequestMapping(value = "/getAllCommodityTest", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getAllCommodityTest(){
-        return this.buildSuccess(communityService.encapsulateCommodityTest(commodityService.getAllCommodity()));
-    }
-
-    /**
-     * 获取全部的商品列表
-     * @return
-     */
-    @RequestMapping(value = "/getAllCommodity", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getAllCommodity(){
-        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodity()));
-    }
-
-    /**
-     * 获取全部的商品列表(登录)
-     * @param user_ID
-     * @return
-     */
-    @RequestMapping(value = "/getAllCommodityLogin", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getAllCommodityLogin(
-            @RequestParam String user_ID
-    ){
-        return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodity(), user_ID));
     }
 
     /**
@@ -458,87 +304,6 @@ public class CommunityController extends BaseController{
     }
 
     /**
-     * 根据类别获取全部的商品列表
-     * @param type
-     * @return
-     */
-    @RequestMapping(value = "/getAllCommodityByType", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getAllCommodityByType(
-            @RequestParam String type
-    ){
-        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByType(type)));
-    }
-
-    /**
-     * 根据类别获取全部的商品列表(登录)
-     * @param user_ID
-     * @param type
-     * @return
-     */
-    @RequestMapping(value = "/getAllCommodityByTypeLogin", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getAllCommodityByTypeLogin(
-            @RequestParam String user_ID, String type
-    ){
-        return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodityByType(type),user_ID));
-    }
-
-    /**
-     * 根据品牌获取全部的商品列表
-     * @param brand
-     * @return
-     */
-    @RequestMapping(value = "/getAllCommodityByBrand", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getAllCommodityByBrand(
-            @RequestParam String brand
-    ){
-        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByBrand(brand)));
-    }
-
-    /**
-     * 根据品牌获取全部的商品列表(登录)
-     * @param user_ID
-     * @param brand
-     * @return
-     */
-    @RequestMapping(value = "/getAllCommodityByBrandLogin", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getAllCommodityByBrandLogin(
-            @RequestParam String user_ID, String brand
-    ){
-        return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodityByBrand(brand),user_ID));
-    }
-
-    /**
-     * 根据功效获取全部的商品列表
-     * @param effacicy
-     * @return
-     */
-    @RequestMapping(value = "/getAllCommodityByEffacicy", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getAllCommodityByEffacicy(
-            @RequestParam String effacicy
-    ){
-        return this.buildSuccess(communityService.encapsulateCommodity(commodityService.getAllCommodityByEffacicy(effacicy)));
-    }
-
-    /**
-     * 根据功效获取全部的商品列表(登录)
-     * @param user_ID
-     * @param effacicy
-     * @return
-     */
-    @RequestMapping(value = "/getAllCommodityByEffacicyLogin", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getAllCommodityByEffacicyLogin(
-            @RequestParam String user_ID, String effacicy
-    ){
-        return this.buildSuccess(communityService.encapsulateCommodityLogin(commodityService.getAllCommodityByEffacicy(effacicy),user_ID));
-    }
-
-    /**
      * 得到帖子的评论
      * @param post_ID
      * @return
@@ -549,28 +314,6 @@ public class CommunityController extends BaseController{
             @RequestParam String post_ID
     ){
         return this.buildSuccess(communityService.eGetComments(post_ID));
-    }
-
-    /**
-     * 获取全部的关注用户
-     */
-    @RequestMapping(value = "/getAllFollows", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getAllFollows(
-            @RequestParam String user_ID
-    ){
-        return this.buildSuccess(communityService.getAllFollows(user_ID));
-    }
-
-    /**
-     * 获取全部的粉丝用户
-     */
-    @RequestMapping(value = "/getAllFans", method = RequestMethod.GET)
-    @ResponseBody
-    public Object getAllFans(
-            @RequestParam String user_ID
-    ){
-        return this.buildSuccess(communityService.getAllFans(user_ID));
     }
 
 }
