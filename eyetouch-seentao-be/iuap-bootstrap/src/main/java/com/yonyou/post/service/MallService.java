@@ -204,6 +204,32 @@ public class MallService {
     }
 
     /**
+     * 获取所有的模糊查询帖子
+     */
+    public List<Object> getAllCommodityLikeSearch(String keyword){
+        List<Object> commodityList = commodityService.getCommodityByNameAndContent(keyword,keyword);
+        List<String> idList = commodityService.eGetIdsList(commodityList);
+
+        List<Object> queryList1 = commodityService.getCommodityByNameAndContent(keyword, "");
+        for (Object o:queryList1){
+            CommodityDTO cd = (CommodityDTO)o;
+            if (!idList.contains(cd.getId())){
+                commodityList.add(cd);
+            }
+        }
+        idList = commodityService.eGetIdsList(commodityList);
+        List<Object> queryList2 = commodityService.getCommodityByNameAndContent("", keyword);
+        for (Object o:queryList2){
+            CommodityDTO cd = (CommodityDTO)o;
+            if (!idList.contains(cd.getId())){
+                commodityList.add(cd);
+            }
+        }
+
+        return commodityList;
+    }
+
+    /**
      * 根据商品的id删除商品
      * 因为商品有外键引用，需要先删除那些记录
      */

@@ -408,6 +408,32 @@ public class CommunityService {
     }
 
     /**
+     * 获取所有的模糊查询帖子
+     */
+    public List<Object> getAllPostsLikeSearch(String keyword){
+        List<Object> postList = postService.getPostByTitleAndContent(keyword, keyword);
+        List<String> idList = postService.eGetIdsList(postList);
+
+        List<Object> queryList1 = postService.getPostByTitleAndContent(keyword, "");
+        for (Object o:queryList1){
+            PostDTO pd = (PostDTO)o;
+            if (!idList.contains(pd.getId())){
+                postList.add(pd);
+            }
+        }
+        idList = postService.eGetIdsList(postList);
+        List<Object> queryList2 = postService.getPostByTitleAndContent("", keyword);
+        for (Object o:queryList2){
+            PostDTO pd = (PostDTO)o;
+            if (!idList.contains(pd.getId())){
+                postList.add(pd);
+            }
+        }
+
+        return postList;
+    }
+
+    /**
      * 发表帖子（图片）
      * @param p
      * @param pimageList

@@ -143,6 +143,35 @@ public class PostService extends GenericAssoService<Post,String>{
     }
 
     /**
+     * 根据帖子的标题和内容进行模糊查询
+     * @param title
+     * @param content
+     * @return
+     */
+    public List<Object> getPostByTitleAndContent(String title, String content){
+        com.yonyou.post.dto.SimpleSearchDTO postSimpleDto = new
+                com.yonyou.post.dto.SimpleSearchDTO();
+        postSimpleDto.setSearch_title(title);
+        postSimpleDto.setSearch_content(content);
+        List postList = postQueryService.listPost(postSimpleDto.toSearchParams(Post.class));
+        return postList;
+    }
+
+    /**
+     * 根据帖子列表转换为字符串id列表
+     * @param postList
+     * @return
+     */
+    public List<String> eGetIdsList(List<Object> postList){
+        List<String> idList = new ArrayList<>();
+        for (Object o:postList){
+            PostDTO pd = (PostDTO)o;
+            idList.add(pd.getId());
+        }
+        return idList;
+    }
+
+    /**
      * 得到某条帖子的转发id列表
      * @param post_ID
      * @return

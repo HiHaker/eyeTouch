@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yonyou.commodity.api.CommodityQueryService;
+import com.yonyou.commodity.dto.CommodityDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.yonyou.iuap.baseservice.intg.support.ServiceFeature;
@@ -146,5 +147,34 @@ public class CommodityService extends GenericAssoService<Commodity,String>{
         commoditySimpleDto.setSearch_brand(brand);
         List commodityList = commodityQueryService.listCommodity(commoditySimpleDto.toSearchParams(Commodity.class));
         return commodityList;
+    }
+
+    /**
+     * 根据商品名称和内容进行模糊查询
+     * @param name
+     * @param content
+     * @return
+     */
+    public List<Object> getCommodityByNameAndContent(String name, String content){
+        com.yonyou.commodity.dto.SimpleSearchDTO commoditySimpleDto = new
+                com.yonyou.commodity.dto.SimpleSearchDTO();
+        commoditySimpleDto.setSearch_name(name);
+        commoditySimpleDto.setSearch_content(content);
+        List commodityList = commodityQueryService.listCommodity(commoditySimpleDto.toSearchParams(Commodity.class));
+        return commodityList;
+    }
+
+    /**
+     * 根据商品列表转换为字符串id列表
+     * @param commodityList
+     * @return
+     */
+    public List<String> eGetIdsList(List<Object> commodityList){
+        List<String> idList = new ArrayList<>();
+        for (Object o:commodityList){
+            CommodityDTO pd = (CommodityDTO)o;
+            idList.add(pd.getId());
+        }
+        return idList;
     }
 }

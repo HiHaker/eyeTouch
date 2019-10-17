@@ -234,6 +234,32 @@ public class CommunityController extends BaseController{
     }
 
     /**
+     * 模糊查询帖子
+     * @param keyword
+     * @return
+     */
+    @RequestMapping(value = "/getAllPostsLikeSearch", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllPostsLikeSearch(
+            @RequestParam String keyword
+    ){
+        return this.buildSuccess(communityService.encapsulatePost(communityService.getAllPostsLikeSearch(keyword)));
+    }
+
+    /**
+     * 模糊查询帖子(登录)
+     * @param keyword
+     * @return
+     */
+    @RequestMapping(value = "/getAllPostsLikeSearchLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllPostsLikeSearch(
+            @RequestParam String keyword, String user_ID
+    ){
+        return this.buildSuccess(communityService.encapsulatePostLogin(communityService.getAllPostsLikeSearch(keyword),user_ID));
+    }
+
+    /**
      * 根据类型（type）获取全部的帖子列表
      * @param type
      * @return

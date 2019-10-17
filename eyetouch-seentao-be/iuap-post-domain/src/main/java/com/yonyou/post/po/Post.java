@@ -91,7 +91,7 @@ public class Post extends BasePO implements AuditTrail{
     }
 
 
-    @Condition(match=Match.EQ)
+    @Condition(match=Match.LIKE)
     @Column(name="content")
     private String content;        //帖子内容
 
@@ -103,7 +103,7 @@ public class Post extends BasePO implements AuditTrail{
     }
 
 
-    @Condition(match=Match.EQ)
+    @Condition(match=Match.LIKE)
     @Column(name="title")
     private String title;        //帖子标题
 

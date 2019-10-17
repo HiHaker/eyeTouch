@@ -91,7 +91,7 @@ public class Commodity extends BasePO implements AuditTrail{
     }
 
 
-    @Condition(match=Match.EQ)
+    @Condition(match=Match.LIKE)
     @Column(name="content")
     private String content;        //商品内容
 
@@ -115,7 +115,7 @@ public class Commodity extends BasePO implements AuditTrail{
     }
 
 
-    @Condition(match=Match.EQ)
+    @Condition(match=Match.LIKE)
     @Column(name="name")
     private String name;        //商品名称
 

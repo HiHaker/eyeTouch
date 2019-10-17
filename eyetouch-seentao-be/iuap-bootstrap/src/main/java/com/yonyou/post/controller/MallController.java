@@ -209,4 +209,30 @@ public class MallController extends BaseController{
         return this.buildSuccess(mallService.encapsulateCommodityLogin(commodityService.getAllCommodityByEffacicy(effacicy),user_ID));
     }
 
+    /**
+     * 商品的模糊查询
+     * @param keyword
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityLikeSearch", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityLikeSearch(
+            @RequestParam String keyword
+    ){
+        return this.buildSuccess(mallService.encapsulateCommodity(mallService.getAllCommodityLikeSearch(keyword)));
+    }
+
+    /**
+     * 商品的模糊查询(登录)
+     * @param keyword
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityLikeSearchLogin", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityLikeSearch(
+            @RequestParam String keyword, String user_ID
+    ){
+        return this.buildSuccess(mallService.encapsulateCommodityLogin(mallService.getAllCommodityLikeSearch(keyword),user_ID));
+    }
+
 }
