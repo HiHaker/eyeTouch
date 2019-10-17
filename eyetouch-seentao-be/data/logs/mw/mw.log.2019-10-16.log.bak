@@ -1,0 +1,426 @@
+2019-10-16 13:03:54.349 ERROR [http-nio-9688-exec-9] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [7a7f5042f14167e8] [7a7f5042f14167e8] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/community/community/login] [] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (login_name = 'yiyi')&471ms 
+2019-10-16 13:07:49.159 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [4054cc6b2d11af31] [4054cc6b2d11af31] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/community/community/login] [] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (login_name = 'yiyi')&262ms 
+2019-10-16 14:08:02.446 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [55e210c45b072504] [55e210c45b072504] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/test] [post_ID=f98cec8b-3778-4290-9b47-e82a73bc0fe6] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (fpid = 'f98cec8b-3778-4290-9b47-e82a73bc0fe6')&230ms 
+2019-10-16 14:08:35.611 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [b1ce0dfb022b4b98] [b1ce0dfb022b4b98] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/test] [post_ID=e76290ae-0ea7-46f7-82d4-3b534ff374ca] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (fpid = 'e76290ae-0ea7-46f7-82d4-3b534ff374ca')&900ms 
+2019-10-16 14:10:12.998 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [335983306b65a511] [335983306b65a511] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/test] [post_ID=return%20forwardList.size()%3B] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (fpid = 'return forwardList.size();')&317ms 
+2019-10-16 14:10:35.637 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [c2d0b502aba1b860] [c2d0b502aba1b860] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/test] [post_ID=f98cec8b-3778-4290-9b47-e82a73bc0fe6] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (fpid = 'f98cec8b-3778-4290-9b47-e82a73bc0fe6')&215ms 
+2019-10-16 14:10:44.740 ERROR [http-nio-9688-exec-7] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [f7d67ee44513acb6] [f7d67ee44513acb6] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/test] [post_ID=e753b153-7e09-413f-9b8b-cd73b1a2bb65] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (fpid = 'e753b153-7e09-413f-9b8b-cd73b1a2bb65')&261ms 
+2019-10-16 14:50:16.814 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [342b9f5d2901a304] [342b9f5d2901a304] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=b43136d1-c973-4146-8345-9c749823ab06] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = 'b43136d1-c973-4146-8345-9c749823ab06')&189ms 
+2019-10-16 14:50:17.208 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [342b9f5d2901a304] [342b9f5d2901a304] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=b43136d1-c973-4146-8345-9c749823ab06] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (uid = 'b43136d1-c973-4146-8345-9c749823ab06')&90ms 
+2019-10-16 14:50:17.312 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [342b9f5d2901a304] [342b9f5d2901a304] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=b43136d1-c973-4146-8345-9c749823ab06] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (uid = 'b43136d1-c973-4146-8345-9c749823ab06')&98ms 
+2019-10-16 14:50:17.515 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [342b9f5d2901a304] [342b9f5d2901a304] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=b43136d1-c973-4146-8345-9c749823ab06] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.cfavorites.dao.CfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,create_user,time,id,last_modified,dr,cid,ts FROM cfavorites WHERE dr = 0 AND (uid = 'b43136d1-c973-4146-8345-9c749823ab06')&148ms 
+2019-10-16 14:50:17.617 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [342b9f5d2901a304] [342b9f5d2901a304] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=b43136d1-c973-4146-8345-9c749823ab06] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (fans = 'b43136d1-c973-4146-8345-9c749823ab06')&97ms 
+2019-10-16 14:50:17.719 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [342b9f5d2901a304] [342b9f5d2901a304] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=b43136d1-c973-4146-8345-9c749823ab06] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = 'b43136d1-c973-4146-8345-9c749823ab06')&102ms 
+2019-10-16 14:51:16.296 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [a30e335216faf8aa] [a30e335216faf8aa] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&104ms 
+2019-10-16 14:51:16.710 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [a30e335216faf8aa] [a30e335216faf8aa] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&108ms 
+2019-10-16 14:51:16.909 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [a30e335216faf8aa] [a30e335216faf8aa] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&135ms 
+2019-10-16 14:51:17.011 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [a30e335216faf8aa] [a30e335216faf8aa] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.cfavorites.dao.CfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,create_user,time,id,last_modified,dr,cid,ts FROM cfavorites WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&102ms 
+2019-10-16 14:51:17.114 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [a30e335216faf8aa] [a30e335216faf8aa] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (fans = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&102ms 
+2019-10-16 14:51:17.421 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [a30e335216faf8aa] [a30e335216faf8aa] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '8e061932-f8e8-4115-8c24-93b527495ab1')&102ms 
+2019-10-16 14:51:17.831 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [a30e335216faf8aa] [a30e335216faf8aa] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&103ms 
+2019-10-16 14:51:18.037 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [a30e335216faf8aa] [a30e335216faf8aa] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&104ms 
+2019-10-16 14:51:18.547 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [a30e335216faf8aa] [a30e335216faf8aa] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&103ms 
+2019-10-16 14:55:34.366 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [8dc464ad557b9541] [8dc464ad557b9541] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&316ms 
+2019-10-16 14:55:34.660 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [8dc464ad557b9541] [8dc464ad557b9541] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&99ms 
+2019-10-16 14:55:35.171 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [8dc464ad557b9541] [8dc464ad557b9541] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&105ms 
+2019-10-16 14:55:35.489 ERROR [http-nio-9688-exec-1] [c.y.i.u.c.e.CommonExceptionHandler] [8dc464ad557b9541] [8dc464ad557b9541] [] [] [1001001000001] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - 出现异常啦 com.yonyou.iuap.ucf.common.exception.BusinessException: 程序员开小差了，请您稍后再试。
+	at com.yonyou.iuap.ucf.core.exception.CommonExceptionHandler.handleThrowable(CommonExceptionHandler.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:412)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:139)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:79)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1297)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1109)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.yonyou.cloud.filter.ZoneFilter.doFilter(ZoneFilter.java:89)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ch.qos.logback.classic.helpers.MDCInsertingServletFilter.doFilter(MDCInsertingServletFilter.java:49)
+	at com.yonyou.iuap.ucf.log.filter.MDCLogFilter.doFilter(MDCLogFilter.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassCastException: com.yonyou.myuser.po.Myuser cannot be cast to com.yonyou.myuser.dto.MyuserDTO
+	at com.yonyou.post.service.UserService.encapsulateUser(UserService.java:82)
+	at com.yonyou.post.service.UserService$$FastClassBySpringCGLIB$$2fb7edd.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at com.yonyou.post.service.UserService$$EnhancerBySpringCGLIB$$26df9c16.encapsulateUser(<generated>)
+	at com.yonyou.post.controller.UserController.getAllFans(UserController.java:122)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	... 50 common frames omitted
+
+2019-10-16 14:58:30.292 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [e951ffe56f4c2e76] [e951ffe56f4c2e76] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&297ms 
+2019-10-16 14:58:30.363 ERROR [http-nio-9688-exec-1] [c.y.i.u.c.e.CommonExceptionHandler] [e951ffe56f4c2e76] [e951ffe56f4c2e76] [] [] [1001001000001] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - 出现异常啦 com.yonyou.iuap.ucf.common.exception.BusinessException: 程序员开小差了，请您稍后再试。
+	at com.yonyou.iuap.ucf.core.exception.CommonExceptionHandler.handleThrowable(CommonExceptionHandler.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:412)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:139)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:79)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1297)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1109)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.yonyou.cloud.filter.ZoneFilter.doFilter(ZoneFilter.java:89)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ch.qos.logback.classic.helpers.MDCInsertingServletFilter.doFilter(MDCInsertingServletFilter.java:49)
+	at com.yonyou.iuap.ucf.log.filter.MDCLogFilter.doFilter(MDCLogFilter.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassCastException: com.yonyou.relation.dto.RelationDTO cannot be cast to com.yonyou.myuser.dto.MyuserDTO
+	at com.yonyou.post.service.UserService.encapsulateUser(UserService.java:82)
+	at com.yonyou.post.service.UserService$$FastClassBySpringCGLIB$$2fb7edd.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at com.yonyou.post.service.UserService$$EnhancerBySpringCGLIB$$cee13ce1.encapsulateUser(<generated>)
+	at com.yonyou.post.controller.UserController.getAllFans(UserController.java:124)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	... 50 common frames omitted
+
+2019-10-16 14:58:55.678 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [2fab02709b65d4df] [2fab02709b65d4df] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&102ms 
+2019-10-16 14:58:56.086 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [2fab02709b65d4df] [2fab02709b65d4df] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&94ms 
+2019-10-16 14:58:56.287 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [2fab02709b65d4df] [2fab02709b65d4df] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&153ms 
+2019-10-16 14:58:56.391 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [2fab02709b65d4df] [2fab02709b65d4df] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.cfavorites.dao.CfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,create_user,time,id,last_modified,dr,cid,ts FROM cfavorites WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&97ms 
+2019-10-16 14:58:56.493 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [2fab02709b65d4df] [2fab02709b65d4df] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (fans = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&102ms 
+2019-10-16 14:58:56.698 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [2fab02709b65d4df] [2fab02709b65d4df] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '8e061932-f8e8-4115-8c24-93b527495ab1')&104ms 
+2019-10-16 14:58:57.108 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [2fab02709b65d4df] [2fab02709b65d4df] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&102ms 
+2019-10-16 14:58:57.312 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [2fab02709b65d4df] [2fab02709b65d4df] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&103ms 
+2019-10-16 14:58:57.824 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [2fab02709b65d4df] [2fab02709b65d4df] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getUserById] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&103ms 
+2019-10-16 15:02:00.830 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [63cb2836f9f78598] [63cb2836f9f78598] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/test] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&243ms 
+2019-10-16 15:05:25.629 ERROR [http-nio-9688-exec-1] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [438dd7bdaf09ad55] [438dd7bdaf09ad55] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/test] [user_ID=%2F%2F%20%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%20%20%20%20%20%20%20%20%20%20%20%20%20userObject.put(%22id%22%2CmyuserDTO.getId())%3B%20%20%20%20%20%20%20%20%20%20%20%20%20userObject.put(%22avatar%22%2CmyuserDTO.getAvatar())%3B%20%20%20%20%20%20%20%20%20%20%20%20%20userObject.put(%22login_name%22%2CmyuserDTO.getLogin_name())%3B%20%20%20%20%20%20%20%20%20%20%20%20%20userObject.put(%22password%22%2CmyuserDTO.getPassword())%3B%20%20%20%20%20%20%20%20%20%20%20%20%20userObject.put(%22nickname%22%2CmyuserDTO.getNickname())%3B%20%20%20%20%20%20%20%20%20%20%20%20%20userObject.put(%22sex%22%2CmyuserDTO.getSex())%3B%20%20%20%20%20%20%20%20%20%20%20%20%20userObject.put(%22birthday%22%2CmyuserDTO.getBirthday())%3B%20%20%20%20%20%20%20%20%20%20%20%20%20userObject.put(%22register_date%22%2CmyuserDTO.getRegister_date())%3B%20%20%20%20%20%20%20%20%20%20%20%20%20userObject.put(%22profile%22%2CmyuserDTO.getProfile())%3B%20%20%20%20%20%20%20%20%20%20%20%20%20userObject.put(%22phone_number%22%2CmyuserDTO.getPhone_number())%3B%20%20%20%20%20%20%20%20%20%20%20%20%20userObject.put(%22mailbox%22%2CmyuserDTO.getMailbox())%3B] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '// 基本信息 userObject.put("id",myuserDTO.getId()); userObject.put("avatar",myuserDTO.getAvatar()); userObject.put("login_name",myuserDTO.getLogin_name()); userObject.put("password",myuserDTO.getPassword()); userObject.put("nickname",myuserDTO.getNickname()); userObject.put("sex",myuserDTO.getSex()); userObject.put("birthday",myuserDTO.getBirthday()); userObject.put("register_date",myuserDTO.getRegister_date()); userObject.put("profile",myuserDTO.getProfile()); userObject.put("phone_number",myuserDTO.getPhone_number()); userObject.put("mailbox",myuserDTO.getMailbox());')&241ms 
+2019-10-16 15:05:45.198 ERROR [http-nio-9688-exec-5] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [ded1eae3e8c32ff8] [ded1eae3e8c32ff8] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/test] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&218ms 
+2019-10-16 15:05:45.299 ERROR [http-nio-9688-exec-5] [c.y.i.u.c.e.CommonExceptionHandler] [ded1eae3e8c32ff8] [ded1eae3e8c32ff8] [] [] [1001001000001] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/test] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - 出现异常啦 com.yonyou.iuap.ucf.common.exception.BusinessException: 程序员开小差了，请您稍后再试。
+	at com.yonyou.iuap.ucf.core.exception.CommonExceptionHandler.handleThrowable(CommonExceptionHandler.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:412)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:139)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:79)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1297)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1109)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.yonyou.cloud.filter.ZoneFilter.doFilter(ZoneFilter.java:89)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ch.qos.logback.classic.helpers.MDCInsertingServletFilter.doFilter(MDCInsertingServletFilter.java:49)
+	at com.yonyou.iuap.ucf.log.filter.MDCLogFilter.doFilter(MDCLogFilter.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassCastException: com.yonyou.relation.dto.RelationDTO cannot be cast to com.yonyou.myuser.dto.MyuserDTO
+	at com.yonyou.post.service.UserService.encapsulateUserTest(UserService.java:82)
+	at com.yonyou.post.service.UserService$$FastClassBySpringCGLIB$$2fb7edd.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at com.yonyou.post.service.UserService$$EnhancerBySpringCGLIB$$3df1300b.encapsulateUserTest(<generated>)
+	at com.yonyou.post.controller.UserController.userLogin(UserController.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	... 50 common frames omitted
+
+2019-10-16 15:05:52.454 ERROR [http-nio-9688-exec-6] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [f5bf65e404a39fee] [f5bf65e404a39fee] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/test] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&232ms 
+2019-10-16 15:05:52.455 ERROR [http-nio-9688-exec-6] [c.y.i.u.c.e.CommonExceptionHandler] [f5bf65e404a39fee] [f5bf65e404a39fee] [] [] [1001001000001] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/test] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - 出现异常啦 com.yonyou.iuap.ucf.common.exception.BusinessException: 程序员开小差了，请您稍后再试。
+	at com.yonyou.iuap.ucf.core.exception.CommonExceptionHandler.handleThrowable(CommonExceptionHandler.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:412)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:139)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:79)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1297)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1109)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.yonyou.cloud.filter.ZoneFilter.doFilter(ZoneFilter.java:89)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ch.qos.logback.classic.helpers.MDCInsertingServletFilter.doFilter(MDCInsertingServletFilter.java:49)
+	at com.yonyou.iuap.ucf.log.filter.MDCLogFilter.doFilter(MDCLogFilter.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassCastException: com.yonyou.relation.dto.RelationDTO cannot be cast to com.yonyou.myuser.dto.MyuserDTO
+	at com.yonyou.post.service.UserService.encapsulateUserTest(UserService.java:82)
+	at com.yonyou.post.service.UserService$$FastClassBySpringCGLIB$$2fb7edd.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at com.yonyou.post.service.UserService$$EnhancerBySpringCGLIB$$3df1300b.encapsulateUserTest(<generated>)
+	at com.yonyou.post.controller.UserController.userLogin(UserController.java:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	... 50 common frames omitted
+
+2019-10-16 15:12:44.023 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&243ms 
+2019-10-16 15:12:44.320 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&100ms 
+2019-10-16 15:12:44.832 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&104ms 
+2019-10-16 15:12:45.249 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&106ms 
+2019-10-16 15:12:45.444 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&131ms 
+2019-10-16 15:12:45.546 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.cfavorites.dao.CfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,create_user,time,id,last_modified,dr,cid,ts FROM cfavorites WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&96ms 
+2019-10-16 15:12:45.648 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (fans = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&102ms 
+2019-10-16 15:12:45.854 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '8e061932-f8e8-4115-8c24-93b527495ab1')&103ms 
+2019-10-16 15:12:46.263 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&103ms 
+2019-10-16 15:12:46.470 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&105ms 
+2019-10-16 15:12:46.981 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&104ms 
+2019-10-16 15:12:47.494 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&207ms 
+2019-10-16 15:12:47.595 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&100ms 
+2019-10-16 15:12:47.699 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.cfavorites.dao.CfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,create_user,time,id,last_modified,dr,cid,ts FROM cfavorites WHERE dr = 0 AND (uid = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&104ms 
+2019-10-16 15:12:47.801 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (fans = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&101ms 
+2019-10-16 15:12:48.006 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '8e061932-f8e8-4115-8c24-93b527495ab1')&105ms 
+2019-10-16 15:12:48.415 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&104ms 
+2019-10-16 15:12:48.619 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&96ms 
+2019-10-16 15:12:49.131 ERROR [http-nio-9688-exec-2] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [6b0f0bca10a845a4] [6b0f0bca10a845a4] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&103ms 
+2019-10-16 15:15:45.480 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&243ms 
+2019-10-16 15:15:45.779 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '2233')&95ms 
+2019-10-16 15:15:46.289 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '65aa6380-c280-4022-8c38-78775909a4ae')&105ms 
+2019-10-16 15:15:46.698 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (uid = '2233')&94ms 
+2019-10-16 15:15:46.800 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (uid = '2233')&96ms 
+2019-10-16 15:15:46.902 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.cfavorites.dao.CfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,create_user,time,id,last_modified,dr,cid,ts FROM cfavorites WHERE dr = 0 AND (uid = '2233')&96ms 
+2019-10-16 15:15:47.007 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (fans = '2233')&104ms 
+2019-10-16 15:15:47.210 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&104ms 
+2019-10-16 15:15:47.621 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '2233')&105ms 
+2019-10-16 15:15:47.722 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (uid = '65aa6380-c280-4022-8c38-78775909a4ae')&100ms 
+2019-10-16 15:15:47.824 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (uid = '65aa6380-c280-4022-8c38-78775909a4ae')&62ms 
+2019-10-16 15:15:47.926 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.cfavorites.dao.CfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,create_user,time,id,last_modified,dr,cid,ts FROM cfavorites WHERE dr = 0 AND (uid = '65aa6380-c280-4022-8c38-78775909a4ae')&102ms 
+2019-10-16 15:15:48.029 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (fans = '65aa6380-c280-4022-8c38-78775909a4ae')&103ms 
+2019-10-16 15:15:48.237 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&103ms 
+2019-10-16 15:15:48.745 ERROR [http-nio-9688-exec-3] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [1651d58fcca7a987] [1651d58fcca7a987] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFans] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '65aa6380-c280-4022-8c38-78775909a4ae')&205ms 
+2019-10-16 15:16:04.311 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [3ce875580751dcfd] [3ce875580751dcfd] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFollows] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (fans = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&243ms 
+2019-10-16 15:16:04.523 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [3ce875580751dcfd] [3ce875580751dcfd] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFollows] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '8e061932-f8e8-4115-8c24-93b527495ab1')&110ms 
+2019-10-16 15:16:04.928 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [3ce875580751dcfd] [3ce875580751dcfd] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFollows] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.post.dao.PostMapper.list:SELECT tenant_id,create_time,title,type,content,dr,uid,fpid,last_modify_user,style,create_user,time,id,last_modified,ts FROM post WHERE dr = 0 AND (uid = '8e061932-f8e8-4115-8c24-93b527495ab1')&105ms 
+2019-10-16 15:16:05.030 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [3ce875580751dcfd] [3ce875580751dcfd] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFollows] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.pfavorites.dao.PfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,pid,create_user,time,id,last_modified,dr,ts FROM pfavorites WHERE dr = 0 AND (uid = '8e061932-f8e8-4115-8c24-93b527495ab1')&100ms 
+2019-10-16 15:16:05.232 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [3ce875580751dcfd] [3ce875580751dcfd] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFollows] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.cfavorites.dao.CfavoritesMapper.list:SELECT tenant_id,uid,create_time,last_modify_user,create_user,time,id,last_modified,dr,cid,ts FROM cfavorites WHERE dr = 0 AND (uid = '8e061932-f8e8-4115-8c24-93b527495ab1')&154ms 
+2019-10-16 15:16:05.335 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [3ce875580751dcfd] [3ce875580751dcfd] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFollows] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (fans = '8e061932-f8e8-4115-8c24-93b527495ab1')&103ms 
+2019-10-16 15:16:05.539 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [3ce875580751dcfd] [3ce875580751dcfd] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFollows] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '27c1a703-4eba-4741-8474-959a6942d852')&103ms 
+2019-10-16 15:16:05.949 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [3ce875580751dcfd] [3ce875580751dcfd] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFollows] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.relation.dao.RelationMapper.list:SELECT tenant_id,create_time,last_modify_user,follows,create_user,id,last_modified,dr,fans,ts FROM relation WHERE dr = 0 AND (follows = '8e061932-f8e8-4115-8c24-93b527495ab1')&100ms 
+2019-10-16 15:16:06.154 ERROR [http-nio-9688-exec-4] [c.y.i.u.l.m.f.MDCLogMybatisInterceptor] [3ce875580751dcfd] [3ce875580751dcfd] [] [] [] [http://127.0.0.1:9688/eyetouch-seentao-be/user/user/getAllFollows] [user_ID=088dadca-0ce2-4e2c-8bde-38b109fcd6c8] [iuap,iuap-eyetouch-seentao-server,,,,,] - DB Signature&com.yonyou.myuser.dao.MyuserMapper.list:SELECT birthday,tenant_id,create_time,sex,profile,register_date,avatar,dr,password,login_name,mailbox,last_modify_user,nickname,phone_number,create_user,id,last_modified,ts FROM myuser WHERE dr = 0 AND (id = '088dadca-0ce2-4e2c-8bde-38b109fcd6c8')&102ms 

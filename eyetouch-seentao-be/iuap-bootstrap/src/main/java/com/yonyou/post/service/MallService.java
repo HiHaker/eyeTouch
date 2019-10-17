@@ -127,6 +127,8 @@ public class MallService {
             commodityObject.put("content",c.getContent());
             // 商品链接
             commodityObject.put("link",c.getLink());
+            // 商品价格
+            commodityObject.put("price",c.getPrice());
             // 商品品牌
             commodityObject.put("brand",cbrandService.getAssoVo(c.getBrand()).getEntity().getName());
             // 商品功效
@@ -175,6 +177,8 @@ public class MallService {
             commodityObject.put("content",c.getContent());
             // 商品链接
             commodityObject.put("link",c.getLink());
+            // 商品价格
+            commodityObject.put("price",c.getPrice());
             // 商品品牌
             commodityObject.put("brand",cbrandService.getAssoVo(c.getBrand()).getEntity().getName());
             // 商品功效

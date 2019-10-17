@@ -186,6 +186,18 @@ public class CommunityController extends BaseController{
     }
 
     /**
+     * 消息获取
+     * @return
+     */
+    @RequestMapping(value = "/getCommunityMessage", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getCommunityMessage(
+            @RequestParam String user_ID
+    ){
+        return this.buildSuccess(communityService.getCommunityMessage(user_ID));
+    }
+
+    /**
      * 获取全部的帖子列表
      * @return
      */
@@ -315,5 +327,7 @@ public class CommunityController extends BaseController{
     ){
         return this.buildSuccess(communityService.eGetComments(post_ID));
     }
+
+
 
 }

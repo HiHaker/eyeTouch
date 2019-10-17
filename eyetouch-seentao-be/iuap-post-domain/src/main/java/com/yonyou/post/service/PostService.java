@@ -158,6 +158,21 @@ public class PostService extends GenericAssoService<Post,String>{
     }
 
     /**
+     * 得到用户发表的帖子id列表
+     * @param user_ID
+     * @return
+     */
+    public List<String> eGetPostsList(String user_ID){
+        List<Object> postsList = this.getPostByUserId(user_ID);
+        List<String> postsIds = new ArrayList<>();
+        for (Object o:postsList){
+            PostDTO pd = (PostDTO)o;
+            postsIds.add(pd.getId());
+        }
+        return postsIds;
+    }
+
+    /**
      * 得到用户发表的帖子数
      * @param user_ID
      * @return

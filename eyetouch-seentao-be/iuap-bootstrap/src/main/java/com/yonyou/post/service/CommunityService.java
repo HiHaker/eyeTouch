@@ -1,38 +1,38 @@
 package com.yonyou.post.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.yonyou.cbrand.service.CbrandService;
-import com.yonyou.ccomments.dto.CcommentsDTO;
 import com.yonyou.ccomments.service.CcommentsService;
 import com.yonyou.cfavorites.service.CfavoritesService;
 import com.yonyou.cimage.service.CimageService;
 import com.yonyou.clikes.service.ClikesService;
 import com.yonyou.commodity.dto.CommodityDTO;
 import com.yonyou.commodity.service.CommodityService;
-import com.yonyou.ctype.service.CtypeService;
-import com.yonyou.effacicy.service.EffacicyService;
-import com.yonyou.myuser.po.Myuser;
+import com.yonyou.myuser.dto.MyuserDTO;
 import com.yonyou.myuser.service.MyuserService;
 import com.yonyou.pcomments.dto.PcommentsDTO;
 import com.yonyou.pcomments.service.PcommentsService;
+import com.yonyou.pfavorites.dto.PfavoritesDTO;
 import com.yonyou.pfavorites.service.PfavoritesService;
 import com.yonyou.pimage.po.Pimage;
 import com.yonyou.pimage.service.PimageService;
+import com.yonyou.plikes.dto.PlikesDTO;
 import com.yonyou.plikes.service.PlikesService;
 import com.yonyou.post.dto.PostDTO;
+import com.yonyou.post.entity.CommunityAction;
 import com.yonyou.post.po.Post;
 import com.yonyou.pvideo.po.Pvideo;
 import com.yonyou.pvideo.service.PvideoService;
-import com.yonyou.relation.dto.RelationDTO;
 import com.yonyou.relation.service.RelationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
 
 /**
  * Created on 2019/10/3 0003
@@ -205,7 +205,7 @@ public class CommunityService {
             // 视频url
             postObject.put("video",pvideoService.eGetVideoUrl(p.getId()));
             // body
-            postObject.put("body",p.getContent());
+            postObject.put("content",p.getContent());
 
             // 判断帖子是否是转发的,为"-1"说明不是转发的
             if (p.getFpid().equals("-1")){
@@ -275,7 +275,7 @@ public class CommunityService {
             // 视频url
             postObject.put("video",pvideoService.eGetVideoUrl(p.getId()));
             // body
-            postObject.put("body",p.getContent());
+            postObject.put("content",p.getContent());
 
             // 判断帖子是否是转发的,为"-1"说明不是转发的
             if (p.getFpid().equals("-1")){
@@ -304,6 +304,107 @@ public class CommunityService {
             postObject = new JSONObject();
         }
         return ePostList;
+    }
+
+    /**
+     * 获取当前用户的全部消息
+     * @param user_ID
+     * @return
+     */
+    public List<CommunityAction> getCommunityMessage(String user_ID){
+        // 获取当前用户发表的全部的帖子
+        List<String> posts = postService.eGetPostsList(user_ID);
+        // 点赞列表
+        List<Object> plikes = new ArrayList<>(); //plikesDTO
+        // 收藏列表
+        List<Object> pfavorites = new ArrayList<>(); // pfavoritesDTO
+        // 评论列表
+        List<Object> pcomments = new ArrayList<>(); // pcommentsDTO
+        // 转发列表
+        List<Object> forwards = new ArrayList<>(); //postDTO
+        // 消息列表
+        List<CommunityAction> communityActionList = new ArrayList<>();
+
+        // 获取完整的记录
+        for (String pid:posts){
+            plikes.addAll(plikesService.getAllUsersByPostId(pid));
+            pfavorites.addAll(pfavoritesService.getAllUsersByPostId(pid));
+            pcomments.addAll(pcommentsService.getAllByPostId(pid));
+            forwards.addAll(postService.getPostByForwardId(pid));
+        }
+
+        // code : 点赞-1，收藏-2，转发-3，评论-4，回复-5
+
+        // 点赞
+        for (Object o:plikes){
+            CommunityAction ca = new CommunityAction();
+            PlikesDTO pd = (PlikesDTO)o;
+            ca.setUid(pd.getUid());
+            ca.setAvatar(myuserService.getAssoVo(pd.getUid()).getEntity().getAvatar());
+            ca.setNickname(myuserService.getAssoVo(pd.getUid()).getEntity().getNickname());
+            ca.setAttent(this.eIfFollows(user_ID,pd.getUid()));
+            ca.setPid(pd.getPid());
+            ca.setTitle(postService.getAssoVo(pd.getPid()).getEntity().getTitle());
+            ca.setContent(postService.getAssoVo(pd.getPid()).getEntity().getContent());
+            ca.setTime(pd.getTime());
+            ca.setCode("1");
+            communityActionList.add(ca);
+        }
+
+        // 收藏
+        for (Object o:pfavorites){
+            CommunityAction ca = new CommunityAction();
+            PfavoritesDTO pd = (PfavoritesDTO)o;
+            ca.setUid(pd.getUid());
+            ca.setAvatar(myuserService.getAssoVo(pd.getUid()).getEntity().getAvatar());
+            ca.setNickname(myuserService.getAssoVo(pd.getUid()).getEntity().getNickname());
+            ca.setAttent(this.eIfFollows(user_ID,pd.getUid()));
+            ca.setPid(pd.getPid());
+            ca.setTitle(postService.getAssoVo(pd.getPid()).getEntity().getTitle());
+            ca.setContent(postService.getAssoVo(pd.getPid()).getEntity().getContent());
+            ca.setTime(pd.getTime());
+            ca.setCode("2");
+            communityActionList.add(ca);
+        }
+
+        // 转发
+        for (Object o:forwards){
+            CommunityAction ca = new CommunityAction();
+            PostDTO pd = (PostDTO)o;
+            ca.setUid(pd.getUid());
+            ca.setAvatar(myuserService.getAssoVo(pd.getUid()).getEntity().getAvatar());
+            ca.setNickname(myuserService.getAssoVo(pd.getUid()).getEntity().getNickname());
+            ca.setAttent(this.eIfFollows(user_ID,pd.getUid()));
+            ca.setPid(pd.getId());
+            ca.setTitle(postService.getAssoVo(pd.getId()).getEntity().getTitle());
+            ca.setContent(postService.getAssoVo(pd.getId()).getEntity().getContent());
+            ca.setTime(pd.getTime());
+            ca.setCode("3");
+            communityActionList.add(ca);
+        }
+
+        // 评论和回复
+        for (Object o:pcomments){
+            CommunityAction ca = new CommunityAction();
+            PcommentsDTO pd = (PcommentsDTO)o;
+            ca.setUid(pd.getAuid());
+            ca.setAvatar(myuserService.getAssoVo(pd.getAuid()).getEntity().getAvatar());
+            ca.setNickname(myuserService.getAssoVo(pd.getAuid()).getEntity().getNickname());
+            ca.setAttent(this.eIfFollows(user_ID,pd.getAuid()));
+            ca.setPid(pd.getId());
+            ca.setTitle(postService.getAssoVo(pd.getId()).getEntity().getTitle());
+            ca.setContent(postService.getAssoVo(pd.getId()).getEntity().getContent());
+            ca.setComment(pd.getContent());
+            ca.setTime(pd.getTime());
+            if (pd.getBuid() == null){
+                ca.setCode("3");
+            } else{
+                ca.setCode("4");
+            }
+            communityActionList.add(ca);
+        }
+
+        return communityActionList;
     }
 
     /**

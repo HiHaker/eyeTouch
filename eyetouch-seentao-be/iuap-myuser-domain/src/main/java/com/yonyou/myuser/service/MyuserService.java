@@ -61,6 +61,17 @@ public class MyuserService extends GenericAssoService<Myuser,String>{
     }
 
     /**
+     * 获取全部的用户
+     * @return
+     */
+    public List<Object> getAllUsers(){
+        com.yonyou.myuser.dto.SimpleSearchDTO myuserSimpleDto = new
+                com.yonyou.myuser.dto.SimpleSearchDTO();
+        List myuserList = myuserQueryService.listMyuser(myuserSimpleDto.toSearchParams(Myuser.class));
+        return myuserList;
+    }
+
+    /**
      * 根据用户名查询用户（用户名唯一，返回一条记录）
      * @param loginName
      * @return

@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.yonyou.ccomments.service.CcommentsService;
 import com.yonyou.cfavorites.service.CfavoritesService;
 import com.yonyou.clikes.service.ClikesService;
+import com.yonyou.commodity.dto.CommodityDTO;
+import com.yonyou.commodity.service.CommodityService;
 import com.yonyou.myuser.dto.MyuserDTO;
 import com.yonyou.myuser.po.Myuser;
 import com.yonyou.myuser.service.MyuserService;
@@ -17,6 +19,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +39,8 @@ public class UserService {
     @Autowired
     PostService postService;
     @Autowired
+    CommodityService commodityService;
+    @Autowired
     RelationService relationService;
     @Autowired
     PlikesService plikesService;
@@ -47,6 +54,10 @@ public class UserService {
     CfavoritesService cfavoritesService;
     @Autowired
     CcommentsService ccommentsService;
+
+    // 时间模式
+    private static final DateTimeFormatter datePattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private static final DateTimeFormatter dateTimePattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     /**
      * 将用户实体转换为DTO
@@ -206,5 +217,80 @@ public class UserService {
             fansList.add(this.switchDTO(myuser));
         }
         return fansList;
+    }
+
+
+    /**
+     * 获取当日新增的用户数
+     * @return
+     */
+    public Integer getNewUsers(){
+        // 构造当日0点localdate对象
+        String zeroDate = LocalDateTime.now().format(datePattern);
+        String zeroDateTimeString = zeroDate + " " + "00:00:00";
+        LocalDateTime zeroDateTime = LocalDateTime.parse(zeroDateTimeString, dateTimePattern);
+        String registerTime;
+        Integer count = 0;
+        List<Object> usersList = myuserService.getAllUsers();
+        for (Object o:usersList){
+            MyuserDTO md = (MyuserDTO)o;
+            registerTime = md.getRegister_date();
+            LocalDateTime registerDateTime = LocalDateTime.parse(registerTime, dateTimePattern);
+            // 如果发帖时间在当日，就为当日新增
+            if (ChronoUnit.DAYS.between(zeroDateTime, registerDateTime) == 0){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * 获取当日新增的帖子数
+     * @return
+     */
+    public Integer getNewPosts(){
+        // 构造当日0点localdate对象
+        String zeroDate = LocalDateTime.now().format(datePattern);
+        String zeroDateTimeString = zeroDate + " " + "00:00:00";
+        LocalDateTime zeroDateTime = LocalDateTime.parse(zeroDateTimeString, dateTimePattern);
+        String postTime;
+        Integer count = 0;
+        List<Object> postsList = postService.getAllPost();
+        for (Object o:postsList){
+            PostDTO pd = (PostDTO)o;
+            postTime = pd.getTime();
+            // 发帖的时间转换为localdate对象
+            LocalDateTime postDateTime = LocalDateTime.parse(postTime, dateTimePattern);
+            // 如果发帖时间在当日，就为当日新增
+            if (ChronoUnit.DAYS.between(zeroDateTime, postDateTime) == 0){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * 获取当日新增的商品数
+     * @return
+     */
+    public Integer getNewCommoditys(){
+        // 构造当日0点localdate对象
+        String zeroDate = LocalDateTime.now().format(datePattern);
+        String zeroDateTimeString = zeroDate + " " + "00:00:00";
+        LocalDateTime zeroDateTime = LocalDateTime.parse(zeroDateTimeString, dateTimePattern);
+        String publishTime;
+        Integer count = 0;
+        List<Object> commodityList = commodityService.getAllCommodity();
+        for (Object o:commodityList){
+            CommodityDTO cd = (CommodityDTO)o;
+            publishTime = cd.getCreateTime();
+            // 发帖的时间转换为localdate对象
+            LocalDateTime publishDateTime = LocalDateTime.parse(publishTime, dateTimePattern);
+            // 如果发帖时间在当日，就为当日新增
+            if (ChronoUnit.DAYS.between(zeroDateTime, publishDateTime) == 0){
+                count++;
+            }
+        }
+        return count;
     }
 }

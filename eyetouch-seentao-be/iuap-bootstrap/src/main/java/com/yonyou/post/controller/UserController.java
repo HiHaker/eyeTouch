@@ -111,4 +111,31 @@ public class UserController extends BaseController{
     ){
         return this.buildSuccess(userService.encapsulateUser(userService.getAllFans(user_ID)));
     }
+
+    /**
+     * 获取当日新增用户数
+     */
+    @RequestMapping(value = "/getNewUsers", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllFans(){
+        return userService.getNewUsers();
+    }
+
+    /**
+     * 获取当日新增帖子数
+     */
+    @RequestMapping(value = "/getNewPosts", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getNewPosts(){
+        return userService.getNewPosts();
+    }
+
+    /**
+     * 获取当日新增商品数
+     */
+    @RequestMapping(value = "/getNewCommoditys", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getNewCommoditys(){
+        return userService.getNewCommoditys();
+    }
 }
