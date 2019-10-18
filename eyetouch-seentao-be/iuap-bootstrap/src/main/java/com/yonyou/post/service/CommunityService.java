@@ -375,9 +375,9 @@ public class CommunityService {
             ca.setAvatar(myuserService.getAssoVo(pd.getUid()).getEntity().getAvatar());
             ca.setNickname(myuserService.getAssoVo(pd.getUid()).getEntity().getNickname());
             ca.setAttent(this.eIfFollows(user_ID,pd.getUid()));
-            ca.setPid(pd.getId());
-            ca.setTitle(postService.getAssoVo(pd.getId()).getEntity().getTitle());
-            ca.setContent(postService.getAssoVo(pd.getId()).getEntity().getContent());
+            ca.setPid(pd.getFpid());
+            ca.setTitle(postService.getAssoVo(pd.getFpid()).getEntity().getTitle());
+            ca.setContent(postService.getAssoVo(pd.getFpid()).getEntity().getContent());
             ca.setTime(pd.getTime());
             ca.setCode("3");
             communityActionList.add(ca);
@@ -391,9 +391,9 @@ public class CommunityService {
             ca.setAvatar(myuserService.getAssoVo(pd.getAuid()).getEntity().getAvatar());
             ca.setNickname(myuserService.getAssoVo(pd.getAuid()).getEntity().getNickname());
             ca.setAttent(this.eIfFollows(user_ID,pd.getAuid()));
-            ca.setPid(pd.getId());
-            ca.setTitle(postService.getAssoVo(pd.getId()).getEntity().getTitle());
-            ca.setContent(postService.getAssoVo(pd.getId()).getEntity().getContent());
+            ca.setPid(pd.getPid());
+            ca.setTitle(postService.getAssoVo(pd.getPid()).getEntity().getTitle());
+            ca.setContent(postService.getAssoVo(pd.getPid()).getEntity().getContent());
             ca.setComment(pd.getContent());
             ca.setTime(pd.getTime());
             if (pd.getBuid() == null){
