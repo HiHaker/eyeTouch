@@ -42,6 +42,27 @@ public class MyuserService extends GenericAssoService<Myuser,String>{
     }
 
     /**
+     * 将用户实体转换为DTO
+     * @param myuser
+     * @return
+     */
+    public MyuserDTO switchDTO(Myuser myuser){
+        MyuserDTO myuserDTO = new MyuserDTO();
+        myuserDTO.setId(myuser.getId());
+        myuserDTO.setAvatar(myuser.getAvatar());
+        myuserDTO.setLogin_name(myuser.getLogin_name());
+        myuserDTO.setPassword(myuser.getPassword());
+        myuserDTO.setNickname(myuser.getNickname());
+        myuserDTO.setSex(myuser.getSex());
+        myuserDTO.setBirthday(myuser.getBirthday());
+        myuserDTO.setRegister_date(myuser.getRegister_date());
+        myuserDTO.setProfile(myuser.getProfile());
+        myuserDTO.setPhone_number(myuser.getPhone_number());
+        myuserDTO.setMailbox(myuser.getMailbox());
+        return myuserDTO;
+    }
+
+    /**
      * 增加一条用户记录
      * @param user
      * @return

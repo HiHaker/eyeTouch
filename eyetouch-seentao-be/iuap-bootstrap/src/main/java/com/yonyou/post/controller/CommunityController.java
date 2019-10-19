@@ -129,25 +129,9 @@ public class CommunityController extends BaseController{
     ){
         // 转换为DTO
         Post post = postService.getAssoVo(post_ID).getEntity();
-        PostDTO pd = new PostDTO();
-        pd.setId(post.getId());
-        pd.setUid(post.getUid());
-        pd.setTitle(post.getTitle());
-        pd.setContent(post.getContent());
-        pd.setType(post.getType());
-        pd.setStyle(post.getStyle());
-        pd.setFpid(post.getFpid());
-        pd.setTime(post.getTime());
-        pd.setCreateUser(post.getCreateUser());
-        pd.setCreateTime(post.getCreateTime());
-        pd.setDr(post.getDr());
-        pd.setTs(post.getTs());
-        pd.setTenantId(post.getTenantId());
-        pd.setLastModifyUser(post.getLastModifyUser());
-        pd.setLastModified(post.getLastModified());
         // 封装成帖子列表
         List<Object> postList = new ArrayList<>();
-        postList.add(pd);
+        postList.add(postService.switchDTO(post));
         return this.buildSuccess(communityService.encapsulatePost(postList));
     }
 
@@ -163,25 +147,9 @@ public class CommunityController extends BaseController{
     ){
         // 转换为DTO
         Post post = postService.getAssoVo(post_ID).getEntity();
-        PostDTO pd = new PostDTO();
-        pd.setId(post.getId());
-        pd.setUid(post.getUid());
-        pd.setTitle(post.getTitle());
-        pd.setContent(post.getContent());
-        pd.setType(post.getType());
-        pd.setStyle(post.getStyle());
-        pd.setFpid(post.getFpid());
-        pd.setTime(post.getTime());
-        pd.setCreateUser(post.getCreateUser());
-        pd.setCreateTime(post.getCreateTime());
-        pd.setDr(post.getDr());
-        pd.setTs(post.getTs());
-        pd.setTenantId(post.getTenantId());
-        pd.setLastModifyUser(post.getLastModifyUser());
-        pd.setLastModified(post.getLastModified());
         // 封装成帖子列表
         List<Object> postList = new ArrayList<>();
-        postList.add(pd);
+        postList.add(postService.switchDTO(post));
         return this.buildSuccess(communityService.encapsulatePostLogin(postList,user_ID));
     }
 
@@ -218,6 +186,19 @@ public class CommunityController extends BaseController{
             @RequestParam String user_ID
     ){
         return this.buildSuccess(communityService.encapsulatePostLogin(postService.getAllPost(),user_ID));
+    }
+
+    /**
+     * 得到用户收藏的全部帖子
+     * @param user_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllPostsFavorite", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllPostsFavorite(
+            @RequestParam String user_ID
+    ){
+        return this.buildSuccess(communityService.encapsulatePostLogin(communityService.getAllPostsFavorite(user_ID), user_ID));
     }
 
     /**

@@ -60,27 +60,6 @@ public class UserService {
     private static final DateTimeFormatter dateTimePattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     /**
-     * 将用户实体转换为DTO
-     * @param myuser
-     * @return
-     */
-    public MyuserDTO switchDTO(Myuser myuser){
-        MyuserDTO myuserDTO = new MyuserDTO();
-        myuserDTO.setId(myuser.getId());
-        myuserDTO.setAvatar(myuser.getAvatar());
-        myuserDTO.setLogin_name(myuser.getLogin_name());
-        myuserDTO.setPassword(myuser.getPassword());
-        myuserDTO.setNickname(myuser.getNickname());
-        myuserDTO.setSex(myuser.getSex());
-        myuserDTO.setBirthday(myuser.getBirthday());
-        myuserDTO.setRegister_date(myuser.getRegister_date());
-        myuserDTO.setProfile(myuser.getProfile());
-        myuserDTO.setPhone_number(myuser.getPhone_number());
-        myuserDTO.setMailbox(myuser.getMailbox());
-        return myuserDTO;
-    }
-
-    /**
      * 封装用户测试
      * @param userList
      * @return
@@ -199,7 +178,7 @@ public class UserService {
             // 类型转换
             RelationDTO rd = (RelationDTO)o;
             Myuser myuser = myuserService.getAssoVo(rd.getFollows()).getEntity();
-            followsList.add(this.switchDTO(myuser));
+            followsList.add(myuserService.switchDTO(myuser));
         }
         return followsList;
     }
@@ -214,7 +193,7 @@ public class UserService {
             // 类型转换
             RelationDTO rd = (RelationDTO)o;
             Myuser myuser = myuserService.getAssoVo(rd.getFans()).getEntity();
-            fansList.add(this.switchDTO(myuser));
+            fansList.add(myuserService.switchDTO(myuser));
         }
         return fansList;
     }

@@ -40,6 +40,23 @@ public class CommodityService extends GenericAssoService<Commodity,String>{
     }
 
     /**
+     * 转换为DTO
+     * @param commodity
+     * @return
+     */
+    public CommodityDTO switchDTO(Commodity commodity){
+        CommodityDTO cd = new CommodityDTO();
+        cd.setId(commodity.getId());
+        cd.setName(commodity.getName());
+        cd.setPrice(commodity.getPrice());
+        cd.setLink(commodity.getLink());
+        cd.setType(commodity.getType());
+        cd.setBrand(commodity.getBrand());
+        cd.setEffacicy(commodity.getEffacicy());
+        return cd;
+    }
+
+    /**
      * 根据商品的id删除商品
      * @param commodity_ID
      */

@@ -55,7 +55,7 @@ public class UserController extends BaseController{
             String token = tokenService.getToken(myuser);
             jsonObject.put("token",token);
             List<Object> userList = new ArrayList<>();
-            userList.add(userService.switchDTO(user));
+            userList.add(myuserService.switchDTO(user));
             jsonObject.put("userMessage",userService.encapsulateUser(userList));
             return jsonObject;
         }
@@ -73,7 +73,7 @@ public class UserController extends BaseController{
     ){
         Myuser myuser = myuserService.getAssoVo(user_ID).getEntity();
         List<Object> userList = new ArrayList<>();
-        userList.add(userService.switchDTO(myuser));
+        userList.add(myuserService.switchDTO(myuser));
         return  this.buildSuccess(userService.encapsulateUser(userList));
     }
 

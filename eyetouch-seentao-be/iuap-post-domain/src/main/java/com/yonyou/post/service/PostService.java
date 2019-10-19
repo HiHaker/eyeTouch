@@ -43,6 +43,19 @@ public class PostService extends GenericAssoService<Post,String>{
         return new ServiceFeature[]{ AUDIT,I18N_ENUM };
     }
 
+    public PostDTO switchDTO(Post post){
+        PostDTO pd = new PostDTO();
+        pd.setId(post.getId());
+        pd.setUid(post.getUid());
+        pd.setTitle(post.getTitle());
+        pd.setContent(post.getContent());
+        pd.setType(post.getType());
+        pd.setStyle(post.getStyle());
+        pd.setFpid(post.getFpid());
+        pd.setTime(post.getTime());
+        return pd;
+    }
+
     /**
      * 根据帖子的id删除帖子
      * @param post_ID

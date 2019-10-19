@@ -199,7 +199,7 @@ public class CommunityService {
             // 用户昵称
             postObject.put("nickname",myuserService.getAssoVo(p.getUid()).getEntity().getNickname());
             // 发表时间
-            postObject.put("postTime",p.getTime());
+            postObject.put("time",p.getTime());
             // 图像url列表
             postObject.put("images",pimageService.eGetImagesUrl(p.getId()));
             // 视频url
@@ -269,7 +269,7 @@ public class CommunityService {
             // 用户昵称
             postObject.put("nickname",myuserService.getAssoVo(p.getUid()).getEntity().getNickname());
             // 发表时间
-            postObject.put("postTime",p.getTime());
+            postObject.put("time",p.getTime());
             // 图像url列表
             postObject.put("images",pimageService.eGetImagesUrl(p.getId()));
             // 视频url
@@ -505,5 +505,20 @@ public class CommunityService {
         }
 
         return postsObject;
+    }
+
+    /**
+     * 获取用户收藏的全部帖子
+     * @param user_ID
+     * @return
+     */
+    public List<Object> getAllPostsFavorite(String user_ID){
+        List<Object> favoritesList = pfavoritesService.getAllPostsByUserId(user_ID);
+        List<Object> postsList = new ArrayList<>();
+        for (Object o:favoritesList){
+            PfavoritesDTO pd = (PfavoritesDTO)o;
+            postsList.add(postService.switchDTO(postService.getAssoVo(pd.getPid()).getEntity()));
+        }
+        return postsList;
     }
 }

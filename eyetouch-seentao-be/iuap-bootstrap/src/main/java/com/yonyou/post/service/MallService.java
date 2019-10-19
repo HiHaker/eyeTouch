@@ -3,6 +3,7 @@ package com.yonyou.post.service;
 import com.yonyou.cbrand.service.CbrandService;
 import com.yonyou.ccomments.dto.CcommentsDTO;
 import com.yonyou.ccomments.service.CcommentsService;
+import com.yonyou.cfavorites.dto.CfavoritesDTO;
 import com.yonyou.cfavorites.service.CfavoritesService;
 import com.yonyou.cimage.service.CimageService;
 import com.yonyou.clikes.service.ClikesService;
@@ -244,5 +245,22 @@ public class MallService {
 
         // 删除自身
         commodityService.deleteCommodityById(commodity_ID);
+    }
+
+    /**
+     * 得到用户收藏的所有商品
+     * @param user_ID
+     * @return
+     */
+    public List<Object> getAllCommodityFavorites(String user_ID){
+        List<Object> favoritesList = cfavoritesService.getAllCommodityByUserId(user_ID);
+        List<Object> commodityList = new ArrayList<>();
+
+        for (Object o:favoritesList){
+            CfavoritesDTO cd = (CfavoritesDTO)o;
+            commodityList.add(commodityService.switchDTO(commodityService.getAssoVo(cd.getCid()).getEntity()));
+        }
+
+        return commodityList;
     }
 }

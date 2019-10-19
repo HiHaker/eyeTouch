@@ -48,26 +48,11 @@ public class MallController extends BaseController{
     public Object getCommodityById(
             @RequestParam String commodity_ID
     ){
-        // 转换为DTO
         Commodity commodity = commodityService.getAssoVo(commodity_ID).getEntity();
-        CommodityDTO cd = new CommodityDTO();
-        cd.setId(commodity.getId());
-        cd.setName(commodity.getName());
-        cd.setPrice(commodity.getPrice());
-        cd.setLink(commodity.getLink());
-        cd.setType(commodity.getType());
-        cd.setBrand(commodity.getBrand());
-        cd.setEffacicy(commodity.getEffacicy());
-        cd.setCreateUser(commodity.getCreateUser());
-        cd.setCreateTime(commodity.getCreateTime());
-        cd.setDr(commodity.getDr());
-        cd.setTs(commodity.getTs());
-        cd.setTenantId(commodity.getTenantId());
-        cd.setLastModifyUser(commodity.getLastModifyUser());
-        cd.setLastModified(commodity.getLastModified());
         // 封装成帖子列表
         List<Object> commodityList = new ArrayList<>();
-        commodityList.add(cd);
+        // 转换为DTO
+        commodityList.add(commodityService.switchDTO(commodity));
         return this.buildSuccess(mallService.encapsulateCommodity(commodityList));
     }
 
@@ -84,24 +69,9 @@ public class MallController extends BaseController{
     ){
         // 转换为DTO
         Commodity commodity = commodityService.getAssoVo(commodity_ID).getEntity();
-        CommodityDTO cd = new CommodityDTO();
-        cd.setId(commodity.getId());
-        cd.setName(commodity.getName());
-        cd.setPrice(commodity.getPrice());
-        cd.setLink(commodity.getLink());
-        cd.setType(commodity.getType());
-        cd.setBrand(commodity.getBrand());
-        cd.setEffacicy(commodity.getEffacicy());
-        cd.setCreateUser(commodity.getCreateUser());
-        cd.setCreateTime(commodity.getCreateTime());
-        cd.setDr(commodity.getDr());
-        cd.setTs(commodity.getTs());
-        cd.setTenantId(commodity.getTenantId());
-        cd.setLastModifyUser(commodity.getLastModifyUser());
-        cd.setLastModified(commodity.getLastModified());
         // 封装成帖子列表
         List<Object> commodityList = new ArrayList<>();
-        commodityList.add(cd);
+        commodityList.add(commodityService.switchDTO(commodity));
         return this.buildSuccess(mallService.encapsulateCommodityLogin(commodityList,user_ID));
     }
 
@@ -207,6 +177,19 @@ public class MallController extends BaseController{
             @RequestParam String user_ID, String effacicy
     ){
         return this.buildSuccess(mallService.encapsulateCommodityLogin(commodityService.getAllCommodityByEffacicy(effacicy),user_ID));
+    }
+
+    /**
+     * 得到用户收藏的所有商品
+     * @param user_ID
+     * @return
+     */
+    @RequestMapping(value = "/getAllCommodityFavorites", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getAllCommodityFavorites(
+            @RequestParam String user_ID
+    ){
+        return this.buildSuccess(mallService.encapsulateCommodityLogin(mallService.getAllCommodityFavorites(user_ID), user_ID));
     }
 
     /**
