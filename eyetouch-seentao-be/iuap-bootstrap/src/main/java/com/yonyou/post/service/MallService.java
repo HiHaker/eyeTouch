@@ -242,9 +242,52 @@ public class MallService {
         cfavoritesService.deleteByCommodityId(commodity_ID);
         // 删除评论
         ccommentsService.deleteByCommodityId(commodity_ID);
-
+        // 删除图片
+        cimageService.deleteImagesByCommodityId(commodity_ID);
         // 删除自身
         commodityService.deleteCommodityById(commodity_ID);
+    }
+
+    /**
+     * 根据Id删除类型
+     * @param type
+     */
+    @Transactional
+    public void deleteCtypeById(String type){
+        List<Object> commodyList = commodityService.getAllCommodityByType(type);
+        for (Object o:commodyList){
+            CommodityDTO cd = (CommodityDTO)o;
+            this.deleteCommodityById(cd.getId());
+        }
+        ctypeService.deleteById(type);
+    }
+
+    /**
+     * 根据id删除品牌
+     * @param brand
+     */
+    @Transactional
+    public void deleteCbrandById(String brand){
+        List<Object> commodyList = commodityService.getAllCommodityByBrand(brand);
+        for (Object o:commodyList){
+            CommodityDTO cd = (CommodityDTO)o;
+            this.deleteCommodityById(cd.getId());
+        }
+        cbrandService.deleteById(brand);
+    }
+
+    /**
+     * 根据id删除功效
+     * @param effacicy
+     */
+    @Transactional
+    public void deleteEffacicyById(String effacicy){
+        List<Object> commodyList = commodityService.getAllCommodityByEffacicy(effacicy);
+        for (Object o:commodyList){
+            CommodityDTO cd = (CommodityDTO)o;
+            this.deleteCommodityById(cd.getId());
+        }
+        effacicyService.deleteById(effacicy);
     }
 
     /**

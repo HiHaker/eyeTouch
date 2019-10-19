@@ -1,6 +1,5 @@
 package com.yonyou.post.controller;
 
-import com.yonyou.commodity.dto.CommodityDTO;
 import com.yonyou.commodity.po.Commodity;
 import com.yonyou.commodity.service.CommodityService;
 import com.yonyou.post.service.MallService;
@@ -35,6 +34,45 @@ public class MallController extends BaseController{
             @RequestParam String commodity_ID
     ){
         mallService.deleteCommodityById(commodity_ID);
+        return "success";
+    }
+
+    /**
+     * 根据Id删除类型
+     * @param type
+     */
+    @RequestMapping(value = "/deleteCtypeById", method = RequestMethod.DELETE)
+    @ResponseBody
+    public Object deleteCtypeById(
+            @RequestParam String type
+    ){
+        mallService.deleteCtypeById(type);
+        return "success";
+    }
+
+    /**
+     * 根据Id删除品牌
+     * @param brand
+     */
+    @RequestMapping(value = "/deleteCbrandById", method = RequestMethod.DELETE)
+    @ResponseBody
+    public Object deleteCbrandById(
+            @RequestParam String brand
+    ){
+        mallService.deleteCbrandById(brand);
+        return "success";
+    }
+
+    /**
+     * 根据Id删除功效
+     * @param effacicy
+     */
+    @RequestMapping(value = "/deleteEffacicyById", method = RequestMethod.DELETE)
+    @ResponseBody
+    public Object deleteEffacicyById(
+            @RequestParam String effacicy
+    ){
+        mallService.deleteEffacicyById(effacicy);
         return "success";
     }
 
