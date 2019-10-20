@@ -205,7 +205,7 @@ public class UserService {
      */
     public Integer getNewUsers(){
         // 构造当日0点localdate对象
-        String zeroDate = LocalDateTime.now().format(datePattern);
+        String zeroDate = LocalDateTime.now().minusDays(1).format(datePattern);
         String zeroDateTimeString = zeroDate + " " + "00:00:00";
         LocalDateTime zeroDateTime = LocalDateTime.parse(zeroDateTimeString, dateTimePattern);
         String registerTime;
@@ -216,8 +216,70 @@ public class UserService {
             registerTime = md.getRegister_date();
             LocalDateTime registerDateTime = LocalDateTime.parse(registerTime, dateTimePattern);
             // 如果发帖时间在当日，就为当日新增
-            if (ChronoUnit.DAYS.between(zeroDateTime, registerDateTime) == 0){
+            if (ChronoUnit.DAYS.between(zeroDateTime, registerDateTime) == 1){
                 count++;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * 获取8日内新增的用户数
+     * @return
+     */
+    public int[] getNewUsersForEightDays(){
+        // 构造当日0点localdate对象
+        String zeroDate = LocalDateTime.now().minusDays(1).format(datePattern);
+        String zeroDate1 = LocalDateTime.now().minusDays(2).format(datePattern);
+        String zeroDate2 = LocalDateTime.now().minusDays(3).format(datePattern);
+        String zeroDate3 = LocalDateTime.now().minusDays(4).format(datePattern);
+        String zeroDate4 = LocalDateTime.now().minusDays(5).format(datePattern);
+        String zeroDate5 = LocalDateTime.now().minusDays(6).format(datePattern);
+        String zeroDate6 = LocalDateTime.now().minusDays(7).format(datePattern);
+        String zeroDate7 = LocalDateTime.now().minusDays(8).format(datePattern);
+
+        String zeroDateTimeString = zeroDate + " " + "00:00:00";
+        String zeroDateTimeString1 = zeroDate1 + " " + "00:00:00";
+        String zeroDateTimeString2 = zeroDate2 + " " + "00:00:00";
+        String zeroDateTimeString3 = zeroDate3 + " " + "00:00:00";
+        String zeroDateTimeString4 = zeroDate4 + " " + "00:00:00";
+        String zeroDateTimeString5 = zeroDate5 + " " + "00:00:00";
+        String zeroDateTimeString6 = zeroDate6 + " " + "00:00:00";
+        String zeroDateTimeString7 = zeroDate7 + " " + "00:00:00";
+
+        LocalDateTime zeroDateTime = LocalDateTime.parse(zeroDateTimeString, dateTimePattern);
+        LocalDateTime zeroDateTime1 = LocalDateTime.parse(zeroDateTimeString1, dateTimePattern);
+        LocalDateTime zeroDateTime2 = LocalDateTime.parse(zeroDateTimeString2, dateTimePattern);
+        LocalDateTime zeroDateTime3 = LocalDateTime.parse(zeroDateTimeString3, dateTimePattern);
+        LocalDateTime zeroDateTime4 = LocalDateTime.parse(zeroDateTimeString4, dateTimePattern);
+        LocalDateTime zeroDateTime5 = LocalDateTime.parse(zeroDateTimeString5, dateTimePattern);
+        LocalDateTime zeroDateTime6 = LocalDateTime.parse(zeroDateTimeString6, dateTimePattern);
+        LocalDateTime zeroDateTime7 = LocalDateTime.parse(zeroDateTimeString7, dateTimePattern);
+
+        String registerTime;
+        int[] count = new int[8];
+        List<Object> usersList = myuserService.getAllUsers();
+        for (Object o:usersList){
+            MyuserDTO md = (MyuserDTO)o;
+            registerTime = md.getRegister_date();
+            LocalDateTime registerDateTime = LocalDateTime.parse(registerTime, dateTimePattern);
+            // 如果发帖时间在当日，就为当日新增
+            if (ChronoUnit.DAYS.between(zeroDateTime, registerDateTime) == 1){
+                count[7]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime1, registerDateTime) == 1){
+                count[6]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime2, registerDateTime) == 1){
+                count[5]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime3, registerDateTime) == 1){
+                count[4]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime4, registerDateTime) == 1){
+                count[3]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime5, registerDateTime) == 1){
+                count[2]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime6, registerDateTime) == 1){
+                count[1]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime7, registerDateTime) == 1){
+                count[0]++;
             }
         }
         return count;
@@ -229,7 +291,7 @@ public class UserService {
      */
     public Integer getNewPosts(){
         // 构造当日0点localdate对象
-        String zeroDate = LocalDateTime.now().format(datePattern);
+        String zeroDate = LocalDateTime.now().minusDays(1).format(datePattern);
         String zeroDateTimeString = zeroDate + " " + "00:00:00";
         LocalDateTime zeroDateTime = LocalDateTime.parse(zeroDateTimeString, dateTimePattern);
         String postTime;
@@ -241,8 +303,71 @@ public class UserService {
             // 发帖的时间转换为localdate对象
             LocalDateTime postDateTime = LocalDateTime.parse(postTime, dateTimePattern);
             // 如果发帖时间在当日，就为当日新增
-            if (ChronoUnit.DAYS.between(zeroDateTime, postDateTime) == 0){
+            if (ChronoUnit.DAYS.between(zeroDateTime, postDateTime) == 1){
                 count++;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * 获取8日内新增的帖子数
+     * @return
+     */
+    public int[] getNewPostsForEightDays(){
+        // 构造当日0点localdate对象
+        String zeroDate = LocalDateTime.now().minusDays(1).format(datePattern);
+        String zeroDate1 = LocalDateTime.now().minusDays(2).format(datePattern);
+        String zeroDate2 = LocalDateTime.now().minusDays(3).format(datePattern);
+        String zeroDate3 = LocalDateTime.now().minusDays(4).format(datePattern);
+        String zeroDate4 = LocalDateTime.now().minusDays(5).format(datePattern);
+        String zeroDate5 = LocalDateTime.now().minusDays(6).format(datePattern);
+        String zeroDate6 = LocalDateTime.now().minusDays(7).format(datePattern);
+        String zeroDate7 = LocalDateTime.now().minusDays(8).format(datePattern);
+
+        String zeroDateTimeString = zeroDate + " " + "00:00:00";
+        String zeroDateTimeString1 = zeroDate1 + " " + "00:00:00";
+        String zeroDateTimeString2 = zeroDate2 + " " + "00:00:00";
+        String zeroDateTimeString3 = zeroDate3 + " " + "00:00:00";
+        String zeroDateTimeString4 = zeroDate4 + " " + "00:00:00";
+        String zeroDateTimeString5 = zeroDate5 + " " + "00:00:00";
+        String zeroDateTimeString6 = zeroDate6 + " " + "00:00:00";
+        String zeroDateTimeString7 = zeroDate7 + " " + "00:00:00";
+
+        LocalDateTime zeroDateTime = LocalDateTime.parse(zeroDateTimeString, dateTimePattern);
+        LocalDateTime zeroDateTime1 = LocalDateTime.parse(zeroDateTimeString1, dateTimePattern);
+        LocalDateTime zeroDateTime2 = LocalDateTime.parse(zeroDateTimeString2, dateTimePattern);
+        LocalDateTime zeroDateTime3 = LocalDateTime.parse(zeroDateTimeString3, dateTimePattern);
+        LocalDateTime zeroDateTime4 = LocalDateTime.parse(zeroDateTimeString4, dateTimePattern);
+        LocalDateTime zeroDateTime5 = LocalDateTime.parse(zeroDateTimeString5, dateTimePattern);
+        LocalDateTime zeroDateTime6 = LocalDateTime.parse(zeroDateTimeString6, dateTimePattern);
+        LocalDateTime zeroDateTime7 = LocalDateTime.parse(zeroDateTimeString7, dateTimePattern);
+
+        String postTime;
+        int[] count = new int[8];
+        List<Object> postsList = postService.getAllPost();
+        for (Object o:postsList){
+            PostDTO pd = (PostDTO)o;
+            postTime = pd.getTime();
+            // 发帖的时间转换为localdate对象
+            LocalDateTime postDateTime = LocalDateTime.parse(postTime, dateTimePattern);
+            // 如果发帖时间在当日，就为当日新增
+            if (ChronoUnit.DAYS.between(zeroDateTime, postDateTime) == 1){
+                count[7]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime1, postDateTime) == 1){
+                count[6]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime2, postDateTime) == 1){
+                count[5]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime3, postDateTime) == 1){
+                count[4]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime4, postDateTime) == 1){
+                count[3]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime5, postDateTime) == 1){
+                count[2]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime6, postDateTime) == 1){
+                count[1]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime7, postDateTime) == 1){
+                count[0]++;
             }
         }
         return count;
@@ -254,7 +379,7 @@ public class UserService {
      */
     public Integer getNewCommoditys(){
         // 构造当日0点localdate对象
-        String zeroDate = LocalDateTime.now().format(datePattern);
+        String zeroDate = LocalDateTime.now().minusDays(1).format(datePattern);
         String zeroDateTimeString = zeroDate + " " + "00:00:00";
         LocalDateTime zeroDateTime = LocalDateTime.parse(zeroDateTimeString, dateTimePattern);
         String publishTime;
@@ -266,8 +391,71 @@ public class UserService {
             // 发帖的时间转换为localdate对象
             LocalDateTime publishDateTime = LocalDateTime.parse(publishTime, dateTimePattern);
             // 如果发帖时间在当日，就为当日新增
-            if (ChronoUnit.DAYS.between(zeroDateTime, publishDateTime) == 0){
+            if (ChronoUnit.DAYS.between(zeroDateTime, publishDateTime) == 1){
                 count++;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * 获取8日内新增的商品数
+     * @return
+     */
+    public int[] getNewCommoditysForEightDays(){
+        // 构造当日0点localdate对象
+        String zeroDate = LocalDateTime.now().minusDays(1).format(datePattern);
+        String zeroDate1 = LocalDateTime.now().minusDays(2).format(datePattern);
+        String zeroDate2 = LocalDateTime.now().minusDays(3).format(datePattern);
+        String zeroDate3 = LocalDateTime.now().minusDays(4).format(datePattern);
+        String zeroDate4 = LocalDateTime.now().minusDays(5).format(datePattern);
+        String zeroDate5 = LocalDateTime.now().minusDays(6).format(datePattern);
+        String zeroDate6 = LocalDateTime.now().minusDays(7).format(datePattern);
+        String zeroDate7 = LocalDateTime.now().minusDays(8).format(datePattern);
+
+        String zeroDateTimeString = zeroDate + " " + "00:00:00";
+        String zeroDateTimeString1 = zeroDate1 + " " + "00:00:00";
+        String zeroDateTimeString2 = zeroDate2 + " " + "00:00:00";
+        String zeroDateTimeString3 = zeroDate3 + " " + "00:00:00";
+        String zeroDateTimeString4 = zeroDate4 + " " + "00:00:00";
+        String zeroDateTimeString5 = zeroDate5 + " " + "00:00:00";
+        String zeroDateTimeString6 = zeroDate6 + " " + "00:00:00";
+        String zeroDateTimeString7 = zeroDate7 + " " + "00:00:00";
+
+        LocalDateTime zeroDateTime = LocalDateTime.parse(zeroDateTimeString, dateTimePattern);
+        LocalDateTime zeroDateTime1 = LocalDateTime.parse(zeroDateTimeString1, dateTimePattern);
+        LocalDateTime zeroDateTime2 = LocalDateTime.parse(zeroDateTimeString2, dateTimePattern);
+        LocalDateTime zeroDateTime3 = LocalDateTime.parse(zeroDateTimeString3, dateTimePattern);
+        LocalDateTime zeroDateTime4 = LocalDateTime.parse(zeroDateTimeString4, dateTimePattern);
+        LocalDateTime zeroDateTime5 = LocalDateTime.parse(zeroDateTimeString5, dateTimePattern);
+        LocalDateTime zeroDateTime6 = LocalDateTime.parse(zeroDateTimeString6, dateTimePattern);
+        LocalDateTime zeroDateTime7 = LocalDateTime.parse(zeroDateTimeString7, dateTimePattern);
+
+        String publishTime;
+        int[] count = new int[8];
+        List<Object> commodityList = commodityService.getAllCommodity();
+        for (Object o:commodityList){
+            CommodityDTO cd = (CommodityDTO)o;
+            publishTime = cd.getCreateTime();
+            // 发帖的时间转换为localdate对象
+            LocalDateTime publishDateTime = LocalDateTime.parse(publishTime, dateTimePattern);
+            // 如果发帖时间在当日，就为当日新增
+            if (ChronoUnit.DAYS.between(zeroDateTime, publishDateTime) == 1){
+                count[7]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime1, publishDateTime) == 1){
+                count[6]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime2, publishDateTime) == 1){
+                count[5]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime3, publishDateTime) == 1){
+                count[4]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime4, publishDateTime) == 1){
+                count[3]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime5, publishDateTime) == 1){
+                count[2]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime6, publishDateTime) == 1){
+                count[1]++;
+            } else if (ChronoUnit.DAYS.between(zeroDateTime7, publishDateTime) == 1){
+                count[0]++;
             }
         }
         return count;

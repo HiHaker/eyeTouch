@@ -152,6 +152,19 @@ public class RelationController extends BaseController{
     }
 
     /**
+     * 根据被关注人的用户ID，被关注人的用户ID查询记录
+     * @param follows_ID
+     * @return
+     */
+    @RequestMapping(value = "/getByFansIdAndFollowsId", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getByFansIdAndFollowsId(
+            @RequestParam(required = false) String fans_ID, String follows_ID
+    ){
+        return this.buildSuccess(service.getByFansIdAndFollowsId(fans_ID, follows_ID));
+    }
+
+    /**
      * 根据被关注人的用户ID，得到所有粉丝的用户ID列表
      * @param follows_ID
      * @return

@@ -118,7 +118,16 @@ public class UserController extends BaseController{
     @RequestMapping(value = "/getNewUsers", method = RequestMethod.GET)
     @ResponseBody
     public Object getAllFans(){
-        return userService.getNewUsers();
+        return this.buildSuccess(userService.getNewUsers());
+    }
+
+    /**
+     * 获取前8日新增的用户数
+     */
+    @RequestMapping(value = "/getNewUsersForEightDays", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getNewUsersForEightDays(){
+        return this.buildSuccess(userService.getNewUsersForEightDays());
     }
 
     /**
@@ -127,7 +136,16 @@ public class UserController extends BaseController{
     @RequestMapping(value = "/getNewPosts", method = RequestMethod.GET)
     @ResponseBody
     public Object getNewPosts(){
-        return userService.getNewPosts();
+        return this.buildSuccess(userService.getNewPosts());
+    }
+
+    /**
+     * 获取8日内新增的帖子数
+     */
+    @RequestMapping(value = "/getNewPostsForEightDays", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getNewPostsForEightDays(){
+        return this.buildSuccess(userService.getNewPostsForEightDays());
     }
 
     /**
@@ -136,6 +154,15 @@ public class UserController extends BaseController{
     @RequestMapping(value = "/getNewCommoditys", method = RequestMethod.GET)
     @ResponseBody
     public Object getNewCommoditys(){
-        return userService.getNewCommoditys();
+        return this.buildSuccess(userService.getNewCommoditys());
+    }
+
+    /**
+     * 获取8日内新增的商品数
+     */
+    @RequestMapping(value = "/getNewCommoditysForEightDays", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getNewCommoditysForEightDays(){
+        return this.buildSuccess(userService.getNewCommoditysForEightDays());
     }
 }
