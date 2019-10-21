@@ -188,6 +188,20 @@ public class CommunityController extends BaseController{
         return this.buildSuccess(communityService.encapsulatePostLogin(postService.getAllPost(),user_ID));
     }
 
+
+    /**
+     * 获取用户发表的全部的帖子列表
+     * @param user_ID
+     * @return
+     */
+    @RequestMapping(value = "/getUsersAllPosts", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getUsersAllPosts(
+            @RequestParam String user_ID
+    ){
+        return this.buildSuccess(communityService.encapsulatePostLogin(postService.getPostByUserId(user_ID), user_ID));
+    }
+
     /**
      * 得到用户收藏的全部帖子
      * @param user_ID
