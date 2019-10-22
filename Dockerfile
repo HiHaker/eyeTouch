@@ -10,6 +10,7 @@ FROM ycr.yonyoucloud.com/base/tomcat:8-jdk8-alpine
 WORKDIR /app
 RUN  mkdir -p /usr/local/tomcat/webapps/eyetouch-seentao-be
 
+COPY --from=0 /app/eyetouch-seentao-fe /usr/local/tomcat/webapps/eyetouch-seentao-fe
 COPY --from=0 /app/eyetouch-seentao-be/iuap-bootstrap/target/eyetouch-seentao-be.war /usr/local/tomcat/webapps/eyetouch-seentao-be.war
 RUN unzip /usr/local/tomcat/webapps/eyetouch-seentao-be.war -d /usr/local/tomcat/webapps/eyetouch-seentao-be
 RUN rm -f /usr/local/tomcat/webapps/eyetouch-seentao-be.war
